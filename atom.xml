@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MiZhuo</title>
+  <icon>https://www.gravatar.com/avatar/66181c53243a8aa70e5b1971b944717c</icon>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="/"/>
+  <updated>2020-01-11T09:44:53.000Z</updated>
+  <id>/</id>
+  
+  <author>
+    <name>MiZhuo</name>
+    <email>mizhuo809@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo从windows迁移到mac</title>
+    <link href="/2020/01/11/Hexo%E4%BB%8Ewindows%E8%BF%81%E7%A7%BB%E5%88%B0mac/"/>
+    <id>/2020/01/11/Hexo从windows迁移到mac/</id>
+    <published>2020-01-11T09:44:53.000Z</published>
+    <updated>2020-01-11T09:44:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;最近换mac了，所有环境和项目都要转移到Mac上，在迁移Hexo时出了点小问题。这里记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven和Gradle的区别和使用</title>
+    <link href="/2019/12/26/Maven%E5%92%8CGradle%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>/2019/12/26/Maven和Gradle的区别和使用/</id>
+    <published>2019-12-26T14:04:20.000Z</published>
+    <updated>2019-12-26T14:54:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;最近网上经常看到项目使用的是Gradle来进行依赖管理，曾经红极一时的Maven也开始慢慢失宠了，更古老的Ant基本上是不见踪影了，而Gradle的发展则是如日中天。于是来深入了解一下Gradle，顺便和Maven进行简单的比较。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="构建工具" scheme="/categories/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Maven" scheme="/tags/Maven/"/>
+    
+      <category term="Gradle" scheme="/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringSecurity+JWT做认证授权</title>
+    <link href="/2019/12/25/SpringSecurity-JWT%E5%81%9A%E8%AE%A4%E8%AF%81%E6%8E%88%E6%9D%83/"/>
+    <id>/2019/12/25/SpringSecurity-JWT做认证授权/</id>
+    <published>2019-12-25T14:06:45.000Z</published>
+    <updated>2019-12-29T08:13:07.933Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;在讲SpringSecurity+JWT做认证授权前，先对SpringSecurity和JWT做个简单的介绍。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SpringSecurity&lt;/code&gt;：SpringSecurity顾名思义就是安全框架，而其主要功能就是实现用户身份认证和权限控制。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JWT&lt;/code&gt;:即&lt;code&gt;JSON WEB TOKEN&lt;/code&gt; 是一个便于我们管理用户状态的规范，在此之前，我们大部分的Web项目都是使用Session来管理用户状态的，但是随着功能的升级，业务场景日益复杂，分布式应运而生，将业务分为几个部分分别部署在不同的服务器上，从而减轻服务器压力。而这样的话就会有一个问题，session在几个服务器上无法同步，session共享的方式延时较长，用户体验不好。而JWT相当于将session数据保存在客户端，每次请求数据的时候将token带上，后台就可以解析token获取用户信息，将业务无状态化。解决了session管理难的问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Spring Security" scheme="/categories/Spring-Security/"/>
+    
+    
+      <category term="Spring" scheme="/tags/Spring/"/>
+    
+      <category term="Spring Security" scheme="/tags/Spring-Security/"/>
+    
+      <category term="JWT" scheme="/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue+SpringBoot项目实战【一】</title>
+    <link href="/2019/11/27/Vue-SpringBoot%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E3%80%90%E4%B8%80%E3%80%91/"/>
+    <id>/2019/11/27/Vue-SpringBoot项目实战【一】/</id>
+    <published>2019-11-27T14:32:56.000Z</published>
+    <updated>2019-11-27T14:32:56.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;本文仅作为新手参考教程,前端使用Vue+ElementUi搭建,后端使用SpringBoot+Mybatis提供数据接口。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Springboot" scheme="/categories/Springboot/"/>
+    
+      <category term="Vue" scheme="/categories/Springboot/Vue/"/>
+    
+    
+      <category term="Vue" scheme="/tags/Vue/"/>
+    
+      <category term="Springboot" scheme="/tags/Springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue跨域问题</title>
+    <link href="/2019/11/26/Vue%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>/2019/11/26/Vue跨域问题/</id>
+    <published>2019-11-26T07:44:42.000Z</published>
+    <updated>2019-11-26T07:44:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;公司最近上线了日志系统,每天要在上面写日志,但是操作复杂,要先开VPN连接内网,登陆写日志。嫌麻烦的我于是用Vue写了几个前端页面,调用公司的接口。然后把项目部署到自己的服务器上,在服务器上打开VPN,这样的话就会简单很多了。在这个过程中,遇到了Vue的跨域问题。在这里记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+      <category term="Vue" scheme="/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-Router</title>
+    <link href="/2019/11/09/Vue-Router/"/>
+    <id>/2019/11/09/Vue-Router/</id>
+    <published>2019-11-09T08:50:26.000Z</published>
+    <updated>2019-11-09T08:50:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;要想在实际项目中使用Vue来搭建前端框架,就必须熟练的使用&lt;span style=&quot;color:red;font-size:18px;&quot;&gt;vue-router&lt;/span&gt;来实现路由管理。所谓路由管理,顾名思义,就是帮助我们来管理各个页面之间的跳转。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+      <category term="Vue" scheme="/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue的初体验</title>
+    <link href="/2019/11/01/Vue%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>/2019/11/01/Vue的初体验/</id>
+    <published>2019-11-01T14:05:45.000Z</published>
+    <updated>2019-11-01T14:05:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;上一文章,已经讲解了Vue的安装及项目的搭建,接下来就可以开始学习Vue的语法及使用了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+      <category term="Vue" scheme="/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue的安装及项目搭建</title>
+    <link href="/2019/10/31/Vue%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    <id>/2019/10/31/Vue的安装及项目搭建/</id>
+    <published>2019-10-31T01:25:06.000Z</published>
+    <updated>2019-10-31T01:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;简介&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#简介&quot;&gt;null&lt;/a&gt;简介&lt;/h4&gt;
+&lt;p&gt;Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式JavaScript框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，方便与第三方库或既有项目整合。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+      <category term="Vue" scheme="/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号开发【三】</title>
+    <link href="/2019/10/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E3%80%90%E4%B8%89%E3%80%91/"/>
+    <id>/2019/10/15/微信公众号开发【三】/</id>
+    <published>2019-10-15T10:43:09.000Z</published>
+    <updated>2019-10-31T03:02:23.015Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;前面文章已经成功接入微信公众号了，我们就能够接受到用户发送的消息了。接收到消息之后就可以编写逻辑来进行处理了。用户向公众号发送消息时，我们收到的消息发送者是一个OpenID，是使用用户微信号加密后的结果，每个用户对每个公众号有一个唯一的OpenID。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="微信公众号" scheme="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+    
+      <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="wechat" scheme="/tags/wechat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号开发【二】</title>
+    <link href="/2019/10/13/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E3%80%90%E4%BA%8C%E3%80%91/"/>
+    <id>/2019/10/13/微信公众号开发【二】/</id>
+    <published>2019-10-13T06:47:36.000Z</published>
+    <updated>2019-10-31T03:01:59.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="微信公众号" scheme="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+    
+      <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="wechat" scheme="/tags/wechat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下DB2的使用</title>
+    <link href="/2019/10/09/Linux%E4%B8%8BDB2%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>/2019/10/09/Linux下DB2的使用/</id>
+    <published>2019-10-09T06:04:55.000Z</published>
+    <updated>2019-10-15T09:24:55.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="DB2" scheme="/categories/DB2/"/>
+    
+    
+      <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下DB2的安装</title>
+    <link href="/2019/10/09/Linux%E4%B8%8BDB2%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>/2019/10/09/Linux下DB2的安装/</id>
+    <published>2019-10-09T02:12:09.000Z</published>
+    <updated>2019-10-09T06:04:55.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;一只在银行工作的程序猿，工作需要使用DB2数据库比较多，于是在自己买的服务器上安装DB2来学习DB2相关命令的使用。这里记录一下在Linux下安装DB2的方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="DB2" scheme="/categories/DB2/"/>
+    
+    
+      <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号开发【一】</title>
+    <link href="/2019/09/29/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E3%80%90%E4%B8%80%E3%80%91/"/>
+    <id>/2019/09/29/微信公众号开发【一】/</id>
+    <published>2019-09-29T02:29:13.000Z</published>
+    <updated>2019-10-31T02:59:30.901Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;最近经常看博客，大佬们一个个的都运营着自己的微信公众号，于是心里也痒痒，也想来搞一个，有没有人气的无所谓(因为我也没有办法 😢 😢 😢)，重要的是能够学习呀！以后搞得好的话没准也能成为一方巨擘的呀 😏 😏 😏。心一想，这百利而无一害呀，那还不干他丫的！Let’s go!&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="微信公众号" scheme="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+    
+      <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="wechat" scheme="/tags/wechat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DB2 SqlCode 错误码大全</title>
+    <link href="/2019/09/24/DB2-SqlCode-%E9%94%99%E8%AF%AF%E7%A0%81%E5%A4%A7%E5%85%A8/"/>
+    <id>/2019/09/24/DB2-SqlCode-错误码大全/</id>
+    <published>2019-09-24T03:31:25.000Z</published>
+    <updated>2019-09-24T03:31:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;说明&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#说明&quot;&gt;null&lt;/a&gt;说明&lt;/h3&gt;
+&lt;p&gt;日常使用数据库编写sql时，总会出现各种各样的错误，而数据库只会提示一个错误码或错误状态，很难直观的知道错误的原因，而有数据库的错误码大全，就能够根据错误码查询到错误详情，会方便很多。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="DB2" scheme="/categories/DB2/"/>
+    
+    
+      <category term="DB2" scheme="/tags/DB2/"/>
+    
+  </entry>
+  
+</feed>
