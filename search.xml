@@ -8,18 +8,68 @@
 <a id="more"></a>
 <h4 id="一：数据库差异"><a class="header-anchor" href="#一：数据库差异">null</a>一：数据库差异</h4>
 <ul>
-<li>1:自动增长
-<ul>
 <li>
-<p>在Mysql中,提供了<code>AUTO_INCREMENT</code>实现自动递增。</p>
+<p>1:自动增长</p>
+<ul>
+<li>在Mysql中,提供了<code>AUTO_INCREMENT</code>实现自动递增。</li>
+<li>在Oracle中则没有这个概念,但oracle中提供了序列的概念,用户可以新建一个<code>SEQUENCE</code>自增序列和一个触发器来获取序列号实现字段自动增长。  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">自增序列:</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span> <span class="string">"DBNAME"</span>.<span class="string">"SEQ_NAME"</span> <span class="keyword">MINVALUE</span> <span class="number">1</span> MAXVALUE <span class="number">9999999999999999999999999999</span> <span class="keyword">INCREMENT</span> <span class="keyword">BY</span> <span class="number">1</span> NOCACHE;</span><br><span class="line">触发器:</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> <span class="string">"DBNAME"</span>.<span class="string">"TRIGGER_NAME"</span> <span class="keyword">BEFORE</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> <span class="string">"DBNAME"</span>.<span class="string">"TABLENAME"</span> <span class="keyword">REFERENCING</span> <span class="keyword">OLD</span> <span class="keyword">AS</span> <span class="string">"OLD"</span> <span class="keyword">NEW</span> <span class="keyword">AS</span> <span class="string">"NEW"</span> <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> <span class="keyword">WHEN</span> (new.待增长的字段名 <span class="keyword">is</span> <span class="literal">null</span>) </span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> SEQ_NAME.NEXTVAL <span class="keyword">INTO</span> :NEW.待增长的字段名 <span class="keyword">FROM</span> DUAL;</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 <li>
-<p>在Oracle中则没有这个概念,但oracle中提供了序列的概念,用户可以新建一个<code>SEQUENCE</code>自增序列和一个触发器来获取序列号实现字段自动增长。</p>
-  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">        <span class="comment">-- 自增序列</span></span><br><span class="line">        <span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span> <span class="string">"DBNAME"</span>.<span class="string">"SEQ_NAME"</span> <span class="keyword">MINVALUE</span> <span class="number">1</span> MAXVALUE <span class="number">9999999999999999999999999999</span> <span class="keyword">INCREMENT</span> <span class="keyword">BY</span> <span class="number">1</span> NOCACHE;</span><br><span class="line">        <span class="comment">-- 触发器</span></span><br><span class="line">        <span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> <span class="string">"DBNAME"</span>.<span class="string">"TRIGGER_NAME"</span> <span class="keyword">BEFORE</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> <span class="string">"DBNAME"</span>.<span class="string">"TABLENAME"</span> <span class="keyword">REFERENCING</span> <span class="keyword">OLD</span> <span class="keyword">AS</span> <span class="string">"OLD"</span> <span class="keyword">NEW</span> <span class="keyword">AS</span> <span class="string">"NEW"</span> <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> <span class="keyword">WHEN</span> (new.待增长的字段名 <span class="keyword">is</span> <span class="literal">null</span>) </span><br><span class="line">        <span class="keyword">BEGIN</span></span><br><span class="line">        <span class="keyword">SELECT</span> SEQ_NAME.NEXTVAL <span class="keyword">INTO</span> :NEW.待增长的字段名 <span class="keyword">FROM</span> DUAL;</span><br><span class="line">        <span class="keyword">END</span>;</span><br><span class="line">        ``` </span><br><span class="line">- 2:数据类型差异</span><br><span class="line">    数据类型 | Mysql |  Oracle  </span><br><span class="line">    -|-|-</span><br><span class="line">    字符串 | varchar[0-65535] | varchar2[0-4000] |</span><br><span class="line">    整数 | int | number(p,s) p为整数位,s为小数位 |</span><br><span class="line">    浮点数 | float | oracle10g前无float,使用number代替,后面出现的float等实际上也是number实现 |</span><br><span class="line">    | ... | ... | ...|</span><br><span class="line">- 3:事务提交</span><br><span class="line">    - Mysql中事务默认会自动提交。如需关闭自动提交，则需执行命令```<span class="keyword">Set</span> autocommit = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>2:数据类型差异</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>Mysql</th>
+<th>Oracle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串</td>
+<td>varchar[0-65535]</td>
+<td>varchar2[0-4000]</td>
+</tr>
+<tr>
+<td>整数</td>
+<td>int</td>
+<td>number(p,s) p为整数位,s为小数位</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>float</td>
+<td>oracle10g前无float,使用number代替,后面出现的float等实际上也是number实现</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
-<p>Oracle中事务默认不自动提交，需要用户手动提交。如需自动提交,执行命令<figure class="highlight plain"><figcaption><span>AUTOCOMMIT ON```</span></figcaption><table><tr><td class="code"><pre><span class="line">- 4: 建库建表</span><br><span class="line">    - Mysql中直接新建数据库,在数据库上新建表就可以了。</span><br><span class="line">    - Oracle 则较为复杂，具体流程如下:</span><br><span class="line">        - 创建表空间:</span><br><span class="line">            ```SQL</span><br><span class="line">            CREATE TABLESPACE DEMO</span><br><span class="line">            DATAFILE &apos;文件路径\demo.dbf&apos;</span><br><span class="line">            SIZE 200M</span><br><span class="line">            AUTOEXTEND ON;</span><br></pre></td></tr></table></figure></p>
+<p>3:事务提交</p>
 <ul>
+<li>Mysql中事务默认会自动提交。如需关闭自动提交，则需执行命令<code>Set autocommit = 0</code></li>
+<li>Oracle中事务默认不自动提交，需要用户手动提交。如需自动提交,执行命令<code>SET AUTOCOMMIT ON</code></li>
+</ul>
+</li>
+<li>
+<p>4: 建库建表</p>
+<ul>
+<li>
+<p>Mysql中直接新建数据库,在数据库上新建表就可以了。</p>
+</li>
+<li>
+<p>Oracle 则较为复杂，具体流程如下:</p>
+<ul>
+<li>
+<p>创建表空间:</p>
+  <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> DEMO</span><br><span class="line"><span class="keyword">DATAFILE</span> <span class="string">'文件路径\demo.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">200</span>M</span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li>
 <p>创建用户:</p>
   <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'USERNAME'</span></span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'PASSWORD'</span></span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">TABLESPACE</span> DEMO</span><br><span class="line"><span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> temp;</span><br></pre></td></tr></table></figure>
@@ -41,7 +91,17 @@
   <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#jdbc.user=root</span></span><br><span class="line"><span class="comment">#jdbc.password=123456</span></span><br><span class="line"><span class="comment">#jdbc.driverClass=com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment">#jdbc.jdbcUrl=jdbc:mysql://localhost:3306/demo?useSSL=false&amp;serverTimezone=GMT%2B8</span></span><br><span class="line"><span class="comment">#jdbc.testConnectionOnCheckout=true</span></span><br><span class="line"></span><br><span class="line"><span class="meta">jdbc.user</span>=<span class="string">demo</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">123456</span></span><br><span class="line"><span class="meta">jdbc.driverClass</span>=<span class="string">oracle.jdbc.OracleDriver</span></span><br><span class="line"><span class="meta">jdbc.jdbcUrl</span>=<span class="string">jdbc:oracle:thin:@localhost:1521:xe</span></span><br><span class="line"><span class="meta">jdbc.testConnectionOnCheckout</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>到这里是不是觉得就可以成功运行了？</p>
+<p>到这里是不是觉得就可以成功运行了？但是并没有！！！控制台报了以下错误:</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">java.lang.RuntimeException: java.sql.SQLException: Connections could not be acquired from the underlying database!</span><br></pre></td></tr></table></figure>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174136.png" alt></p>
+</li>
+<li>
+<p>查了很多的资料，试过很多方法才发现是tomcat没有oracle的驱动导致的。于是将ojdbc包放入tomcat的lib下面。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174958.png" alt></p>
+</li>
+<li>
+<p>重新启动项目，完美运行。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174655.png" alt></p>
 </li>
 </ul>
 ]]></content>
