@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-05-26T10:27:07.000Z</updated>
+  <updated>2020-05-29T03:05:06.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DB2导入数据中文乱码</title>
+    <link href="/2020/05/29/DB2%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
+    <id>/2020/05/29/DB2导入数据中文乱码/</id>
+    <published>2020-05-29T03:05:06.000Z</published>
+    <updated>2020-05-29T03:05:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;今天使用DB2导入数据的时候出现了中文乱码,这里记录一下解决方案。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="db2" scheme="/categories/db2/"/>
+    
+    
+      <category term="db2" scheme="/tags/db2/"/>
+    
+  </entry>
   
   <entry>
     <title>项目从mysql转移到oracle</title>
@@ -304,9 +326,9 @@
       <category term="DB2" scheme="/categories/DB2/"/>
     
     
-      <category term="Linux" scheme="/tags/Linux/"/>
-    
       <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
     
   </entry>
   
@@ -328,9 +350,9 @@
       <category term="DB2" scheme="/categories/DB2/"/>
     
     
-      <category term="Linux" scheme="/tags/Linux/"/>
-    
       <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
     
   </entry>
   

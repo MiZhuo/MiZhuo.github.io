@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="mysql,oracle,">
+  <meta name="keywords" content="db2,">
 
 
 
@@ -126,22 +126,18 @@
 
 
 
-<meta name="description" content="null前言 最近将一个项目,从mysql数据库迁移到oracle数据库,其中遇到几个问题,这里记录一下。">
-<meta name="keywords" content="mysql,oracle">
+<meta name="description" content="null前言 今天使用DB2导入数据的时候出现了中文乱码,这里记录一下解决方案。">
+<meta name="keywords" content="db2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="项目从mysql转移到oracle">
-<meta property="og:url" content="/2020/05/26/项目从mysql转移到oracle/index.html">
+<meta property="og:title" content="DB2导入数据中文乱码">
+<meta property="og:url" content="/2020/05/29/DB2导入数据中文乱码/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="null前言 最近将一个项目,从mysql数据库迁移到oracle数据库,其中遇到几个问题,这里记录一下。">
+<meta property="og:description" content="null前言 今天使用DB2导入数据的时候出现了中文乱码,这里记录一下解决方案。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174136.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174958.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174655.png">
-<meta property="og:updated_time" content="2020-05-26T10:27:07.000Z">
+<meta property="og:updated_time" content="2020-05-29T03:05:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="项目从mysql转移到oracle">
-<meta name="twitter:description" content="null前言 最近将一个项目,从mysql数据库迁移到oracle数据库,其中遇到几个问题,这里记录一下。">
-<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174136.png">
+<meta name="twitter:title" content="DB2导入数据中文乱码">
+<meta name="twitter:description" content="null前言 今天使用DB2导入数据的时候出现了中文乱码,这里记录一下解决方案。">
 
 
 
@@ -171,7 +167,7 @@
 
 
 
-  <link rel="canonical" href="/2020/05/26/项目从mysql转移到oracle/">
+  <link rel="canonical" href="/2020/05/29/DB2导入数据中文乱码/">
 
 
 
@@ -185,7 +181,7 @@
   daovoice('update');
   </script>
 
-  <title>项目从mysql转移到oracle | MiZhuo</title>
+  <title>DB2导入数据中文乱码 | MiZhuo</title>
   
 
 
@@ -349,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2020/05/26/项目从mysql转移到oracle/">
+    <link itemprop="mainEntityOfPage" href="/2020/05/29/DB2导入数据中文乱码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MiZhuo">
@@ -366,7 +362,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">项目从mysql转移到oracle</h2>
+          <h2 class="post-title" itemprop="name headline">DB2导入数据中文乱码</h2>
         
 
         <div class="post-meta">
@@ -378,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-26T18:27:07+08:00">
-                2020-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T11:05:06+08:00">
+                2020-05-29
               </time>
             
 
@@ -394,8 +390,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-26T18:27:07+08:00">
-                2020-05-26
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-29T11:05:06+08:00">
+                2020-05-29
               </time>
             
           </span>
@@ -413,19 +409,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/oracle/" itemprop="url" rel="index">
-                    <span itemprop="name">oracle</span>
+                  <a href="/categories/db2/" itemprop="url" rel="index">
+                    <span itemprop="name">db2</span>
                   </a>
                 </span>
 
@@ -442,8 +427,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>评论数:
-                <a href="/2020/05/26/项目从mysql转移到oracle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/26/项目从mysql转移到oracle/" itemprop="commentCount"></span>
+                <a href="/2020/05/29/DB2导入数据中文乱码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/29/DB2导入数据中文乱码/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -451,7 +436,7 @@
 
           
           
-             <span id="/2020/05/26/项目从mysql转移到oracle/" class="leancloud_visitors" data-flag-title="项目从mysql转移到oracle">
+             <span id="/2020/05/29/DB2导入数据中文乱码/" class="leancloud_visitors" data-flag-title="DB2导入数据中文乱码">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -477,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  606
+                  230
                 </span>
               
 
@@ -493,7 +478,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 min
+                  1 min
                 </span>
               
             </div>
@@ -515,106 +500,18 @@
 
       
         <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
-<p>最近将一个项目,从mysql数据库迁移到oracle数据库,其中遇到几个问题,这里记录一下。</p>
+<p>今天使用DB2导入数据的时候出现了中文乱码,这里记录一下解决方案。</p>
 <a id="more"></a>
-<h4 id="一：数据库差异"><a class="header-anchor" href="#一：数据库差异">null</a>一：数据库差异</h4>
+<h5 id="正常加载数据"><a class="header-anchor" href="#正常加载数据">null</a>正常加载数据</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2 &quot;load from XXX.del of del modified by delprioritychar replace into XXX.XXX&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中<code>modified by delprioritychar</code>是为了防止数据库记录中存在换行符导致数据无法装入的情况。<code>replace</code>代表直接替换原表，先对表做<code>Truncate</code>操作。使用<code>insert</code>代表在原表的基础上<code>Append</code></p>
+</blockquote>
+<p>按照此方法导入出现了中文乱码的问题。</p>
 <ul>
-<li>
-<p>1:自动增长</p>
-<ul>
-<li>在Mysql中,提供了<code>AUTO_INCREMENT</code>实现自动递增。</li>
-<li>在Oracle中则没有这个概念,但oracle中提供了序列的概念,用户可以新建一个<code>SEQUENCE</code>自增序列和一个触发器来获取序列号实现字段自动增长。  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">自增序列:</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span> <span class="string">"DBNAME"</span>.<span class="string">"SEQ_NAME"</span> <span class="keyword">MINVALUE</span> <span class="number">1</span> MAXVALUE <span class="number">9999999999999999999999999999</span> <span class="keyword">INCREMENT</span> <span class="keyword">BY</span> <span class="number">1</span> NOCACHE;</span><br><span class="line">触发器:</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> <span class="string">"DBNAME"</span>.<span class="string">"TRIGGER_NAME"</span> <span class="keyword">BEFORE</span> <span class="keyword">INSERT</span> <span class="keyword">ON</span> <span class="string">"DBNAME"</span>.<span class="string">"TABLENAME"</span> <span class="keyword">REFERENCING</span> <span class="keyword">OLD</span> <span class="keyword">AS</span> <span class="string">"OLD"</span> <span class="keyword">NEW</span> <span class="keyword">AS</span> <span class="string">"NEW"</span> <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="keyword">ROW</span> <span class="keyword">WHEN</span> (new.待增长的字段名 <span class="keyword">is</span> <span class="literal">null</span>) </span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> SEQ_NAME.NEXTVAL <span class="keyword">INTO</span> :NEW.待增长的字段名 <span class="keyword">FROM</span> DUAL;</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
-</li>
+<li>使用<figure class="highlight plain"><figcaption><span>get db cfg for xxxdb|grep -i code```可以查看数据库编码格式。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 1208对应UTF-8编码集,1386对应GBK编码集,819对应ISO8859-1</span><br><span class="line">- 于是使用`modified by codepage = 1208`可以有效去除中文乱码</span><br><span class="line">    ``` linux </span><br><span class="line">    db2 &quot;load from XXX.del of del modified by codepage = 1208 replace into XXX.XXX&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li>
-<p>2:数据类型差异</p>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>Mysql</th>
-<th>Oracle</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>字符串</td>
-<td>varchar[0-65535]</td>
-<td>varchar2[0-4000]</td>
-</tr>
-<tr>
-<td>整数</td>
-<td>int</td>
-<td>number(p,s) p为整数位,s为小数位</td>
-</tr>
-<tr>
-<td>浮点数</td>
-<td>float</td>
-<td>oracle10g前无float,使用number代替,后面出现的float等实际上也是number实现</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>3:事务提交</p>
-<ul>
-<li>Mysql中事务默认会自动提交。如需关闭自动提交，则需执行命令<code>Set autocommit = 0</code></li>
-<li>Oracle中事务默认不自动提交，需要用户手动提交。如需自动提交,执行命令<code>SET AUTOCOMMIT ON</code></li>
-</ul>
-</li>
-<li>
-<p>4: 建库建表</p>
-<ul>
-<li>
-<p>Mysql中直接新建数据库,在数据库上新建表就可以了。</p>
-</li>
-<li>
-<p>Oracle 则较为复杂，具体流程如下:</p>
-<ul>
-<li>
-<p>创建表空间:</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> DEMO</span><br><span class="line"><span class="keyword">DATAFILE</span> <span class="string">'文件路径\demo.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">200</span>M</span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">ON</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>创建用户:</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'USERNAME'</span></span><br><span class="line"><span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'PASSWORD'</span></span><br><span class="line"><span class="keyword">DEFAULT</span> <span class="keyword">TABLESPACE</span> DEMO</span><br><span class="line"><span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> temp;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>给用户赋予权限:</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CREATE</span> <span class="keyword">SESSION</span>,<span class="keyword">CREATE</span> <span class="keyword">TABLE</span>,<span class="keyword">CREATE</span> <span class="keyword">VIEW</span>,<span class="keyword">CREATE</span> <span class="keyword">SEQUENCE</span>,<span class="keyword">UNLIMITED</span> <span class="keyword">TABLESPACE</span> <span class="keyword">TO</span> USERNAME; </span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">TO</span> USERNAME; </span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">RESOURCE</span> <span class="keyword">TO</span> USERNAME; </span><br><span class="line"><span class="keyword">GRANT</span> DBA <span class="keyword">TO</span> USERNAME;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>最后使用新建的用户连接数据库,就可以进行正常的建表操作了。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="二：jbdc连接"><a class="header-anchor" href="#二：jbdc连接">null</a>二：JBDC连接</h4>
-<ul>
-<li>
-<p>根据MySQL和ORACLE的差异，将数据从mysql导入到oracle中，然后修改项目的JDBC连接。</p>
-  <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#jdbc.user=root</span></span><br><span class="line"><span class="comment">#jdbc.password=123456</span></span><br><span class="line"><span class="comment">#jdbc.driverClass=com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment">#jdbc.jdbcUrl=jdbc:mysql://localhost:3306/demo?useSSL=false&amp;serverTimezone=GMT%2B8</span></span><br><span class="line"><span class="comment">#jdbc.testConnectionOnCheckout=true</span></span><br><span class="line"></span><br><span class="line"><span class="meta">jdbc.user</span>=<span class="string">demo</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">123456</span></span><br><span class="line"><span class="meta">jdbc.driverClass</span>=<span class="string">oracle.jdbc.OracleDriver</span></span><br><span class="line"><span class="meta">jdbc.jdbcUrl</span>=<span class="string">jdbc:oracle:thin:@localhost:1521:xe</span></span><br><span class="line"><span class="meta">jdbc.testConnectionOnCheckout</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>到这里是不是觉得就可以成功运行了？但是并没有！！！控制台报了以下错误:</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.RuntimeException: java.sql.SQLException: Connections could not be acquired from the underlying database!</span><br></pre></td></tr></table></figure>
-<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174136.png" alt></p>
-</li>
-<li>
-<p>查了很多的资料，试过很多方法才发现是tomcat没有oracle的驱动导致的。于是将ojdbc包放入tomcat的lib下面。<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174958.png" alt></p>
-</li>
-<li>
-<p>重新启动项目，完美运行。<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200528174655.png" alt></p>
-</li>
-</ul>
+<p>同理导出数据的时候也可以指定编码集格式进行导出。</p>
 
       
     </div>
@@ -647,12 +544,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/05/26/项目从mysql转移到oracle/">项目从mysql转移到oracle</a></p>
+  <p><span>本文标题:</span><a href="/2020/05/29/DB2导入数据中文乱码/">DB2导入数据中文乱码</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
-  <p><span>发布时间:</span>2020年05月26日 - 18:05</p>
-  <p><span>最后更新:</span>2020年05月26日 - 18:05</p>
-  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/05/26/项目从mysql转移到oracle/" title="https://www.mizhuo.fun项目从mysql转移到oracle">https://www.mizhuo.fun/2020/05/26/项目从mysql转移到oracle/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/05/26/项目从mysql转移到oracle/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年05月29日 - 11:05</p>
+  <p><span>最后更新:</span>2020年05月29日 - 11:05</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/05/29/DB2导入数据中文乱码/" title="https://www.mizhuo.funDB2导入数据中文乱码">https://www.mizhuo.fun/2020/05/29/DB2导入数据中文乱码/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/05/29/DB2导入数据中文乱码/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -682,9 +579,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
-          
-            <a href="/tags/oracle/" rel="tag"><i class="fa fa-tag"></i> oracle</a>
+            <a href="/tags/db2/" rel="tag"><i class="fa fa-tag"></i> db2</a>
           
         </div>
       
@@ -696,8 +591,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/11/Hexo从windows迁移到mac/" rel="next" title="Hexo从windows迁移到mac">
-                <i class="fa fa-chevron-left"></i> Hexo从windows迁移到mac
+              <a href="/2020/05/26/项目从mysql转移到oracle/" rel="next" title="项目从mysql转移到oracle">
+                <i class="fa fa-chevron-left"></i> 项目从mysql转移到oracle
               </a>
             
           </div>
@@ -705,10 +600,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/29/DB2导入数据中文乱码/" rel="prev" title="DB2导入数据中文乱码">
-                DB2导入数据中文乱码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -905,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一：数据库差异"><span class="nav-number">2.</span> <span class="nav-text">null一：数据库差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二：jbdc连接"><span class="nav-number">3.</span> <span class="nav-text">null二：JBDC连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#正常加载数据"><span class="nav-number">1.1.</span> <span class="nav-text">null正常加载数据</span></a></li></ol></li></ol></div>
             
 
           </div>
