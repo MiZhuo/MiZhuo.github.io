@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  230
+                  229
                 </span>
               
 
@@ -509,7 +509,10 @@
 </blockquote>
 <p>按照此方法导入出现了中文乱码的问题。</p>
 <ul>
-<li>使用<figure class="highlight plain"><figcaption><span>get db cfg for xxxdb|grep -i code```可以查看数据库编码格式。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 1208对应UTF-8编码集,1386对应GBK编码集,819对应ISO8859-1</span><br><span class="line">- 于是使用`modified by codepage = 1208`可以有效去除中文乱码</span><br><span class="line">    ``` linux </span><br><span class="line">    db2 &quot;load from XXX.del of del modified by codepage = 1208 replace into XXX.XXX&quot;</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>db2 get db cfg for xxxdb|grep -i code</code>可以查看数据库编码格式。</li>
+<li>1208对应UTF-8编码集,1386对应GBK编码集,819对应ISO8859-1</li>
+<li>于是使用<code>modified by codepage = 1208</code>可以有效去除中文乱码  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2 &quot;load from XXX.del of del modified by codepage = 1208 replace into XXX.XXX&quot;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>同理导出数据的时候也可以指定编码集格式进行导出。</p>
 
