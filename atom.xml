@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-05-29T03:05:06.000Z</updated>
+  <updated>2020-06-03T07:46:53.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>清空DB2表数据的几种方法</title>
+    <link href="/2020/06/03/%E6%B8%85%E7%A9%BADB2%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>/2020/06/03/清空DB2表数据的几种方法/</id>
+    <published>2020-06-03T07:46:53.000Z</published>
+    <updated>2020-06-03T07:46:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;今天对DB2数据进行刷新操作，表数据千万级别，因为要从其它表中重新汇数据，所以我新建了一张临时表，但是中间逻辑问题，我直接使用了&lt;code&gt;DELETE FROM XXX&lt;/code&gt;来进行清表操作，结果光删除数据就花费了半个小时。于是整理了一下时间慢的原因和其它几种清表方式。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="db2" scheme="/categories/db2/"/>
+    
+    
+      <category term="db2" scheme="/tags/db2/"/>
+    
+  </entry>
   
   <entry>
     <title>DB2导入数据中文乱码</title>
@@ -326,9 +348,9 @@
       <category term="DB2" scheme="/categories/DB2/"/>
     
     
-      <category term="Linux" scheme="/tags/Linux/"/>
-    
       <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
     
   </entry>
   
@@ -350,9 +372,9 @@
       <category term="DB2" scheme="/categories/DB2/"/>
     
     
-      <category term="Linux" scheme="/tags/Linux/"/>
-    
       <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
     
   </entry>
   

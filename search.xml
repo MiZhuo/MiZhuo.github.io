@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>清空DB2表数据的几种方法</title>
+    <url>/2020/06/03/%E6%B8%85%E7%A9%BADB2%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>今天对DB2数据进行刷新操作，表数据千万级别，因为要从其它表中重新汇数据，所以我新建了一张临时表，但是中间逻辑问题，我直接使用了<code>DELETE FROM XXX</code>来进行清表操作，结果光删除数据就花费了半个小时。于是整理了一下时间慢的原因和其它几种清表方式。</p>
+<a id="more"></a>
+<h4 id="清空表数据的几种方式"><a class="header-anchor" href="#清空表数据的几种方式">null</a>清空表数据的几种方式</h4>
+<ul>
+<li>1:使用<code>DELETE FROM XXX</code>
+<blockquote>
+<p>这种方式因为不带where条件，所以可以清除表中所有的数据，表数据量小的话可以使用这种方式没什么问题，但是如果表数据量大的话就不要使用这种方式了，因为这种方式虽然能达到清除表数据的效果，但是这个操作会记录事务日志，因此执行速度极慢。而且可能会产生日志空间不足的情况。如果中途取消操作，还会进行回滚操作。</p>
+</blockquote>
+</li>
+<li>2:使用<code>Import</code>或者<code>Load</code>命令
+<ul>
+<li><code>Import</code>: 使用<code>Import from /dev/null of del replace into XXX</code></li>
+<li><code>Load</code>: 使用<code>Load from /dev/null of del replace into XXX</code></li>
+</ul>
+<blockquote>
+<p>这种方式因为<code>replace</code>导入方式首先会将表中所有数据清空，然后<code>IMPORT</code>/<code>LOAD</code>又向表中导入了空数据，从而实现了数据的清除操作。</p>
+</blockquote>
+</li>
+<li>3:使用<code>NOT LOGGED INITIALLY</code>
+<ul>
+<li><code>ALTER TABLE xxx ACTIVATE NOT LOGGED INITIALLY WITH EMPTY TABLE</code></li>
+</ul>
+<blockquote>
+<p>这种方法在整个删除操作中不会记日志，因此执行速度是几种方法中最快的一种，但删除的数据是不可恢复的。</p>
+</blockquote>
+</li>
+<li>4:删除表重建
+<blockquote>
+<p>最后一种方法也是最暴力的一种方法，使用<code>db2look</code>将表结构dll导出，然后使用<code>drop</code>命令将整表删除，最后重新新建表结构。一搬生产环境的回退操作就是这样的，先备份表结构和表数据，如果升级失败回退，则删除表，重建表结构，最后导入备份的数据。</p>
+</blockquote>
+</li>
+</ul>
+<p></p><h4>以上方法都可以对表进行清空，但是如果只是要实现TRUNCATE的效果，推荐第二种方式。<p></p>
+</h4>]]></content>
+      <categories>
+        <category>db2</category>
+      </categories>
+      <tags>
+        <tag>db2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DB2导入数据中文乱码</title>
     <url>/2020/05/29/DB2%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
@@ -805,8 +850,8 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
         <category>DB2</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>DB2</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -857,8 +902,8 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
         <category>DB2</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>DB2</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
