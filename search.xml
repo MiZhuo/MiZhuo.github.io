@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Docker安装RabbitMq后无法进入管理页面</title>
+    <url>/2020/06/07/Docker%E5%AE%89%E8%A3%85RabbitMq%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>今天使用Docker安装RabbitMq后发现无法根据指定的15672的管理端端口进入管理页面，于是仔细检查了Docker命令和端口号,并重新安装了一遍,最后才发现问题，这里记录一下。</p>
+<a id="more"></a>
+<h4 id="解决方案"><a class="header-anchor" href="#解决方案">null</a>解决方案</h4>
+<ul>
+<li>
+<p>查阅<a href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener">官网</a>文档后发现有这么一段话<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164113.png" alt><br>
+管理端是个插件，必须安装后才能使用!于是根据官方提示，安装插件，终于成功访问到了管理页面。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mizhuo@mizhuodembp  ~  docker exec -i -t rabbitmq /bin/bash</span><br><span class="line">root@7aa7a089ca7b:/#  rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">Enabling plugins on node rabbit@7aa7a089ca7b:</span><br><span class="line">rabbitmq_management</span><br><span class="line">The following plugins have been configured:</span><br><span class="line">rabbitmq_management</span><br><span class="line">rabbitmq_management_agent</span><br><span class="line">rabbitmq_web_dispatch</span><br><span class="line">Applying plugin configuration to rabbit@7aa7a089ca7b...</span><br><span class="line">The following plugins have been enabled:</span><br><span class="line">rabbitmq_management</span><br><span class="line">rabbitmq_management_agent</span><br><span class="line">rabbitmq_web_dispatch</span><br><span class="line"></span><br><span class="line">started 3 plugins.</span><br><span class="line">root@7aa7a089ca7b:/#</span><br></pre></td></tr></table></figure>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164350.png" alt></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Mq</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Mq</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker安装MongoDB及MongoDB的基本使用</title>
     <url>/2020/06/06/Docker%E5%AE%89%E8%A3%85MongoDB%E5%8F%8AMongoDB%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
