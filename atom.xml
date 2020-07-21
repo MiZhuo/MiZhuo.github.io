@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-06-07T08:33:42.000Z</updated>
+  <updated>2020-07-19T14:07:08.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用支付宝沙箱支付</title>
+    <link href="/2020/07/19/%E4%BD%BF%E7%94%A8%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1%E6%94%AF%E4%BB%98/"/>
+    <id>/2020/07/19/使用支付宝沙箱支付/</id>
+    <published>2020-07-19T14:07:08.000Z</published>
+    <updated>2020-07-19T14:07:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;今天写一个小项目，模拟支付的时候，直接跳转显示很不真实，于是想试试支付宝沙箱支付，可以模拟支付宝支付，看起来就真实许多了！于是记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="支付宝" scheme="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+    
+      <category term="支付宝" scheme="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker安装RabbitMq后无法进入管理页面</title>
