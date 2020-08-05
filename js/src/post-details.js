@@ -1,7 +1,11 @@
 /* global NexT: true */
 
 $(document).ready(function () {
-
+  var reg=new RegExp("null","g"); 
+  $('.nav-text').each(function () {
+    var hv = $(this).html().replace(reg,'');
+    $(this).html(hv);
+  });
   initScrollSpy();
 
   function initScrollSpy () {
