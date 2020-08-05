@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-07-19T14:07:08.000Z</updated>
+  <updated>2020-08-03T14:10:45.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker安装websphere</title>
+    <link href="/2020/08/03/Docker%E5%AE%89%E8%A3%85websphere/"/>
+    <id>/2020/08/03/Docker安装websphere/</id>
+    <published>2020-08-03T14:10:45.000Z</published>
+    <updated>2020-08-03T14:10:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;众所周知,主流的web服务器有Tomcat、Nginx、JBoss、WebSphere、WebLogic等等,我们常用的就是tomat,而webSphere是IBM的产品,需要收费,所以使用不是很广泛,主要在银行等企业使用。这里主要记录一下Docker安装webSphere,用与研究。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="webspher" scheme="/categories/webspher/"/>
+    
+      <category term="Docker" scheme="/categories/webspher/Docker/"/>
+    
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="websphere" scheme="/tags/websphere/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker安装db2</title>
+    <link href="/2020/07/30/Docker%E5%AE%89%E8%A3%85db2/"/>
+    <id>/2020/07/30/Docker安装db2/</id>
+    <published>2020-07-30T13:36:45.000Z</published>
+    <updated>2020-07-30T13:36:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;作为一名在银行工作的程序员,工作中使用的基本上都是IBM的产品,首当其冲的就是IBM的数据库DB2了。DB2最大的优点就是适合海量数据,比较稳定。银行一般都是使用IBM的操作系统AIX,DB2、was都是安装在AIX上的,这里使用Docker来安装学习,更为方便。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="DB2" scheme="/categories/DB2/"/>
+    
+      <category term="Docker" scheme="/categories/DB2/Docker/"/>
+    
+    
+      <category term="DB2" scheme="/tags/DB2/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>使用支付宝沙箱支付</title>
@@ -203,34 +255,6 @@
       <category term="Maven" scheme="/tags/Maven/"/>
     
       <category term="Gradle" scheme="/tags/Gradle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringSecurity+JWT做认证授权</title>
-    <link href="/2019/12/25/SpringSecurity-JWT%E5%81%9A%E8%AE%A4%E8%AF%81%E6%8E%88%E6%9D%83/"/>
-    <id>/2019/12/25/SpringSecurity-JWT做认证授权/</id>
-    <published>2019-12-25T14:06:45.000Z</published>
-    <updated>2019-12-29T08:13:07.933Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;在讲SpringSecurity+JWT做认证授权前，先对SpringSecurity和JWT做个简单的介绍。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SpringSecurity&lt;/code&gt;：SpringSecurity顾名思义就是安全框架，而其主要功能就是实现用户身份认证和权限控制。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;JWT&lt;/code&gt;:即&lt;code&gt;JSON WEB TOKEN&lt;/code&gt; 是一个便于我们管理用户状态的规范，在此之前，我们大部分的Web项目都是使用Session来管理用户状态的，但是随着功能的升级，业务场景日益复杂，分布式应运而生，将业务分为几个部分分别部署在不同的服务器上，从而减轻服务器压力。而这样的话就会有一个问题，session在几个服务器上无法同步，session共享的方式延时较长，用户体验不好。而JWT相当于将session数据保存在客户端，每次请求数据的时候将token带上，后台就可以解析token获取用户信息，将业务无状态化。解决了session管理难的问题。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Spring Security" scheme="/categories/Spring-Security/"/>
-    
-    
-      <category term="Spring" scheme="/tags/Spring/"/>
-    
-      <category term="Spring Security" scheme="/tags/Spring-Security/"/>
-    
-      <category term="JWT" scheme="/tags/JWT/"/>
     
   </entry>
   
@@ -473,28 +497,6 @@
       <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
     
       <category term="wechat" scheme="/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DB2 SqlCode 错误码大全</title>
-    <link href="/2019/09/24/DB2-SqlCode-%E9%94%99%E8%AF%AF%E7%A0%81%E5%A4%A7%E5%85%A8/"/>
-    <id>/2019/09/24/DB2-SqlCode-错误码大全/</id>
-    <published>2019-09-24T03:31:25.000Z</published>
-    <updated>2019-09-24T03:31:25.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;说明&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#说明&quot;&gt;null&lt;/a&gt;说明&lt;/h3&gt;
-&lt;p&gt;日常使用数据库编写sql时，总会出现各种各样的错误，而数据库只会提示一个错误码或错误状态，很难直观的知道错误的原因，而有数据库的错误码大全，就能够根据错误码查询到错误详情，会方便很多。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="DB2" scheme="/categories/DB2/"/>
-    
-    
-      <category term="DB2" scheme="/tags/DB2/"/>
     
   </entry>
   
