@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  812
+                  942
                 </span>
               
 
@@ -481,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 min
+                  4 min
                 </span>
               
             </div>
@@ -592,7 +592,21 @@
 </li>
 <li>
 <p>打印出的结果集</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure></li>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="java解决方案"><a class="header-anchor" href="#java解决方案">null</a>java解决方案</h5>
+<ul>
+<li>
+<p>java得到数据流</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> <span class="keyword">throws</span> IOException, SQLException </span>&#123;</span><br><span class="line">    Map&lt;String, Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>, <span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">    String reString = <span class="string">""</span>;</span><br><span class="line">    Clob clob = (Clob) map.get(<span class="string">"clob"</span>);</span><br><span class="line">    Reader is = clob.getCharacterStream();<span class="comment">// 得到流</span></span><br><span class="line">    BufferedReader br = <span class="keyword">new</span> BufferedReader(is);</span><br><span class="line">    String s = br.readLine();</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">while</span> (s != <span class="keyword">null</span>) &#123;<span class="comment">// 执行循环将字符串全部取出付值给 StringBuffer由StringBuffer转成STRING</span></span><br><span class="line">        sb.append(s);</span><br><span class="line">        s = br.readLine();</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sb.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印结果</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@6bd6b309, name=mizhuo, id=001&#125;</span><br><span class="line">这是clob字段</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -880,7 +894,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#db2解决方案"><span class="nav-number">2.</span> <span class="nav-text">nullDB2解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现"><span class="nav-number">2.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">null解决方案</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle解决方案"><span class="nav-number">3.</span> <span class="nav-text">nullOracle解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现-v2"><span class="nav-number">3.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-v2"><span class="nav-number">3.2.</span> <span class="nav-text">null解决方案</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#db2解决方案"><span class="nav-number">2.</span> <span class="nav-text">nullDB2解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现"><span class="nav-number">2.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">null解决方案</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle解决方案"><span class="nav-number">3.</span> <span class="nav-text">nullOracle解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现-v2"><span class="nav-number">3.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-v2"><span class="nav-number">3.2.</span> <span class="nav-text">null解决方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#java解决方案"><span class="nav-number">3.3.</span> <span class="nav-text">nulljava解决方案</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -914,7 +928,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">30.5k</span>
+    <span title="全站文字共">30.7k</span>
   
 </div>
 

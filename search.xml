@@ -93,7 +93,21 @@
 </li>
 <li>
 <p>打印出的结果集</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure></li>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="java解决方案"><a class="header-anchor" href="#java解决方案">null</a>java解决方案</h5>
+<ul>
+<li>
+<p>java得到数据流</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> <span class="keyword">throws</span> IOException, SQLException </span>&#123;</span><br><span class="line">    Map&lt;String, Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>, <span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">    String reString = <span class="string">""</span>;</span><br><span class="line">    Clob clob = (Clob) map.get(<span class="string">"clob"</span>);</span><br><span class="line">    Reader is = clob.getCharacterStream();<span class="comment">// 得到流</span></span><br><span class="line">    BufferedReader br = <span class="keyword">new</span> BufferedReader(is);</span><br><span class="line">    String s = br.readLine();</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">while</span> (s != <span class="keyword">null</span>) &#123;<span class="comment">// 执行循环将字符串全部取出付值给 StringBuffer由StringBuffer转成STRING</span></span><br><span class="line">        sb.append(s);</span><br><span class="line">        s = br.readLine();</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sb.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印结果</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@6bd6b309, name=mizhuo, id=001&#125;</span><br><span class="line">这是clob字段</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
