@@ -1,6 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CLOB->String转换异常的问题</title>
+    <url>/2020/08/06/CLOB-%3EString%E8%BD%AC%E6%8D%A2%E5%BC%82%E5%B8%B8%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。</p>
+<a id="more"></a>
+<h4 id="db2解决方案"><a class="header-anchor" href="#db2解决方案">null</a>DB2解决方案</h4>
+<ul>
+<li>
+<h5 id="问题重现"><a class="header-anchor" href="#问题重现">null</a>问题重现</h5>
+<ul>
+<li>
+<p>在db2数据库中新建了一张表,字段分别为id、name、clob并往里面插了两条数据。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806204109.png" alt></p>
+</li>
+<li>
+<p>Mybatis中编写查询sql</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestData"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">SELECT id,name,clob FROM TEST.TABLE1 WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Db2Service db2Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = db2Service.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@c</span>47f9dd, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出CLOB字段查出来是一个DB2的对象,直接转换成String会出现类型转换异常。</p>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="解决方案"><a class="header-anchor" href="#解决方案">null</a>解决方案</h5>
+<ul>
+<li>
+<p>使用DB2 CAST强转</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT id,name,cast(clob as varchar(1024)) as clob FROM TEST.TABLE1 WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Db2Service db2Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = db2Service.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">    map = db2Service.queryTestDataAfterCast(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@ac</span>20c6d, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br><span class="line">&#123;CLOB=这是一个CLOB字段, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="oracle解决方案"><a class="header-anchor" href="#oracle解决方案">null</a>Oracle解决方案</h4>
+<ul>
+<li>
+<h5 id="问题重现-v2"><a class="header-anchor" href="#问题重现-v2">null</a>问题重现</h5>
+<ul>
+<li>
+<p>在Oracle数据库中新建表,字段分别为id、name、clob并往里面插了两条数据。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806220714.png" alt></p>
+</li>
+<li>
+<p>Mybatis中编写查询sql</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestData"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">SELECT "id","name","clob" FROM DEMO WHERE "id" = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> OracleService oracleService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">34908</span>b0b, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出CLOB字段查出来是一个Oracle的CLOB对象,直接转换成String会出现类型转换异常。</p>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="解决方案-v2"><a class="header-anchor" href="#解决方案-v2">null</a>解决方案</h5>
+<ul>
+<li>
+<p>1:使用Oracle CAST强转</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",cast("clob" as VARCHAR2(2048)) as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>2:使用TO_CHAR进行类型转换</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",TO_CHAR("clob") as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>3：使用dbms_lob.substr()转换</p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",dbms_lob.substr("clob",4000) as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"> <span class="keyword">private</span> OracleService oracleService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">     params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">     Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">     System.out.println(map);</span><br><span class="line">     map = oracleService.queryTestDataAfterCast(params);</span><br><span class="line">     System.out.println(map);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>database</category>
+      </categories>
+      <tags>
+        <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker安装websphere</title>
     <url>/2020/08/03/Docker%E5%AE%89%E8%A3%85websphere/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>

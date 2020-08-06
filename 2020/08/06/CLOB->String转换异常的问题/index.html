@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="database,">
 
 
 
@@ -126,17 +126,21 @@
 
 
 
-<meta name="description" content="愿你三冬暖，愿你春不寒">
-<meta name="keywords" content="Spring,MyBatis">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MiZhuo">
-<meta property="og:url" content="/archives/2019/12/index.html">
+<meta name="description" content="null前言 今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。">
+<meta name="keywords" content="database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CLOB-&gt;String转换异常的问题">
+<meta property="og:url" content="/2020/08/06/CLOB->String转换异常的问题/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="愿你三冬暖，愿你春不寒">
+<meta property="og:description" content="null前言 今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806204109.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806220714.png">
+<meta property="og:updated_time" content="2020-08-06T04:36:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiZhuo">
-<meta name="twitter:description" content="愿你三冬暖，愿你春不寒">
+<meta name="twitter:title" content="CLOB-&gt;String转换异常的问题">
+<meta name="twitter:description" content="null前言 今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。">
+<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806204109.png">
 
 
 
@@ -166,7 +170,7 @@
 
 
 
-  <link rel="canonical" href="/archives/2019/12/">
+  <link rel="canonical" href="/2020/08/06/CLOB->String转换异常的问题/">
 
 
 
@@ -180,7 +184,7 @@
   daovoice('update');
   </script>
 
-  <title>归档 | MiZhuo</title>
+  <title>CLOB->String转换异常的问题 | MiZhuo</title>
   
 
 
@@ -199,7 +203,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/MiZhuo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -330,72 +334,414 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 22 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2020/08/06/CLOB->String转换异常的问题/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MiZhuo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/headpic.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiZhuo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/12/26/Maven和Gradle的区别和使用/" itemprop="url">
-              
-                <span itemprop="name">Maven和Gradle的区别和使用</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">CLOB->String转换异常的问题</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-26T22:04:20+08:00" content="2019-12-26">
-          12-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-06T12:36:20+08:00">
+                2020-08-06
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-06T12:36:20+08:00">
+                2020-08-06
+              </time>
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>评论数:
+                <a href="/2020/08/06/CLOB->String转换异常的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CLOB->String转换异常的问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/08/06/CLOB->String转换异常的问题/" class="leancloud_visitors" data-flag-title="CLOB->String转换异常的问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  812
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。</p>
+<a id="more"></a>
+<h4 id="db2解决方案"><a class="header-anchor" href="#db2解决方案">null</a>DB2解决方案</h4>
+<ul>
+<li>
+<h5 id="问题重现"><a class="header-anchor" href="#问题重现">null</a>问题重现</h5>
+<ul>
+<li>
+<p>在db2数据库中新建了一张表,字段分别为id、name、clob并往里面插了两条数据。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806204109.png" alt></p>
+</li>
+<li>
+<p>Mybatis中编写查询sql</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestData"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">SELECT id,name,clob FROM TEST.TABLE1 WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Db2Service db2Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = db2Service.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@c</span>47f9dd, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出CLOB字段查出来是一个DB2的对象,直接转换成String会出现类型转换异常。</p>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="解决方案"><a class="header-anchor" href="#解决方案">null</a>解决方案</h5>
+<ul>
+<li>
+<p>使用DB2 CAST强转</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT id,name,cast(clob as varchar(1024)) as clob FROM TEST.TABLE1 WHERE ID = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Db2Service db2Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = db2Service.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">    map = db2Service.queryTestDataAfterCast(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@ac</span>20c6d, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br><span class="line">&#123;CLOB=这是一个CLOB字段, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="oracle解决方案"><a class="header-anchor" href="#oracle解决方案">null</a>Oracle解决方案</h4>
+<ul>
+<li>
+<h5 id="问题重现-v2"><a class="header-anchor" href="#问题重现-v2">null</a>问题重现</h5>
+<ul>
+<li>
+<p>在Oracle数据库中新建表,字段分别为id、name、clob并往里面插了两条数据。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806220714.png" alt></p>
+</li>
+<li>
+<p>Mybatis中编写查询sql</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestData"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">SELECT "id","name","clob" FROM DEMO WHERE "id" = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> OracleService oracleService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">    Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">34908</span>b0b, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出CLOB字段查出来是一个Oracle的CLOB对象,直接转换成String会出现类型转换异常。</p>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="解决方案-v2"><a class="header-anchor" href="#解决方案-v2">null</a>解决方案</h5>
+<ul>
+<li>
+<p>1:使用Oracle CAST强转</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",cast("clob" as VARCHAR2(2048)) as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>2:使用TO_CHAR进行类型转换</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",TO_CHAR("clob") as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>3：使用dbms_lob.substr()转换</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryTestDataAfterCast"</span> <span class="attr">resultType</span>=<span class="string">"map"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span>&gt;</span></span><br><span class="line">    SELECT "id","name",dbms_lob.substr("clob",4000) as "clob" FROM DEMO WHERE "id" = '001'</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>调用方法查询并获取结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"> <span class="keyword">private</span> OracleService oracleService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">oracle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     Map&lt;String,Object&gt; params = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">     params.put(<span class="string">"id"</span>,<span class="string">"001"</span>);</span><br><span class="line">     Map&lt;String, Object&gt; map = oracleService.queryTestData(params);</span><br><span class="line">     System.out.println(map);</span><br><span class="line">     map = oracleService.queryTestDataAfterCast(params);</span><br><span class="line">     System.out.println(map);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>打印出的结果集</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;clob=oracle.sql.CLOB@<span class="number">1</span>b2bd3e6, name=mizhuo, id=<span class="number">001</span>&#125;</span><br><span class="line">&#123;clob=这是clob字段, name=mizhuo, id=<span class="number">001</span>&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+     <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #000;font-size:14px;">
+        ------ 
+        <span class="with-love" id="heart">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        </span>
+        本文结束,感谢阅读
+        <span class="with-love" id="heart">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        </span>------</div>
+    
+</div>
+      
+    </div>
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/08/06/CLOB->String转换异常的问题/">CLOB->String转换异常的问题</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
+  <p><span>发布时间:</span>2020年08月06日 - 12:08</p>
+  <p><span>最后更新:</span>2020年08月06日 - 12:08</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/" title="https://www.mizhuo.funCLOB->String转换异常的问题">https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+    </div>
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/database/" rel="tag"><i class="fa fa-tag"></i> database</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/03/Docker安装websphere/" rel="next" title="Docker安装websphere">
+                <i class="fa fa-chevron-left"></i> Docker安装websphere
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -403,6 +749,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -423,8 +776,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,6 +870,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#db2解决方案"><span class="nav-number">2.</span> <span class="nav-text">nullDB2解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现"><span class="nav-number">2.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">null解决方案</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#oracle解决方案"><span class="nav-number">3.</span> <span class="nav-text">nullOracle解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题重现-v2"><span class="nav-number">3.1.</span> <span class="nav-text">null问题重现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方案-v2"><span class="nav-number">3.2.</span> <span class="nav-text">null解决方案</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -666,6 +1044,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
