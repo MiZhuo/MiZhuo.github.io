@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-08-06T04:36:20.000Z</updated>
+  <updated>2020-08-13T14:37:27.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自定义注解实现Aspect埋点</title>
+    <link href="/2020/08/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0Aspect%E5%9F%8B%E7%82%B9/"/>
+    <id>/2020/08/13/自定义注解实现Aspect埋点/</id>
+    <published>2020-08-13T14:37:27.000Z</published>
+    <updated>2020-08-13T14:37:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;最近做一个项目,要求服务埋点,保存登录用户的所有操作记录并入库，方便系统报错的时候能够及时发现和重现，也能防止登录人员恶意破坏系统规范。一想到埋点，常见的方式就是使用AOP切面,自定义一些包或者类和方法进行AOP来记录操作记录。这里记录一下使用自定义注解埋点过程。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="/categories/SpringBoot/"/>
+    
+      <category term="AOP" scheme="/categories/SpringBoot/AOP/"/>
+    
+    
+      <category term="SpringBoot" scheme="/tags/SpringBoot/"/>
+    
+      <category term="AOP" scheme="/tags/AOP/"/>
+    
+  </entry>
   
   <entry>
     <title>CLOB-&gt;String转换异常的问题</title>
@@ -461,30 +487,6 @@
     
       &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
 &lt;p&gt;一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="DB2" scheme="/categories/DB2/"/>
-    
-    
-      <category term="DB2" scheme="/tags/DB2/"/>
-    
-      <category term="Linux" scheme="/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下DB2的安装</title>
-    <link href="/2019/10/09/Linux%E4%B8%8BDB2%E7%9A%84%E5%AE%89%E8%A3%85/"/>
-    <id>/2019/10/09/Linux下DB2的安装/</id>
-    <published>2019-10-09T02:12:09.000Z</published>
-    <updated>2019-10-09T06:04:55.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;一只在银行工作的程序猿，工作需要使用DB2数据库比较多，于是在自己买的服务器上安装DB2来学习DB2相关命令的使用。这里记录一下在Linux下安装DB2的方法。&lt;/p&gt;
     
     </summary>
     
