@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-08-13T14:37:27.000Z</updated>
+  <updated>2020-08-17T14:30:07.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git命令大全</title>
+    <link href="/2020/08/17/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>/2020/08/17/git命令大全/</id>
+    <published>2020-08-17T14:30:07.000Z</published>
+    <updated>2020-08-17T14:30:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义注解实现Aspect埋点</title>
@@ -158,9 +180,9 @@
       <category term="Docker" scheme="/categories/Mq/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="Mq" scheme="/tags/Mq/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
@@ -184,9 +206,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="MongoDB" scheme="/tags/MongoDB/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
   </entry>
   
@@ -473,30 +495,6 @@
       <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
     
       <category term="wechat" scheme="/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下DB2的使用</title>
-    <link href="/2019/10/09/Linux%E4%B8%8BDB2%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>/2019/10/09/Linux下DB2的使用/</id>
-    <published>2019-10-09T06:04:55.000Z</published>
-    <updated>2019-10-15T09:24:55.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="DB2" scheme="/categories/DB2/"/>
-    
-    
-      <category term="DB2" scheme="/tags/DB2/"/>
-    
-      <category term="Linux" scheme="/tags/Linux/"/>
     
   </entry>
   

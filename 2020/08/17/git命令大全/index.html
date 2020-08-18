@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="微信,wechat,">
+  <meta name="keywords" content="Git,">
 
 
 
@@ -126,23 +126,18 @@
 
 
 
-<meta name="description" content="null前言 最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。">
-<meta name="keywords" content="微信,wechat">
+<meta name="description" content="null前言 Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信公众号开发【二】">
-<meta property="og:url" content="/2019/10/13/微信公众号开发【二】/index.html">
+<meta property="og:title" content="git命令大全">
+<meta property="og:url" content="/2020/08/17/git命令大全/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="null前言 最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。">
+<meta property="og:description" content="null前言 Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110118.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110134.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110146.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110154.png">
-<meta property="og:updated_time" content="2019-10-31T03:01:59.246Z">
+<meta property="og:updated_time" content="2020-08-17T14:30:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信公众号开发【二】">
-<meta name="twitter:description" content="null前言 最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。">
-<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110118.png">
+<meta name="twitter:title" content="git命令大全">
+<meta name="twitter:description" content="null前言 Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。">
 
 
 
@@ -172,7 +167,7 @@
 
 
 
-  <link rel="canonical" href="/2019/10/13/微信公众号开发【二】/">
+  <link rel="canonical" href="/2020/08/17/git命令大全/">
 
 
 
@@ -186,7 +181,7 @@
   daovoice('update');
   </script>
 
-  <title>微信公众号开发【二】 | MiZhuo</title>
+  <title>git命令大全 | MiZhuo</title>
   
 
 
@@ -350,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2019/10/13/微信公众号开发【二】/">
+    <link itemprop="mainEntityOfPage" href="/2020/08/17/git命令大全/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MiZhuo">
@@ -367,7 +362,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">微信公众号开发【二】</h2>
+          <h2 class="post-title" itemprop="name headline">git命令大全</h2>
         
 
         <div class="post-meta">
@@ -379,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T14:47:36+08:00">
-                2019-10-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-17T22:30:07+08:00">
+                2020-08-17
               </time>
             
 
@@ -395,8 +390,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-31T11:01:59+08:00">
-                2019-10-31
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-17T22:30:07+08:00">
+                2020-08-17
               </time>
             
           </span>
@@ -414,8 +409,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信公众号/" itemprop="url" rel="index">
-                    <span itemprop="name">微信公众号</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -432,8 +427,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>评论数:
-                <a href="/2019/10/13/微信公众号开发【二】/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/13/微信公众号开发【二】/" itemprop="commentCount"></span>
+                <a href="/2020/08/17/git命令大全/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/17/git命令大全/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -441,7 +436,7 @@
 
           
           
-             <span id="/2019/10/13/微信公众号开发【二】/" class="leancloud_visitors" data-flag-title="微信公众号开发【二】">
+             <span id="/2020/08/17/git命令大全/" class="leancloud_visitors" data-flag-title="git命令大全">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -467,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.7k
                 </span>
               
 
@@ -483,7 +478,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 min
+                  7 min
                 </span>
               
             </div>
@@ -505,74 +500,18 @@
 
       
         <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
-<p>最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。</p>
+<p>Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。</p>
 <a id="more"></a>
-<h4 id="step1-微信公众号接入"><a class="header-anchor" href="#step1-微信公众号接入">null</a>Step1(微信公众号接入)</h4>
-<blockquote>
-<p>根据<a href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html" target="_blank" rel="noopener">微信官方文档</a>，接入微信公众平台开发，开发者需要按照如下步骤完成：</p>
-</blockquote>
-<ul>
-<li>
-<p>填写服务器配置<br>
-登录微信公众平台，菜单栏找到 <strong><span style="color:red;">&quot;开发&quot;-&gt;“基本配置”-&gt;&quot;服务器配置&quot;</span></strong><br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110118.png" alt><br>
-<strong><span style="color:red;">URL</span></strong>:就是服务器地址即公众号后台逻辑处理的入口地址，目前只支持80端口，我们所有的操作请求、逻辑处理都要从这个地址进入。包括接下来的服务器验证都要从这个地址进入。但是验证服务器使用的是GET请求，其它逻辑处理使用的是POST请求。<br>
-<strong><span style="color:red;">Token</span></strong>:可由开发者可以任意填写，用作生成签名（该Token会和接口URL中包含的Token进行比对，从而验证安全性）。<br>
-<strong><span style="color:red;">EncodingAESKey</span></strong>:由开发者手动填写或随机生成，将用作消息体加解密密钥。</p>
-</li>
-<li>
-<p>验证服务器<br>
-填写好服务器信息后就可以开始验证了。点击提交后，微信服务器将发送GET请求到填写的服务器地址URL上，这个GET请求会携带四个参数。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">signature</td>
-<td style="text-align:center">微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</td>
-</tr>
-<tr>
-<td style="text-align:center">timestamp</td>
-<td style="text-align:center">时间戳</td>
-</tr>
-<tr>
-<td style="text-align:center">nonce</td>
-<td style="text-align:center">随机数</td>
-</tr>
-<tr>
-<td style="text-align:center">echostr</td>
-<td style="text-align:center">随机字符串</td>
-</tr>
-</tbody>
-</table>
-<p>我们需要接收这个GET请求，并通过signature来对请求进行校验。确认此次GET请求来自微信服务器，然后原样返回echostr。加密/校验流程如下：<br>
-<code>1）将token、timestamp、nonce三个参数进行字典序排序。</code><br>
-<code>2）将三个参数字符串拼接成一个字符串进行sha1加密。</code><br>
-<code>3）开发者获得加密后的字符串可与signature对比，标识该请求来源于微信。</code></p>
-</li>
-</ul>
-<h4 id="step2-创建java项目"><a class="header-anchor" href="#step2-创建java项目">null</a>Step2(创建java项目)</h4>
-<p>我这里使用了Idea创建了一个Spring-boot项目。<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110134.png" alt></p>
-<ul>
-<li>创建一个工具类，用来验证签名。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fun.mizhuo.wechat.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.security.MessageDigest;</span><br><span class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@PackageName</span>: fun.mizhuo.wechat.util</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: AccessUtil</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Decription</span>: 微信公众号验证服务器的工具类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: MiZhuo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019-10-15 10:43</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccessUtil</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 定义Token，要与配置信息中填写的Token一致。 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String token;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;weChat.AccountInfo.token&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setToken</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        AccessUtil.token = token;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 验证签名</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> signature：微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> timestamp：时间戳</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> nonce：随机数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">checkSignature</span><span class="params">(String signature,String timestamp,String nonce)</span></span>&#123;</span><br><span class="line">        <span class="comment">//1):将token、timestamp、nonce三个参数进行字典序排序</span></span><br><span class="line">        String[] arr = <span class="keyword">new</span> String[]&#123;token,timestamp,nonce&#125;;</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="comment">//2):将三个参数字符串拼接成一个字符串进行sha1加密</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (String s : arr) &#123;</span><br><span class="line">            sb.append(s);</span><br><span class="line">        &#125;</span><br><span class="line">        MessageDigest md = <span class="keyword">null</span>;</span><br><span class="line">        String tempStr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            md = MessageDigest.getInstance(<span class="string">"SHA-1"</span>);</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = md.digest(sb.toString().getBytes());</span><br><span class="line">            tempStr = byteToStr(bytes);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        sb = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//3):获得加密后的字符串可与signature对比，标识该请求来源于微信</span></span><br><span class="line">        <span class="keyword">return</span> tempStr == <span class="keyword">null</span> ? <span class="keyword">false</span> : tempStr.equals(signature);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将加密后的字符数组转换成字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> bytes</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">byteToStr</span><span class="params">(<span class="keyword">byte</span>[] bytes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] HEX_DIGITS = &#123;<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>,</span><br><span class="line">                <span class="string">'9'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> len = bytes.length;</span><br><span class="line">        StringBuilder buf = <span class="keyword">new</span> StringBuilder(len * <span class="number">2</span>);</span><br><span class="line">        <span class="comment">// 把密文转换成十六进制的字符串形式</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">            buf.append(HEX_DIGITS[(bytes[j] &gt;&gt; <span class="number">4</span>) &amp; <span class="number">0x0f</span>]);</span><br><span class="line">            buf.append(HEX_DIGITS[bytes[j] &amp; <span class="number">0x0f</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buf.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>创建Controller类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> fun.mizhuo.wechat.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> fun.mizhuo.wechat.service.MessageService;</span><br><span class="line"><span class="keyword">import</span> fun.mizhuo.wechat.service.UserReqHistoryService;</span><br><span class="line"><span class="keyword">import</span> fun.mizhuo.wechat.util.AccessUtil;</span><br><span class="line"><span class="keyword">import</span> fun.mizhuo.wechat.util.Constant;</span><br><span class="line"><span class="keyword">import</span> fun.mizhuo.wechat.util.MessageUtil;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@PackageName</span>: fun.mizhuo.wechat.controller</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: CoreController</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Decription</span>: 核心Controller 用于接入微信公众号</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: MiZhuo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019-10-15 14:19</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CoreController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MessageService messageService;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserReqHistoryService historyService;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 接入微信公众号</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> signature</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> timestamp</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> nonce</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> echostr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value=<span class="string">"/"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">checkSignature</span><span class="params">(@RequestParam(value = <span class="string">"signature"</span>,required = <span class="keyword">false</span>)</span> String signature,</span></span><br><span class="line"><span class="function">                                 @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"timestamp"</span>,required = <span class="keyword">false</span>)</span> String timestamp,</span></span><br><span class="line"><span class="function">                                 @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"nonce"</span>,required = <span class="keyword">false</span>)</span> String nonce,</span></span><br><span class="line"><span class="function">                                 @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"echostr"</span>,required = <span class="keyword">false</span>)</span> String echostr) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (AccessUtil.checkSignature(signature, timestamp, nonce)) &#123;</span><br><span class="line">            log.info(<span class="string">"[&#123;&#125;]接入微信公众号成功"</span>,<span class="keyword">new</span> Date(System.currentTimeMillis()));</span><br><span class="line">            <span class="keyword">return</span> echostr;</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(<span class="string">"[&#123;&#125;]接入微信公众号失败"</span>,<span class="keyword">new</span> Date(System.currentTimeMillis()));</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改本地项目启动端口为80,调试的时候,开启NATAPP。<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110146.png" alt><br>
-然后就可以提交了。提交成功后就可以启动服务器配置，开始我们的微信公众号的开发了。<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20191031110154.png" alt></li>
-</ul>
-
+<h4 id="git基础命令"><a class="header-anchor" href="#git基础命令">null</a>Git基础命令</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"># 初始化本地git仓库,在当前目录下生成.git目录</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># 克隆项目到本地</span><br><span class="line">$ git clone &lt;url&gt;</span><br><span class="line"></span><br><span class="line"># 将文件加入到暂存区</span><br><span class="line">$ git add &lt;file1&gt; &lt;file2&gt; ...</span><br><span class="line"></span><br><span class="line"># 将文件目录加入到暂存区</span><br><span class="line">$ git add &lt;dir&gt;</span><br><span class="line"></span><br><span class="line"># 将当前目录所有文件加入到暂存区</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"># 删除工作区文件,并加入到暂存区</span><br><span class="line">$ git rm &lt;file&gt; &lt;file2&gt; ...</span><br><span class="line"></span><br><span class="line"># 停止追踪文件,仍保存在工作区</span><br><span class="line">$ git rm -cached &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 改文件名并保存到暂存区</span><br><span class="line">$ git mv &lt;file-oldName&gt; &lt;file-newName&gt;</span><br><span class="line"></span><br><span class="line"># 提交暂存区所有文件到仓库</span><br><span class="line">$ git commit -m &lt;desc&gt;</span><br><span class="line"></span><br><span class="line"># 提交暂存区指定文件到仓库</span><br><span class="line">$ git commit &lt;file1&gt; &lt;file2&gt; ... -m &lt;desc&gt;</span><br><span class="line"></span><br><span class="line"># 使用一次新的提交替代上一次的提交(改写commit信息)</span><br><span class="line">$ git commit --amend -m &lt;desc&gt;</span><br><span class="line"></span><br><span class="line"># 重做上一次的提交</span><br><span class="line">$ git commit --amend &lt;file1&gt; &lt;file2&gt; ...</span><br><span class="line"></span><br><span class="line"># 提交工作区修改直接到仓库</span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"># 恢复暂存区文件到工作区</span><br><span class="line">$ git checkout &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout &lt;commit&gt; &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br><span class="line"></span><br><span class="line"># 查看当前状态</span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># 查看历史记录</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># 查看commit历史记录，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># 根据关键词查询commit历史</span><br><span class="line">$ git log -S &lt;keyword&gt;</span><br><span class="line"></span><br><span class="line"># 查看指定文件每一次的diff</span><br><span class="line">$ git log -p &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 显示过去的5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># 显示所有提交过的用户和次数</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"># 查看指定文件修改的时间和内容</span><br><span class="line">$ git blame &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 查看暂存区和工作区的代码差异</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># 查看暂存区和上一次commit的差异</span><br><span class="line">$ git diff --cached &lt;file&gt;</span><br><span class="line"></span><br><span class="line"># 显示工作区与当前分支最新commit的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"># 显示今天写的代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 查看某次提交的内容的变化</span><br><span class="line">$ git show &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br><span class="line"></span><br><span class="line"># 将当前分支提交到指定分支之后</span><br><span class="line">$ git rebase &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"># 合并提交，清理记录</span><br><span class="line">$ git rebase -i HEAD~n</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h4 id="git分支命令"><a class="header-anchor" href="#git分支命令">null</a>Git分支命令</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 列出当前分支列表</span><br><span class="line">$ git branch </span><br><span class="line"></span><br><span class="line"># 列出远程分支列表</span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"># 列出本地和远程分支列表</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 新建分支,不切换</span><br><span class="line">$ git branch &lt;branch-name&gt;</span><br><span class="line"></span><br><span class="line"># 新建分支并切换到新分支</span><br><span class="line">$ git checkout -b &lt;branch-name&gt;</span><br><span class="line"></span><br><span class="line"># 新建分支并指定指向某个commit</span><br><span class="line">$ git branch &lt;branch-name&gt; &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 新建分支并与远程分支建立关系</span><br><span class="line">$ git branch --track &lt;branch-name&gt; &lt;remote-branch&gt;</span><br><span class="line"></span><br><span class="line"># 切换分支</span><br><span class="line">$ git checkout &lt;branch-name&gt;</span><br><span class="line"></span><br><span class="line"># 将现有分支与远程分支建立联系</span><br><span class="line">$ git branch --set-upstream &lt;branch-name&gt; &lt;remote-branch&gt;</span><br><span class="line"></span><br><span class="line"># 合并分支到当前分支</span><br><span class="line">$ git merge &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"># 选择一个commit合并到当前分支</span><br><span class="line">$ git cherry-pick &lt;commit&gt;</span><br><span class="line"></span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d &lt;branch-name&gt;</span><br><span class="line"></span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete &lt;branch-name&gt;</span><br><span class="line">$ git branch -dr &lt;remote/branch&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git远程同步命令"><a class="header-anchor" href="#git远程同步命令">null</a>Git远程同步命令</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 显示远程仓库版本信息</span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"># 增加远程仓库</span><br><span class="line">$ git remote add &lt;remote&gt; &lt;url&gt;</span><br><span class="line"></span><br><span class="line"># 上传本地指定分支到仓库</span><br><span class="line">$ git push &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"># 上传所有分支到仓库</span><br><span class="line">$ git push &lt;remote&gt; --all</span><br><span class="line"></span><br><span class="line"># 无视冲突强行上传分支到仓库</span><br><span class="line">$ git push &lt;remote&gt; --force</span><br><span class="line"></span><br><span class="line"># 拉取远程仓库最新内容,不合并</span><br><span class="line">$ git fetch &lt;remote&gt;</span><br><span class="line"></span><br><span class="line"># 拉取远程仓库并与本地分支合并</span><br><span class="line">$ git pull &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"># 同步远程分支到本地</span><br><span class="line">$ git remote update</span><br></pre></td></tr></table></figure>
+<h4 id="git标签命令"><a class="header-anchor" href="#git标签命令">null</a>Git标签命令</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag &lt;tag&gt;</span><br><span class="line"></span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d &lt;tag&gt;</span><br><span class="line"></span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/&lt;tagName&gt;</span><br><span class="line"></span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show &lt;tag&gt;</span><br><span class="line"></span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push &lt;remote&gt; &lt;tag&gt;</span><br><span class="line"></span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push &lt;remote&gt; --tags</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b &lt;branch&gt; &lt;tag&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="git配置命令"><a class="header-anchor" href="#git配置命令">null</a>Git配置命令</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># 查看配置信息</span><br><span class="line"># --local：仓库级，--global：全局级，--system：系统级</span><br><span class="line">$ git config &lt;--local | --global | --system&gt; -l</span><br><span class="line"></span><br><span class="line"># 查看当前生效的配置信息</span><br><span class="line">$ git config -l</span><br><span class="line"></span><br><span class="line"># 编辑配置文件</span><br><span class="line"># --local：仓库级，--global：全局级，--system：系统级</span><br><span class="line">$ git config &lt;--local | --global | --system&gt; -e</span><br><span class="line"></span><br><span class="line"># 添加配置项</span><br><span class="line"># --local：仓库级，--global：全局级，--system：系统级</span><br><span class="line">$ git config &lt;--local | --global | --system&gt; --add &lt;name&gt; &lt;value&gt;</span><br><span class="line"></span><br><span class="line"># 获取配置项</span><br><span class="line">$ git config &lt;--local | --global | --system&gt; --get &lt;name&gt;</span><br><span class="line"></span><br><span class="line"># 删除配置项</span><br><span class="line">$ git config &lt;--local | --global | --system&gt; --unset &lt;name&gt;</span><br><span class="line"></span><br><span class="line"># 配置提交记录中的用户信息</span><br><span class="line">$ git config --global user.name &lt;用户名&gt;</span><br><span class="line">$ git config --global user.email &lt;邮箱地址&gt;</span><br><span class="line"></span><br><span class="line"># 更改Git缓存区的大小</span><br><span class="line"># 如果提交的内容较大，默认缓存较小，提交会失败</span><br><span class="line"># 缓存大小单位：B，例如：524288000（500MB）</span><br><span class="line">$ git config --global http.postBuffer &lt;缓存大小&gt;</span><br><span class="line"></span><br><span class="line"># 调用 git status/git diff 命令时以高亮或彩色方式显示改动状态</span><br><span class="line">$ git config --global color.ui true</span><br><span class="line"></span><br><span class="line"># 配置可以缓存密码，默认缓存时间15分钟</span><br><span class="line">$ git config --global credential.helper cache</span><br><span class="line"></span><br><span class="line"># 配置密码的缓存时间</span><br><span class="line"># 缓存时间单位：秒</span><br><span class="line">$ git config --global credential.helper &apos;cache --timeout=&lt;缓存时间&gt;&apos;</span><br><span class="line"></span><br><span class="line"># 配置长期存储密码</span><br><span class="line">$ git config --global credential.helper store</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -604,12 +543,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/13/微信公众号开发【二】/">微信公众号开发【二】</a></p>
+  <p><span>本文标题:</span><a href="/2020/08/17/git命令大全/">git命令大全</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
-  <p><span>发布时间:</span>2019年10月13日 - 14:10</p>
-  <p><span>最后更新:</span>2019年10月31日 - 11:10</p>
-  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2019/10/13/微信公众号开发【二】/" title="https://www.mizhuo.fun微信公众号开发【二】">https://www.mizhuo.fun/2019/10/13/微信公众号开发【二】/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2019/10/13/微信公众号开发【二】/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年08月17日 - 22:08</p>
+  <p><span>最后更新:</span>2020年08月17日 - 22:08</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/08/17/git命令大全/" title="https://www.mizhuo.fungit命令大全">https://www.mizhuo.fun/2020/08/17/git命令大全/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/08/17/git命令大全/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -639,9 +578,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/微信/" rel="tag"><i class="fa fa-tag"></i> 微信</a>
-          
-            <a href="/tags/wechat/" rel="tag"><i class="fa fa-tag"></i> wechat</a>
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           
         </div>
       
@@ -653,8 +590,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/09/Linux下DB2的使用/" rel="next" title="Linux下DB2的使用">
-                <i class="fa fa-chevron-left"></i> Linux下DB2的使用
+              <a href="/2020/08/13/自定义注解实现Aspect埋点/" rel="next" title="自定义注解实现Aspect埋点">
+                <i class="fa fa-chevron-left"></i> 自定义注解实现Aspect埋点
               </a>
             
           </div>
@@ -662,10 +599,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/15/微信公众号开发【三】/" rel="prev" title="微信公众号开发【三】">
-                微信公众号开发【三】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -862,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step1-微信公众号接入"><span class="nav-number">2.</span> <span class="nav-text">nullStep1(微信公众号接入)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2-创建java项目"><span class="nav-number">3.</span> <span class="nav-text">nullStep2(创建java项目)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git基础命令"><span class="nav-number">2.</span> <span class="nav-text">nullGit基础命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git分支命令"><span class="nav-number">3.</span> <span class="nav-text">nullGit分支命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git远程同步命令"><span class="nav-number">4.</span> <span class="nav-text">nullGit远程同步命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git标签命令"><span class="nav-number">5.</span> <span class="nav-text">nullGit标签命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git配置命令"><span class="nav-number">6.</span> <span class="nav-text">nullGit配置命令</span></a></li></ol></div>
             
 
           </div>
