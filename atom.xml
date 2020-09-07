@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-08-17T14:30:07.000Z</updated>
+  <updated>2020-08-30T06:16:15.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>乐观锁和悲观锁</title>
+    <link href="/2020/08/30/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/"/>
+    <id>/2020/08/30/乐观锁和悲观锁/</id>
+    <published>2020-08-30T06:16:15.000Z</published>
+    <updated>2020-08-30T06:16:15.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;乐观锁和悲观锁，顾名思义，乐观锁对数据库永远保持着一种乐观的态度，操作数据库的时候不会对数据加锁，只有到数据提交的时候才去验证数据是否存在冲突，一般是通过加版本号来验证。而悲观锁则是一种悲观的态度，操作数据库时先对数据加锁，然后再去读写数据，在它释放锁之前，任何人都无法操作数据，直到上一个人释放锁，下一个人才能继续抢占锁，然后操作数据。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>git命令大全</title>
@@ -180,9 +202,9 @@
       <category term="Docker" scheme="/categories/Mq/Docker/"/>
     
     
-      <category term="Mq" scheme="/tags/Mq/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="Mq" scheme="/tags/Mq/"/>
     
   </entry>
   
@@ -461,30 +483,6 @@
     
       &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
 &lt;p&gt;前面文章已经成功接入微信公众号了，我们就能够接受到用户发送的消息了。接收到消息之后就可以编写逻辑来进行处理了。用户向公众号发送消息时，我们收到的消息发送者是一个OpenID，是使用用户微信号加密后的结果，每个用户对每个公众号有一个唯一的OpenID。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="微信公众号" scheme="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
-    
-    
-      <category term="微信" scheme="/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-      <category term="wechat" scheme="/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信公众号开发【二】</title>
-    <link href="/2019/10/13/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E3%80%90%E4%BA%8C%E3%80%91/"/>
-    <id>/2019/10/13/微信公众号开发【二】/</id>
-    <published>2019-10-13T06:47:36.000Z</published>
-    <updated>2019-10-31T03:01:59.246Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;最近满脑子都是为祖国🚩庆生🎉🎉🎉，导致祖国生日都过了将近半个月，才慢慢缓过神来！继续开发我的微信公众号。&lt;/p&gt;
     
     </summary>
     

@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>乐观锁和悲观锁</title>
+    <url>/2020/08/30/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>乐观锁和悲观锁，顾名思义，乐观锁对数据库永远保持着一种乐观的态度，操作数据库的时候不会对数据加锁，只有到数据提交的时候才去验证数据是否存在冲突，一般是通过加版本号来验证。而悲观锁则是一种悲观的态度，操作数据库时先对数据加锁，然后再去读写数据，在它释放锁之前，任何人都无法操作数据，直到上一个人释放锁，下一个人才能继续抢占锁，然后操作数据。</p>
+<a id="more"></a>
+<h4 id="一-悲观锁"><a class="header-anchor" href="#一-悲观锁">null</a>一:悲观锁</h4>
+<p>当要对数据库中一行数据进行修改时，为避免同时被其他人修改，最好的办法是对该数据进行锁定，防止并发，而这种先加锁后访问的锁机制被称为悲观锁。悲观锁主要分为共享锁和排他锁，共享锁又称为读锁，就是多个事务对同一数据可以共享一把锁，都能访问到数据但是无法修改。而排他锁又称为写锁，排他锁不能与其他锁并存，如果一个事务获取了一个数据行的排他锁，那么其他事务则无法获取锁。</p>
+<ul>
+<li>优点:策略保守，数据安全</li>
+<li>缺点:会造成死锁，为处理加锁机制，会影响效率，而且不能并发执行。</li>
+</ul>
+<h4 id="二-乐观锁"><a class="header-anchor" href="#二-乐观锁">null</a>二:乐观锁</h4>
+<p>相对于悲观锁而言，乐观锁默认数据不会产生冲突，不会刻意使用数据库锁机制，常见实现乐观锁是采用记录数据版本的方法或者是CAS算法，提交数据的时候才去校验版本是否变化，如果版本发生了变化，说明数据库中的数据已经变化了，将问题抛出给用户，用户决定如何解决。</p>
+<ul>
+<li>优点:不会出现死锁情况，效率较高</li>
+<li>缺点:只适用于写的操作比较少的情况。否则会影响效率，降低性能。CAS算法的ABA问题,即如果一个变量初次读取的时候是 A 值，它的值被改成了 B，后来又被改回为 A，那 CAS 操作就会误认为它从来没有被改变过。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git命令大全</title>
     <url>/2020/08/17/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
@@ -343,8 +369,8 @@
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>Mq</tag>
         <tag>Docker</tag>
+        <tag>Mq</tag>
       </tags>
   </entry>
   <entry>
