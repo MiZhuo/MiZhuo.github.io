@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>部署Vue项目到远程服务器Dokcer下的Nginx</title>
+    <url>/2020/10/29/%E9%83%A8%E7%BD%B2Vue%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8Dokcer%E4%B8%8B%E7%9A%84Nginx/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+<p>使用远程服务器Dokcer的Nginx来部署Vue项目</p>
+<a id="more"></a>
+<h4 id="一-打包vue项目"><a class="header-anchor" href="#一-打包vue项目">null</a>一:打包Vue项目</h4>
+<ul>
+<li>使用命令打包Vue项目，会生成一个<code>dist</code>文件夹。<code>dist</code>全称<code>distribution</code>，这个也就是我们最终发布的版本。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201029211956.png" alt></li>
+</ul>
+<h4 id="二-安装nginx镜像"><a class="header-anchor" href="#二-安装nginx镜像">null</a>二:安装Nginx镜像</h4>
+<ul>
+<li><code>docker pull nginx</code><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201029213730.png" alt></li>
+</ul>
+<h4 id="三-上传dist文件夹到服务器"><a class="header-anchor" href="#三-上传dist文件夹到服务器">null</a>三:上传dist文件夹到服务器</h4>
+<ul>
+<li>使用ftp工具，将文件上传至服务器<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201029214614.png" alt></li>
+</ul>
+<h4 id="四-创建dockerfile文件"><a class="header-anchor" href="#四-创建dockerfile文件">null</a>四:创建Dockerfile文件</h4>
+<ul>
+<li>新建Dockerfile<br>
+<code>vi Dockerfile</code></li>
+<li>内容如下  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设置基础镜像</span><br><span class="line">FROM nginx:latest</span><br><span class="line"># 作者</span><br><span class="line">MAINTAINER mizhuo</span><br><span class="line"># 复制dist内容到Nginx下</span><br><span class="line">COPY dist/ /usr/share/nginx/html/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="五-创建镜像"><a class="header-anchor" href="#五-创建镜像">null</a>五:创建镜像</h4>
+<ul>
+<li>
+<p>创建自己的镜像</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo project]# docker build -t vue-client .</span><br><span class="line">Sending build context to Docker daemon  6.208MB</span><br><span class="line">Step 1/4 : FROM nginx:latest</span><br><span class="line">---&gt; f35646e83998</span><br><span class="line">Step 2/4 : MAINTAINER mizhuo</span><br><span class="line">---&gt; Running in b330404f1063</span><br><span class="line">Removing intermediate container b330404f1063</span><br><span class="line">---&gt; 618604556d90</span><br><span class="line">Step 3/4 : COPY dist/ /usr/share/nginx/html/</span><br><span class="line">---&gt; f568fe16703b</span><br><span class="line">Step 4/4 : RUN echo &apos;init ok!&apos;</span><br><span class="line">---&gt; Running in 0ccaa3f04510</span><br><span class="line">init ok!</span><br><span class="line">Removing intermediate container 0ccaa3f04510</span><br><span class="line">---&gt; db01d64319dd</span><br><span class="line">Successfully built db01d64319dd</span><br><span class="line">Successfully tagged hr-client:latest</span><br><span class="line">[root@mizhuo project]#</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>查看镜像</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo hr-client]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">vue-client           latest              db01d64319dd        2 minutes ago       139MB</span><br><span class="line">redis               latest              62f1d3402b78        44 hours ago        104MB</span><br><span class="line">nginx               latest              f35646e83998        2 weeks ago         133MB</span><br><span class="line">rabbitmq            management          68898be27496        3 weeks ago         186MB</span><br><span class="line">[root@mizhuo hr-client]#</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>启动镜像</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo hr-client]# docker run -d --name vue-client -p 8080:80 vue-client</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="六-浏览器访问项目"><a class="header-anchor" href="#六-浏览器访问项目">null</a>六:浏览器访问项目</h4>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201029224404.png" alt></p>
+]]></content>
+      <categories>
+        <category>Dokcer</category>
+        <category>Nginx</category>
+      </categories>
+      <tags>
+        <tag>Dokcer</tag>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>乐观锁和悲观锁</title>
     <url>/2020/08/30/%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
@@ -131,6 +186,11 @@
 <li>
 <p>打印出的结果集</p>
   <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@ac</span>20c6d, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br><span class="line">&#123;CLOB=这是一个CLOB字段, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><span style="color:red">2020年10月29日更新</span><br>
+DB2也可以使用字符流的方式，读取方法和Oracle读取方法一样，只不过DB2使用的话要在配置数据库连接的地方加上<code>progressiveStreaming=2;</code></p>
+  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">spring.datasource.driverClassName=com.ibm.db2.jcc.DB2Driver</span><br><span class="line">spring.datasource.url=jdbc:db2://127.0.0.1:50000/mydb;progressiveStreaming=2;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -420,8 +480,8 @@
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>MongoDB</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>

@@ -136,7 +136,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806204109.png">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200806220714.png">
-<meta property="og:updated_time" content="2020-08-06T04:36:20.000Z">
+<meta property="og:updated_time" content="2020-10-29T11:47:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CLOB-&gt;String转换异常的问题">
 <meta name="twitter:description" content="null前言 今天敲代码遇到一个问题,由于需求需要存放很多筛选条件,后期要根据筛选条件去过滤数据,由于这个筛选器长度比较大,所以我们采取的方案就是数据库建两个字段,类型为CLOB,一个字段用来存放前端传来的JSON条件,另一个字段存放根据JSON拼接出来的SQL条件。但是后面取CLOB字段时,出现了类型转换异常,也就是CLOB无法转换为String,这里记录一下解决方案。">
@@ -393,8 +393,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-06T12:36:20+08:00">
-                2020-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2020-10-29T19:47:32+08:00">
+                2020-10-29
               </time>
             
           </span>
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  942
+                  1k
                 </span>
               
 
@@ -543,6 +543,11 @@
 <li>
 <p>打印出的结果集</p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;CLOB=com.ibm.db2.jcc.am.oe<span class="meta">@ac</span>20c6d, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br><span class="line">&#123;CLOB=这是一个CLOB字段, ID=<span class="number">001</span>, NAME=mizhuo001&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><span style="color:red">2020年10月29日更新</span><br>
+DB2也可以使用字符流的方式，读取方法和Oracle读取方法一样，只不过DB2使用的话要在配置数据库连接的地方加上<code>progressiveStreaming=2;</code></p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.driverClassName=com.ibm.db2.jcc.DB2Driver</span><br><span class="line">spring.datasource.url=jdbc:db2://127.0.0.1:50000/mydb;progressiveStreaming=2;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -645,7 +650,7 @@
   <p><span>本文标题:</span><a href="/2020/08/06/CLOB->String转换异常的问题/">CLOB->String转换异常的问题</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年08月06日 - 12:08</p>
-  <p><span>最后更新:</span>2020年08月06日 - 12:08</p>
+  <p><span>最后更新:</span>2020年10月29日 - 19:10</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/" title="https://www.mizhuo.funCLOB->String转换异常的问题">https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/08/06/CLOB->String转换异常的问题/" aria-label="复制成功！"></i></span>
   </p>
@@ -821,7 +826,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -832,7 +837,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -843,7 +848,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -932,7 +937,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">33.7k</span>
+    <span title="全站文字共">34.1k</span>
   
 </div>
 
