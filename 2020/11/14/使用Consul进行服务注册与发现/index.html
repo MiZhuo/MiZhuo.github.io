@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Docker,Mq,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -126,21 +126,22 @@
 
 
 
-<meta name="description" content="null前言 今天使用Docker安装RabbitMq后发现无法根据指定的15672的管理端端口进入管理页面，于是仔细检查了Docker命令和端口号,并重新安装了一遍,最后才发现问题，这里记录一下。">
-<meta name="keywords" content="Docker,Mq">
+<meta name="description" content="nullConsul介绍 Consul是HashiCorp公司推出的开源工具，使用Go语言开发，所以和Docker完全兼容，部署起来非常容易，Consul具有绿色、轻量级的特点。是分布式的、高可用的、 可横向扩展的用于实现分布式系统的服务发现与配置。">
+<meta name="keywords" content="Spring,MyBatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker安装RabbitMq后无法进入管理页面">
-<meta property="og:url" content="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/index.html">
+<meta property="og:title" content="使用Consul进行服务注册与发现">
+<meta property="og:url" content="/2020/11/14/使用Consul进行服务注册与发现/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="null前言 今天使用Docker安装RabbitMq后发现无法根据指定的15672的管理端端口进入管理页面，于是仔细检查了Docker命令和端口号,并重新安装了一遍,最后才发现问题，这里记录一下。">
+<meta property="og:description" content="nullConsul介绍 Consul是HashiCorp公司推出的开源工具，使用Go语言开发，所以和Docker完全兼容，部署起来非常容易，Consul具有绿色、轻量级的特点。是分布式的、高可用的、 可横向扩展的用于实现分布式系统的服务发现与配置。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164113.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164350.png">
-<meta property="og:updated_time" content="2020-06-07T08:33:42.000Z">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114222236.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114222734.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114225604.png">
+<meta property="og:updated_time" content="2020-11-14T14:59:53.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker安装RabbitMq后无法进入管理页面">
-<meta name="twitter:description" content="null前言 今天使用Docker安装RabbitMq后发现无法根据指定的15672的管理端端口进入管理页面，于是仔细检查了Docker命令和端口号,并重新安装了一遍,最后才发现问题，这里记录一下。">
-<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164113.png">
+<meta name="twitter:title" content="使用Consul进行服务注册与发现">
+<meta name="twitter:description" content="nullConsul介绍 Consul是HashiCorp公司推出的开源工具，使用Go语言开发，所以和Docker完全兼容，部署起来非常容易，Consul具有绿色、轻量级的特点。是分布式的、高可用的、 可横向扩展的用于实现分布式系统的服务发现与配置。">
+<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114222236.png">
 
 
 
@@ -170,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/">
+  <link rel="canonical" href="/2020/11/14/使用Consul进行服务注册与发现/">
 
 
 
@@ -184,7 +185,7 @@
   daovoice('update');
   </script>
 
-  <title>Docker安装RabbitMq后无法进入管理页面 | MiZhuo</title>
+  <title>使用Consul进行服务注册与发现 | MiZhuo</title>
   
 
 
@@ -348,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/">
+    <link itemprop="mainEntityOfPage" href="/2020/11/14/使用Consul进行服务注册与发现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MiZhuo">
@@ -365,7 +366,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Docker安装RabbitMq后无法进入管理页面</h2>
+          <h2 class="post-title" itemprop="name headline">使用Consul进行服务注册与发现</h2>
         
 
         <div class="post-meta">
@@ -377,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-07T16:33:42+08:00">
-                2020-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-14T21:47:55+08:00">
+                2020-11-14
               </time>
             
 
@@ -393,45 +394,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-07T16:33:42+08:00">
-                2020-06-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-11-14T22:59:53+08:00">
+                2020-11-14
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mq/" itemprop="url" rel="index">
-                    <span itemprop="name">Mq</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mq/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -441,8 +409,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>评论数:
-                <a href="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/" itemprop="commentCount"></span>
+                <a href="/2020/11/14/使用Consul进行服务注册与发现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/14/使用Consul进行服务注册与发现/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -450,7 +418,7 @@
 
           
           
-             <span id="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/" class="leancloud_visitors" data-flag-title="Docker安装RabbitMq后无法进入管理页面">
+             <span id="/2020/11/14/使用Consul进行服务注册与发现/" class="leancloud_visitors" data-flag-title="使用Consul进行服务注册与发现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -476,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  169
+                  1.1k
                 </span>
               
 
@@ -492,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 min
+                  5 min
                 </span>
               
             </div>
@@ -513,19 +481,48 @@
       
 
       
-        <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
-<p>今天使用Docker安装RabbitMq后发现无法根据指定的15672的管理端端口进入管理页面，于是仔细检查了Docker命令和端口号,并重新安装了一遍,最后才发现问题，这里记录一下。</p>
+        <h4 id="consul介绍"><a class="header-anchor" href="#consul介绍">null</a>Consul介绍</h4>
+<p>Consul是HashiCorp公司推出的开源工具，使用Go语言开发，所以和Docker完全兼容，部署起来非常容易，Consul具有<code>绿色</code>、<code>轻量级</code>的特点。是<code>分布式</code>的、<code>高可用</code>的、 <code>可横向扩展</code>的用于实现分布式系统的服务发现与配置。</p>
 <a id="more"></a>
-<h4 id="解决方案"><a class="header-anchor" href="#解决方案">null</a>解决方案</h4>
+<h4 id="consul与eureka对比"><a class="header-anchor" href="#consul与eureka对比">null</a>Consul与Eureka对比</h4>
 <ul>
-<li>
-<p>查阅<a href="https://www.rabbitmq.com/management.html" target="_blank" rel="noopener">官网</a>文档后发现有这么一段话<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164113.png" alt><br>
-管理端是个插件，必须安装后才能使用!于是根据官方提示，安装插件，终于成功访问到了管理页面。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodembp  ~  docker exec -i -t rabbitmq /bin/bash</span><br><span class="line">root@7aa7a089ca7b:/#  rabbitmq-plugins enable rabbitmq_management</span><br><span class="line">Enabling plugins on node rabbit@7aa7a089ca7b:</span><br><span class="line">rabbitmq_management</span><br><span class="line">The following plugins have been configured:</span><br><span class="line">rabbitmq_management</span><br><span class="line">rabbitmq_management_agent</span><br><span class="line">rabbitmq_web_dispatch</span><br><span class="line">Applying plugin configuration to rabbit@7aa7a089ca7b...</span><br><span class="line">The following plugins have been enabled:</span><br><span class="line">rabbitmq_management</span><br><span class="line">rabbitmq_management_agent</span><br><span class="line">rabbitmq_web_dispatch</span><br><span class="line"></span><br><span class="line">started 3 plugins.</span><br><span class="line">root@7aa7a089ca7b:/#</span><br></pre></td></tr></table></figure>
-<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200607164350.png" alt></p>
-</li>
+<li>首先Eureka只需要在项目中加入依赖，就可以作为注册中心。而Consul和Zookeeper一样，需要单独安装才能使用。</li>
+<li>相比于Eureka来讲，Consul具有<strong>一站式</strong>的特点，它里面内置了包括<code>服务注册于发现</code>、<code>健康检查</code>、<code>分布一致性协议实现</code>、<code>Key/Value存储</code>、<code>多数据中心方案</code>等等</li>
+<li>Eureka注册速度快，因为Eureka没有主从之分，各个节点相对独立，不管注册列表信息是否一致，每个节点都能向外提供相应的服务。所以保证了可用性，牺牲了一致性。而Consul因为必须要求过半节点都写入成功才能认为注册成功。所以保证了一致性牺牲了可用性。</li>
 </ul>
+<blockquote>
+<p>所以选择时需要考虑实际情况，需要保证可用性还是一致性。</p>
+</blockquote>
+<h4 id="docker安装consul"><a class="header-anchor" href="#docker安装consul">null</a>Docker安装Consul</h4>
+<h5 id="查找镜像"><a class="header-anchor" href="#查找镜像">null</a>查找镜像</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">⚙ mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/docker-compose  docker search consul</span><br><span class="line">NAME                            DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED</span><br><span class="line">consul                          Consul is a datacenter runtime that provides…   1123                [OK]</span><br><span class="line">progrium/consul                                                                 354                                     [OK]</span><br><span class="line">gliderlabs/consul                                                               64                                      [OK]</span><br><span class="line">gliderlabs/consul-server                                                        40                                      [OK]</span><br><span class="line">voxxit/consul                   Blazing-fast Consul (consul.io) binary in Al…   29                                      [OK]</span><br><span class="line">hashicorp/consul-template       Consul Template is a template renderer, noti…   25</span><br><span class="line">gliderlabs/consul-agent                                                         14                                      [OK]</span><br><span class="line">prom/consul-exporter                                                            10                                      [OK]</span><br><span class="line">jhipster/consul-config-loader   A small docker based tool to load Spring Boo…   9                                       [OK]</span><br><span class="line">hashicorp/consul-k8s            First-class integrations between Consul and …   6                                       [OK]</span><br><span class="line">acaleph/consul-alerts                                                           6                                       [OK]</span><br><span class="line">bitnami/consul                  Bitnami Docker Image for Consul                 6                                       [OK]</span><br><span class="line">myena/consul-backinator         Command line Consul KV backup and restore ut…   3                                       [OK]</span><br><span class="line">wdijkerman/consul               Consul 1.8.2 running on Alpine 3.11             3                                       [OK]</span><br><span class="line">mycatisblack/consul-agent       Fork of gliderlabs/consul-agent but with nag…   3                                       [OK]</span><br><span class="line">hashicorp/consul-enterprise     Consul is a datacenter runtime that provides…   2</span><br><span class="line">unifio/consul                   HashiCorp Consul                                1</span><br><span class="line">arm64v8/consul                  Consul is a datacenter runtime that provides…   1</span><br><span class="line">pdffiller/consul                consul version - 0.8.1                          0</span><br><span class="line">cjongseok/consul                The original codes is progrium/consul           0                                       [OK]</span><br><span class="line">justicel/consul-conf-env        Initialize a SSL ride-along container for vo…   0</span><br><span class="line">arm32v6/consul                  Consul is a datacenter runtime that provides…   0</span><br><span class="line">carina/consul                   Consul image used by Carina.                    0                                       [OK]</span><br><span class="line">hoist/consul                    Hoist&apos;s Consul Server                           0                                       [OK]</span><br><span class="line">wowgroup/consul-agent           Consul Agent                                    0                                       [OK]</span><br></pre></td></tr></table></figure>
+<h5 id="拉取镜像"><a class="header-anchor" href="#拉取镜像">null</a>拉取镜像</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">⚙ mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/docker-compose  docker pull consul</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from library/consul</span><br><span class="line">188c0c94c7c5: Pull complete</span><br><span class="line">1bd0ad15d154: Pull complete</span><br><span class="line">3d30a01add55: Pull complete</span><br><span class="line">07f3ae3ba267: Pull complete</span><br><span class="line">0de0e8083495: Pull complete</span><br><span class="line">000f607b07c9: Pull complete</span><br><span class="line">Digest: sha256:b85322aa8c65355341dd81b5e95d5c0e8468e6419724d4e8a125198d40426a30</span><br><span class="line">Status: Downloaded newer image for consul:latest</span><br><span class="line">docker.io/library/consul:latest</span><br><span class="line">⚙ mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/docker-compose  docker images</span><br><span class="line">REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">consul                         latest              4f7b214361a7        3 weeks ago         122MB</span><br></pre></td></tr></table></figure>
+<h5 id="单机模式启动"><a class="header-anchor" href="#单机模式启动">null</a>单机模式启动</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> ⚙ mizhuo@mizhuodeMacBook-Pro  ~/docker/consul  docker run -p 8500:8500/tcp consul agent -server -ui -bootstrap-expect=1 -client=0.0.0.0</span><br><span class="line">==&gt; Starting Consul agent...</span><br><span class="line">           Version: &apos;1.8.5&apos;</span><br><span class="line">           Node ID: &apos;76100a42-921d-9c9d-8d63-f0120a90f040&apos;</span><br><span class="line">         Node name: &apos;5ddd97e78a6d&apos;</span><br><span class="line">        Datacenter: &apos;dc1&apos; (Segment: &apos;&lt;all&gt;&apos;)</span><br><span class="line">            Server: true (Bootstrap: true)</span><br><span class="line">       Client Addr: [0.0.0.0] (HTTP: 8500, HTTPS: -1, gRPC: -1, DNS: 8600)</span><br><span class="line">      Cluster Addr: 172.17.0.3 (LAN: 8301, WAN: 8302)</span><br><span class="line">           Encrypt: Gossip: false, TLS-Outgoing: false, TLS-Incoming: false, Auto-Encrypt-TLS: false</span><br></pre></td></tr></table></figure>
+<h5 id="浏览器访问管理页面"><a class="header-anchor" href="#浏览器访问管理页面">null</a>浏览器访问管理页面</h5>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114222236.png" alt></p>
+<blockquote>
+<p>至此Consul已经安装成功，接下来就可以创建服务并注册到Consul上了。</p>
+</blockquote>
+<h4 id="服务提供"><a class="header-anchor" href="#服务提供">null</a>服务提供</h4>
+<p>新建一个SpringBoot模块，并勾选<code>Web</code>、<code>Actuator</code>、<code>ConsulDiscovery</code>依赖。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114222734.png" alt><br>
+修改配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">consul-provider</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    consul:</span> <span class="comment">#consul配置</span></span><br><span class="line"><span class="attr">      host:</span> <span class="string">localhost</span></span><br><span class="line"><span class="attr">      port:</span> <span class="number">8500</span></span><br><span class="line"><span class="attr">      discovery:</span></span><br><span class="line"><span class="attr">        service-name:</span> <span class="string">consul-provider</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>提供一个服务接口,为了测试负载均衡，加上端口号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    Integer port;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello!"</span> + port;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打包项目并分别启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar consul-provider-0.0.1-SNAPSHOT.jar --spring.port=4321</span><br><span class="line">java -jar consul-provider-0.0.1-SNAPSHOT.jar --spring.port=4322</span><br></pre></td></tr></table></figure>
+<p>貌似新版SpringBoot启动类上不加<code>@EnableDiscoveryClient</code>也可以正常发现服务,可以看到两个服务已经成功注册<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201114225604.png" alt></p>
+<h4 id="服务消费"><a class="header-anchor" href="#服务消费">null</a>服务消费</h4>
+<p>同上一样新建模块，并勾选<code>Web</code>、<code>Actuator</code>、<code>ConsulDiscovery</code>依赖。并修改配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">consul-consumer</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    consul:</span> <span class="comment">#consul配置</span></span><br><span class="line"><span class="attr">      host:</span> <span class="string">localhost</span></span><br><span class="line"><span class="attr">      port:</span> <span class="number">8500</span></span><br><span class="line"><span class="attr">      discovery:</span></span><br><span class="line"><span class="attr">        service-name:</span> <span class="string">consul-consumer</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">4321</span></span><br></pre></td></tr></table></figure>
+<p>消费者接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserHelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    LoadBalancerClient client;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ServiceInstance choose = client.choose(<span class="string">"consul-provider"</span>);</span><br><span class="line">        System.out.println(choose.getServiceId());</span><br><span class="line">        System.out.println(choose.getUri());</span><br><span class="line">        String res = restTemplate.getForObject(choose.getUri() + <span class="string">"/hello"</span>, String.class);</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问两次http://localhost:4321/hello，可以看出分别调用了两个不同端口的Provider，说明Consul默认开启负载均衡功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">服务ID:consul-provider</span><br><span class="line">服务URI:http://169.254.6.194:2345</span><br><span class="line">hello!2345</span><br><span class="line">服务ID:consul-provider</span><br><span class="line">服务URI:http://169.254.6.194:1234</span><br><span class="line">hello!1234</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -558,12 +555,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/06/07/Docker安装RabbitMq后无法进入管理页面/">Docker安装RabbitMq后无法进入管理页面</a></p>
+  <p><span>本文标题:</span><a href="/2020/11/14/使用Consul进行服务注册与发现/">使用Consul进行服务注册与发现</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
-  <p><span>发布时间:</span>2020年06月07日 - 16:06</p>
-  <p><span>最后更新:</span>2020年06月07日 - 16:06</p>
-  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/06/07/Docker安装RabbitMq后无法进入管理页面/" title="https://www.mizhuo.funDocker安装RabbitMq后无法进入管理页面">https://www.mizhuo.fun/2020/06/07/Docker安装RabbitMq后无法进入管理页面/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/06/07/Docker安装RabbitMq后无法进入管理页面/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年11月14日 - 21:11</p>
+  <p><span>最后更新:</span>2020年11月14日 - 22:11</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/11/14/使用Consul进行服务注册与发现/" title="https://www.mizhuo.fun使用Consul进行服务注册与发现">https://www.mizhuo.fun/2020/11/14/使用Consul进行服务注册与发现/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/11/14/使用Consul进行服务注册与发现/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -591,14 +588,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
-          
-            <a href="/tags/Mq/" rel="tag"><i class="fa fa-tag"></i> Mq</a>
-          
-        </div>
-      
 
       
       
@@ -607,8 +596,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/06/Docker安装MongoDB及MongoDB的基本使用/" rel="next" title="Docker安装MongoDB及MongoDB的基本使用">
-                <i class="fa fa-chevron-left"></i> Docker安装MongoDB及MongoDB的基本使用
+              <a href="/2020/10/29/部署Vue项目到远程服务器Dokcer下的Nginx/" rel="next" title="部署Vue项目到远程服务器Dokcer下的Nginx">
+                <i class="fa fa-chevron-left"></i> 部署Vue项目到远程服务器Dokcer下的Nginx
               </a>
             
           </div>
@@ -616,10 +605,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/19/使用支付宝沙箱支付/" rel="prev" title="使用支付宝沙箱支付">
-                使用支付宝沙箱支付 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -816,7 +801,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">null解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#consul介绍"><span class="nav-number">1.</span> <span class="nav-text">nullConsul介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#consul与eureka对比"><span class="nav-number">2.</span> <span class="nav-text">nullConsul与Eureka对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker安装consul"><span class="nav-number">3.</span> <span class="nav-text">nullDocker安装Consul</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查找镜像"><span class="nav-number">3.1.</span> <span class="nav-text">null查找镜像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拉取镜像"><span class="nav-number">3.2.</span> <span class="nav-text">null拉取镜像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单机模式启动"><span class="nav-number">3.3.</span> <span class="nav-text">null单机模式启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器访问管理页面"><span class="nav-number">3.4.</span> <span class="nav-text">null浏览器访问管理页面</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务提供"><span class="nav-number">4.</span> <span class="nav-text">null服务提供</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务消费"><span class="nav-number">5.</span> <span class="nav-text">null服务消费</span></a></li></ol></div>
             
 
           </div>
