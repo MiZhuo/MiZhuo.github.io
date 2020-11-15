@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-11-14T14:59:53.852Z</updated>
+  <updated>2020-11-15T01:57:55.000Z</updated>
   <id>/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="/2020/11/14/%E4%BD%BF%E7%94%A8Consul%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/"/>
     <id>/2020/11/14/使用Consul进行服务注册与发现/</id>
     <published>2020-11-14T13:47:55.000Z</published>
-    <updated>2020-11-14T14:59:53.852Z</updated>
+    <updated>2020-11-15T01:57:55.000Z</updated>
     
     <summary type="html">
     
@@ -31,6 +31,14 @@
     </summary>
     
     
+      <category term="SpringCloud" scheme="/categories/SpringCloud/"/>
+    
+      <category term="Consul" scheme="/categories/SpringCloud/Consul/"/>
+    
+    
+      <category term="SpringCloud" scheme="/tags/SpringCloud/"/>
+    
+      <category term="Consul" scheme="/tags/Consul/"/>
     
   </entry>
   
@@ -172,9 +180,9 @@
       <category term="Docker" scheme="/categories/webspher/Docker/"/>
     
     
-      <category term="websphere" scheme="/tags/websphere/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="websphere" scheme="/tags/websphere/"/>
     
   </entry>
   
@@ -272,9 +280,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
