@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-11-15T01:57:55.000Z</updated>
+  <updated>2020-11-15T14:55:56.065Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hystrix介绍与应用</title>
+    <link href="/2020/11/15/Hystrix%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    <id>/2020/11/15/Hystrix介绍与应用/</id>
+    <published>2020-11-15T09:29:34.000Z</published>
+    <updated>2020-11-15T14:55:56.065Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;hystrix介绍&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#hystrix介绍&quot;&gt;null&lt;/a&gt;Hystrix介绍&lt;/h4&gt;
+&lt;p&gt;在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止错误的连锁反应，并提供错误回退和服务降级的功能，有效解决的上述问题。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="SpringCloud" scheme="/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="/tags/SpringCloud/"/>
+    
+      <category term="Hystrix" scheme="/tags/Hystrix/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Consul进行服务注册与发现</title>
@@ -32,8 +56,6 @@
     
     
       <category term="SpringCloud" scheme="/categories/SpringCloud/"/>
-    
-      <category term="Consul" scheme="/categories/SpringCloud/Consul/"/>
     
     
       <category term="SpringCloud" scheme="/tags/SpringCloud/"/>
@@ -58,8 +80,6 @@
     
     
       <category term="Dokcer" scheme="/categories/Dokcer/"/>
-    
-      <category term="Nginx" scheme="/categories/Dokcer/Nginx/"/>
     
     
       <category term="Dokcer" scheme="/tags/Dokcer/"/>
@@ -128,8 +148,6 @@
     
     
       <category term="SpringBoot" scheme="/categories/SpringBoot/"/>
-    
-      <category term="AOP" scheme="/categories/SpringBoot/AOP/"/>
     
     
       <category term="SpringBoot" scheme="/tags/SpringBoot/"/>
@@ -280,9 +298,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="MongoDB" scheme="/tags/MongoDB/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
   </entry>
   
@@ -323,10 +341,10 @@
     </summary>
     
     
-      <category term="db2" scheme="/categories/db2/"/>
+      <category term="DB2" scheme="/categories/DB2/"/>
     
     
-      <category term="db2" scheme="/tags/db2/"/>
+      <category term="DB2" scheme="/tags/DB2/"/>
     
   </entry>
   
@@ -463,30 +481,6 @@
     
       &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
 &lt;p&gt;要想在实际项目中使用Vue来搭建前端框架,就必须熟练的使用&lt;span style=&quot;color:red;font-size:18px;&quot;&gt;vue-router&lt;/span&gt;来实现路由管理。所谓路由管理,顾名思义,就是帮助我们来管理各个页面之间的跳转。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-      <category term="Vue" scheme="/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue的初体验</title>
-    <link href="/2019/11/01/Vue%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>/2019/11/01/Vue的初体验/</id>
-    <published>2019-11-01T14:05:45.000Z</published>
-    <updated>2019-11-01T14:05:45.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;上一文章,已经讲解了Vue的安装及项目的搭建,接下来就可以开始学习Vue的语法及使用了。&lt;/p&gt;
     
     </summary>
     

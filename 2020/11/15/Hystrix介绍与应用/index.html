@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="SpringCloud,Hystrix,">
 
 
 
@@ -126,17 +126,26 @@
 
 
 
-<meta name="description" content="愿你三冬暖，愿你春不寒">
-<meta name="keywords" content="Spring,MyBatis">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MiZhuo">
-<meta property="og:url" content="/categories/SpringCloud/Consul/index.html">
+<meta name="description" content="nullHystrix介绍 在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止">
+<meta name="keywords" content="SpringCloud,Hystrix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hystrix介绍与应用">
+<meta property="og:url" content="/2020/11/15/Hystrix介绍与应用/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="愿你三冬暖，愿你春不寒">
+<meta property="og:description" content="nullHystrix介绍 在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115213755.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224055.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224257.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115225444.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png">
+<meta property="og:updated_time" content="2020-11-15T14:55:56.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiZhuo">
-<meta name="twitter:description" content="愿你三冬暖，愿你春不寒">
+<meta name="twitter:title" content="Hystrix介绍与应用">
+<meta name="twitter:description" content="nullHystrix介绍 在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止">
+<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115213755.png">
 
 
 
@@ -166,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="/categories/SpringCloud/Consul/">
+  <link rel="canonical" href="/2020/11/15/Hystrix介绍与应用/">
 
 
 
@@ -180,7 +189,7 @@
   daovoice('update');
   </script>
 
-  <title>分类: Consul | MiZhuo</title>
+  <title>Hystrix介绍与应用 | MiZhuo</title>
   
 
 
@@ -199,7 +208,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/MiZhuo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -330,53 +339,349 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Consul<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2020/11/15/Hystrix介绍与应用/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MiZhuo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/headpic.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MiZhuo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/11/14/使用Consul进行服务注册与发现/" itemprop="url">
-              
-                <span itemprop="name">使用Consul进行服务注册与发现</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Hystrix介绍与应用</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-11-14T21:47:55+08:00" content="2020-11-14">
-          11-14
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-15T17:29:34+08:00">
+                2020-11-15
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-11-15T22:55:56+08:00">
+                2020-11-15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringCloud</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>评论数:
+                <a href="/2020/11/15/Hystrix介绍与应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/15/Hystrix介绍与应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/15/Hystrix介绍与应用/" class="leancloud_visitors" data-flag-title="Hystrix介绍与应用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  701
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="hystrix介绍"><a class="header-anchor" href="#hystrix介绍">null</a>Hystrix介绍</h4>
+<p>在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止错误的连锁反应，并提供错误回退和服务降级的功能，有效解决的上述问题。</p>
+<a id="more"></a>
+<h4 id="hystrix初步使用"><a class="header-anchor" href="#hystrix初步使用">null</a>Hystrix初步使用</h4>
+<p>1:新建一个服务注册到Eureka上</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">hystrix</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">6666</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:1111/eureka</span></span><br></pre></td></tr></table></figure>
+<p>2:启动类上添加注解<code>@EnableCircuitBreaker</code>,或者添加<code>@SpringCloudApplication</code>注解。因为@SpringCloudApplication注解中已经包含了@EnableCircuitBreaker以及EnableDiscoveryClient。这里我就使用@SpringCloudApplication了。然后创建一个RestTemplate的Bean，并开启Ribbon的负载均衡。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringCloudApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(HystrixApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span></span><br><span class="line">    <span class="function">RestTemplate <span class="title">restTemplate</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3:启动Eureka以及多个不同端口的服务提供者<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115213755.png" alt><br>
+4:创建HystrixService调用服务提供者提供的服务</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5:创建HystrixController调用Service</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HystrixService service;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String res = service.hello();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6:打开浏览器访问两次<code>http://localhost:5555/hello</code>，由于开启了负载均衡，所以两次访问会去向不同的端口。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224055.png" alt><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png" alt><br>
+7:此时模拟其中一个provider掉线，关闭一个provider服务。再次访问<code>http://localhost:5555/hello</code>，一段时间内会出现<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224257.png" alt><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png" alt><br>
+过一段时间后，就只会访问还活跃的端口的服务了。这是因为服务掉线，并不会马上更新Eureka的注册表，会有一段时间的延迟，而这段时间内，还会默认这个服务是正常的，会去访问这个端口的服务。<br>
+8:使用Hystrix提供的解决方案，在Service上添加注解<code>@HystrixCommand</code>,其中<code>fallbackMethod</code>就是如果发生错误，使用的代替解决方案，这里我定义的就是后面的error方法。<strong>注意，替代解决方案返回值必须和当前方法一致。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod=<span class="string">"error"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String res = <span class="string">"我错了😞"</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9:重启刚刚停止的服务，然后再次模拟掉线。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115225444.png" alt><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png" alt><br>
+可以看到没有出现错误页面了，替代的使我们的备用方案。这就是所谓的<code>服务降级</code>。</p>
 
       
     </div>
+    
+    
+    
+     <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #000;font-size:14px;">
+        ------ 
+        <span class="with-love" id="heart">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        </span>
+        本文结束,感谢阅读
+        <span class="with-love" id="heart">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+        </span>------</div>
+    
+</div>
+      
+    </div>
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/11/15/Hystrix介绍与应用/">Hystrix介绍与应用</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
+  <p><span>发布时间:</span>2020年11月15日 - 17:11</p>
+  <p><span>最后更新:</span>2020年11月15日 - 22:11</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/" title="https://www.mizhuo.funHystrix介绍与应用">https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
 
+      
+    </div>
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringCloud/" rel="tag"><i class="fa fa-tag"></i> SpringCloud</a>
+          
+            <a href="/tags/Hystrix/" rel="tag"><i class="fa fa-tag"></i> Hystrix</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/14/使用Consul进行服务注册与发现/" rel="next" title="使用Consul进行服务注册与发现">
+                <i class="fa fa-chevron-left"></i> 使用Consul进行服务注册与发现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -384,6 +689,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -404,8 +716,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -422,7 +743,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -433,7 +754,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -444,7 +765,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -490,6 +811,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix介绍"><span class="nav-number">1.</span> <span class="nav-text">nullHystrix介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix初步使用"><span class="nav-number">2.</span> <span class="nav-text">nullHystrix初步使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -517,7 +854,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">35.1k</span>
+    <span title="全站文字共">35.8k</span>
   
 </div>
 
@@ -647,6 +984,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
