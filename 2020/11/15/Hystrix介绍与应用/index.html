@@ -141,7 +141,11 @@
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115225444.png">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png">
-<meta property="og:updated_time" content="2020-11-15T14:55:56.065Z">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116213359.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116213845.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116225217.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116225748.png">
+<meta property="og:updated_time" content="2020-11-16T15:19:28.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hystrix介绍与应用">
 <meta name="twitter:description" content="nullHystrix介绍 在说Hystrix之前，就要说到微服务了，所谓微服务，体现在一个微上，它将一个很庞大的独立应用细化到一套小型服务，让每个小服务独立运行。服务之间互相通信。而这也会带来很多问题，其中因为微服务模块太多，每一个模块都可能出错，而出错就可能会导致服务雪崩，使得服务器无法正常运行。而Hystrix是Netflix下的一个开源框架，主要是对请求的延迟或故障进行防护和控制，阻止">
@@ -398,8 +402,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-11-15T22:55:56+08:00">
-                2020-11-15
+              <time title="更新于" itemprop="dateModified" datetime="2020-11-16T23:19:28+08:00">
+                2020-11-16
               </time>
             
           </span>
@@ -470,7 +474,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  701
+                  1.5k
                 </span>
               
 
@@ -486,7 +490,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 min
+                  6 min
                 </span>
               
             </div>
@@ -534,6 +538,30 @@
 <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115225444.png" alt><br>
 <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201115224038.png" alt><br>
 可以看到没有出现错误页面了，替代的使我们的备用方案。这就是所谓的<code>服务降级</code>。</p>
+<h4 id="hystrix异常处理"><a class="header-anchor" href="#hystrix异常处理">null</a>Hystrix异常处理</h4>
+<p>在实际应用中，有可能并非请求调用失败，而是业务逻辑出错，这个时候我们需要知道具体错误内容，操作如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod=<span class="string">"error"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">        String res = <span class="string">"我错了😞,错误原因:"</span> + e.getMessage();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116213359.png" alt><br>
+而如果我们需要某个异常直接抛出的时候，可以在注解<code>@HystrixCommand(fallbackMethod=&quot;error&quot;)</code>里面再加上<code>ignoreExceptions = ArithmeticException.class</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod=<span class="string">"error"</span>,ignoreExceptions = ArithmeticException.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">        String res = <span class="string">"我错了😞,错误原因:"</span> + e.getMessage();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的话，报对应异常的时候就不会走回调方法了，而是直接将错误抛出。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116213845.png" alt></p>
+<h4 id="hystrix请求缓存"><a class="header-anchor" href="#hystrix请求缓存">null</a>Hystrix请求缓存</h4>
+<p>所谓请求缓存就是在调用同一个接口的时候，如果参数相同，则可以使用之前缓存下来的数据直接返回，而不去调用接口。而启用请求缓存也很简单，只需要加注解<code>@CacheResult</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod=<span class="string">"error"</span>,ignoreExceptions = ArithmeticException.class)</span><br><span class="line">    <span class="meta">@CacheResult</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">(String str,Throwable e)</span></span>&#123;</span><br><span class="line">        String res = <span class="string">"我错了😞,错误原因:"</span> + e.getMessage();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意:替代方法参数和返回值必须与当前方法参数和返回值一致</strong><br>
+此时启动项目，并调用方法，会发现报错了，提示需要一个<code>HystrixRequestContext</code>，<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116225217.png" alt><br>
+我们在调用接口前初始化缓存，调用后关闭缓存。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HystrixService service;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello/&#123;str&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(@PathVariable String str)</span></span>&#123;</span><br><span class="line">        HystrixRequestContext context = HystrixRequestContext.initializeContext();</span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            res = service.hello(str);</span><br><span class="line">        &#125;</span><br><span class="line">        context.close();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用接口，会发现只打印了一次结果。说明缓存起作用了。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201116225748.png" alt><br>
+如果有多个参数，我们也可以使用<code>@CacheKey</code>来指定一个参数为缓存的Key，这样的话只要这个参数值相同，便可以直接获取缓存内的数据。<br>
+除了上述的几个注解外，还有一个<code>@CacheRemove</code>注解需要注意，在做数据缓存的时候，我们有可能把数据库数据进行删除了，而这个时候我们往往希望在删除数据的时候，同时要删除缓存内容，这个时候就用上了<code>@CacheRemove</code>。在使用这个注解的时候，必须指定<code>commandKey</code>也就是缓存的名字，只有这个才能准确找到我们要删除的缓存数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HystrixService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod=<span class="string">"error"</span>,ignoreExceptions = ArithmeticException.class)</span><br><span class="line">    <span class="meta">@CacheResult</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(@CacheKey String str)</span> </span>&#123;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        String res = restTemplate.getForObject(<span class="string">"http://provider/"</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HystrixCommand</span></span><br><span class="line">    <span class="meta">@CacheRemove</span>(commandKey = <span class="string">"hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">deleteKeyById</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">error</span><span class="params">(String str,Throwable e)</span></span>&#123;</span><br><span class="line">        String res = <span class="string">"我错了😞,错误原因:"</span> + e.getMessage();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="hystrix请求合并"><a class="header-anchor" href="#hystrix请求合并">null</a>Hystrix请求合并</h4>
+<p>所谓请求合并就是在请求一个接口的时候，线程等待指定时间，如果此时还有同样的接口请求，就合并成一个请求。请求合并的核心就是<code>@HystrixCollapser</code>，在这个注解中指定请求批处理的方法和等待时间。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@HystrixCollapser</span>(batchMethod = <span class="string">"getAllById"</span>,collapserProperties = &#123;<span class="meta">@HystrixProperty</span>(name = <span class="string">"timerDelayInMilliseconds"</span>,value = <span class="string">"200"</span>)&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -569,7 +597,7 @@
   <p><span>本文标题:</span><a href="/2020/11/15/Hystrix介绍与应用/">Hystrix介绍与应用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年11月15日 - 17:11</p>
-  <p><span>最后更新:</span>2020年11月15日 - 22:11</p>
+  <p><span>最后更新:</span>2020年11月16日 - 23:11</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/" title="https://www.mizhuo.funHystrix介绍与应用">https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/11/15/Hystrix介绍与应用/" aria-label="复制成功！"></i></span>
   </p>
@@ -820,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix介绍"><span class="nav-number">1.</span> <span class="nav-text">nullHystrix介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix初步使用"><span class="nav-number">2.</span> <span class="nav-text">nullHystrix初步使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix介绍"><span class="nav-number">1.</span> <span class="nav-text">nullHystrix介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix初步使用"><span class="nav-number">2.</span> <span class="nav-text">nullHystrix初步使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix异常处理"><span class="nav-number">3.</span> <span class="nav-text">nullHystrix异常处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix请求缓存"><span class="nav-number">4.</span> <span class="nav-text">nullHystrix请求缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hystrix请求合并"><span class="nav-number">5.</span> <span class="nav-text">nullHystrix请求合并</span></a></li></ol></div>
             
 
           </div>
@@ -854,7 +882,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">35.8k</span>
+    <span title="全站文字共">36.7k</span>
   
 </div>
 
