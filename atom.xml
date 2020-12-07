@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-12-07T14:19:56.579Z</updated>
+  <updated>2020-12-07T14:52:49.964Z</updated>
   <id>/</id>
   
   <author>
@@ -17,25 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>面试相关问题汇总</title>
-    <link href="/2020/12/07/%E9%9D%A2%E8%AF%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
-    <id>/2020/12/07/面试相关问题汇总/</id>
+    <title>Tomcat性能调优</title>
+    <link href="/2020/12/07/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
+    <id>/2020/12/07/Tomcat性能调优/</id>
     <published>2020-12-07T14:19:56.000Z</published>
-    <updated>2020-12-07T14:19:56.579Z</updated>
+    <updated>2020-12-07T14:52:49.964Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;h4 id=&quot;tomcat性能优化&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#tomcat性能优化&quot;&gt;null&lt;/a&gt;Tomcat性能优化&lt;/h4&gt;
+&lt;p&gt;Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。&lt;/p&gt;
     
     </summary>
     
     
+      <category term="性能优化" scheme="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="tomcat" scheme="/tags/tomcat/"/>
+    
+      <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -295,9 +296,9 @@
       <category term="Docker" scheme="/categories/Mq/Docker/"/>
     
     
-      <category term="Mq" scheme="/tags/Mq/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="Mq" scheme="/tags/Mq/"/>
     
   </entry>
   
@@ -321,9 +322,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
