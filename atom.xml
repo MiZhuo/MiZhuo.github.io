@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-11-16T15:19:28.845Z</updated>
+  <updated>2020-12-07T14:19:56.579Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试相关问题汇总</title>
+    <link href="/2020/12/07/%E9%9D%A2%E8%AF%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>/2020/12/07/面试相关问题汇总/</id>
+    <published>2020-12-07T14:19:56.000Z</published>
+    <updated>2020-12-07T14:19:56.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hystrix介绍与应用</title>
@@ -272,9 +295,9 @@
       <category term="Docker" scheme="/categories/Mq/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="Mq" scheme="/tags/Mq/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
@@ -457,30 +480,6 @@
     
       &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
 &lt;p&gt;公司最近上线了日志系统,每天要在上面写日志,但是操作复杂,要先开VPN连接内网,登陆写日志。嫌麻烦的我于是用Vue写了几个前端页面,调用公司的接口。然后把项目部署到自己的服务器上,在服务器上打开VPN,这样的话就会简单很多了。在这个过程中,遇到了Vue的跨域问题。在这里记录一下。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-      <category term="Vue" scheme="/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue-Router</title>
-    <link href="/2019/11/09/Vue-Router/"/>
-    <id>/2019/11/09/Vue-Router/</id>
-    <published>2019-11-09T08:50:26.000Z</published>
-    <updated>2019-11-09T08:50:26.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;要想在实际项目中使用Vue来搭建前端框架,就必须熟练的使用&lt;span style=&quot;color:red;font-size:18px;&quot;&gt;vue-router&lt;/span&gt;来实现路由管理。所谓路由管理,顾名思义,就是帮助我们来管理各个页面之间的跳转。&lt;/p&gt;
     
     </summary>
     
