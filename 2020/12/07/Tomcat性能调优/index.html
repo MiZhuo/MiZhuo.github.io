@@ -134,7 +134,7 @@
 <meta property="og:site_name" content="MiZhuo">
 <meta property="og:description" content="nullTomcat性能优化 Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-07T14:52:49.964Z">
+<meta property="og:updated_time" content="2020-12-09T15:25:49.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat性能调优">
 <meta name="twitter:description" content="nullTomcat性能优化 Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。">
@@ -390,8 +390,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-07T22:52:49+08:00">
-                2020-12-07
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-09T23:25:49+08:00">
+                2020-12-09
               </time>
             
           </span>
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  75
+                  674
                 </span>
               
 
@@ -478,7 +478,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 min
+                  2 min
                 </span>
               
             </div>
@@ -502,7 +502,36 @@
         <h4 id="tomcat性能优化"><a class="header-anchor" href="#tomcat性能优化">null</a>Tomcat性能优化</h4>
 <p>Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。</p>
 <a id="more"></a>
-<h5 id="none"><a class="header-anchor" href="#none">null</a></h5>
+<h4 id="设置jvm内存"><a class="header-anchor" href="#设置jvm内存">null</a>设置JVM内存</h4>
+<p>JAVA中很常见的一个异常就是<code>java.lang.OutOfMemoryError</code>(内存溢出),其中内存溢出也分为多个原因，<code>PermGen space</code>和<code>Java heap space</code>。</p>
+<ul>
+<li><code>PermGen space</code>是因为程序中大量的使用Jar或Class，使java虚拟机装载类的空间不足，出现内存溢出。</li>
+<li><code>Java heap space</code>是因为java虚拟机创建的对象过多，没有及时的回收清理空间，导致堆内存满了。<br>
+######解决方案:</li>
+<li>去掉重复jar包，减少第三方jar的重复加载。</li>
+<li>配置<code>MaxPermSize</code>的大小，<a href="http://xn--catalina-0n3mm27o.sh" target="_blank" rel="noopener">修改catalina.sh</a>，在</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo"Using CATALINA_BASE:$CATALINA_BASE"</span><br></pre></td></tr></table></figure>
+<p>上一行填加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_OPTS="-server-XX:PermSize=64M-XX:MaxPermSize=128m</span><br></pre></td></tr></table></figure>
+<ul>
+<li>加大内存，配置catalina.sh中 <code>setJAVA_OPTS=-Xms32m-Xmx512m</code>,JVM自动设置堆内存的初始空间<code>-Xms</code>为物理内存的1/64，最大空间<code>-Xmx</code>为物理内存的1/4。手动设置堆空间最大不要超过可用物理内存的80%，一般将<code>-Xms</code>和<code>-Xmx</code>设置为相同，而<code>-Xmn</code>设置为<code>-Xmx</code>的1/4.<br>
+<strong><em>注意:在JVM中，如果80%的时间都用于GC且可用的堆空间不足2%，则会抛出此异常。</em></strong></li>
+</ul>
+<h4 id="设置tomcat连接参数"><a class="header-anchor" href="#设置tomcat连接参数">null</a>设置tomcat连接参数</h4>
+<p>在Tomcat的配置文件<code>server.xml</code>中的<code>&lt;Connector&gt;&lt;Connector/&gt;</code>配置中</p>
+<ul>
+<li><code>minProcessors</code>:最小空闲连接,用于提高系统的处理性能,默认为10;</li>
+<li><code>maxProcessors</code>:最大连接线程数,即并发处理的最大请求数,默认为75;</li>
+<li><code>acceptCount</code>:允许的最大连接数,应大于等于<code>maxProcessors</code>,默认值为100;</li>
+<li><code>enableLookups</code>:是否DNS查询,为提高处理能力,应设置为false;</li>
+<li><code>connectionTimeout</code>:网络连接超时,单位:毫秒。设置为0表示永不超时。通常设置为3000ms;</li>
+<li><code>web server</code>:允许的最大连接数还受制于操作系统的内核参数设置,Windows为2000个左右,Linux为1000个左右;</li>
+</ul>
+<h4 id="项目使用缓存和压缩"><a class="header-anchor" href="#项目使用缓存和压缩">null</a>项目使用缓存和压缩</h4>
+<p>对于静态页面最好进行缓存，这样就不用每次从磁盘上读取，减少磁盘的读写，提高服务器性能。比如采用Nginx作为缓存服务器，将图片、css、js等文件进行缓存，有效减少Tomcat的访问。</p>
+<h4 id="集群"><a class="header-anchor" href="#集群">null</a>集群</h4>
+<p>单个服务器性能肯定有瓶颈，最好的办法就是对服务器进行扩展，而集群就是最好的扩展方式。比如使用Nginx集群，将多个访问分发到多个服务器，大大提升服务器的性能和效率。</p>
 
       
     </div>
@@ -538,7 +567,7 @@
   <p><span>本文标题:</span><a href="/2020/12/07/Tomcat性能调优/">Tomcat性能调优</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月07日 - 22:12</p>
-  <p><span>最后更新:</span>2020年12月07日 - 22:12</p>
+  <p><span>最后更新:</span>2020年12月09日 - 23:12</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/07/Tomcat性能调优/" title="https://www.mizhuo.funTomcat性能调优">https://www.mizhuo.fun/2020/12/07/Tomcat性能调优/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/07/Tomcat性能调优/" aria-label="复制成功！"></i></span>
   </p>
@@ -789,7 +818,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#tomcat性能优化"><span class="nav-number">1.</span> <span class="nav-text">nullTomcat性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#none"><span class="nav-number">1.1.</span> <span class="nav-text">null</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#tomcat性能优化"><span class="nav-number">1.</span> <span class="nav-text">nullTomcat性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置jvm内存"><span class="nav-number">2.</span> <span class="nav-text">null设置JVM内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置tomcat连接参数"><span class="nav-number">3.</span> <span class="nav-text">null设置tomcat连接参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目使用缓存和压缩"><span class="nav-number">4.</span> <span class="nav-text">null项目使用缓存和压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集群"><span class="nav-number">5.</span> <span class="nav-text">null集群</span></a></li></ol></div>
             
 
           </div>
@@ -823,7 +852,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">36.7k</span>
+    <span title="全站文字共">37.3k</span>
   
 </div>
 
