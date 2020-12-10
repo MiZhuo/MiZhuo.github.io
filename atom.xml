@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-12-09T15:25:49.391Z</updated>
+  <updated>2020-12-10T14:50:14.860Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JVM性能优化</title>
+    <link href="/2020/12/10/JVM%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>/2020/12/10/JVM性能优化/</id>
+    <published>2020-12-10T12:50:22.000Z</published>
+    <updated>2020-12-10T14:50:14.860Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;jvm组成部分&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#jvm组成部分&quot;&gt;null&lt;/a&gt;JVM组成部分&lt;/h4&gt;
+&lt;p&gt;JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JVM" scheme="/categories/JVM/"/>
+    
+      <category term="性能优化" scheme="/categories/JVM/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="JVM" scheme="/tags/JVM/"/>
+    
+      <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tomcat性能调优</title>
     <link href="/2020/12/07/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
     <id>/2020/12/07/Tomcat性能调优/</id>
     <published>2020-12-07T14:19:56.000Z</published>
-    <updated>2020-12-09T15:25:49.391Z</updated>
+    <updated>2020-12-10T12:48:44.101Z</updated>
     
     <summary type="html">
     
@@ -34,9 +60,9 @@
       <category term="性能优化" scheme="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="tomcat" scheme="/tags/tomcat/"/>
-    
       <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="tomcat" scheme="/tags/tomcat/"/>
     
   </entry>
   
@@ -296,9 +322,9 @@
       <category term="Docker" scheme="/categories/Mq/Docker/"/>
     
     
-      <category term="Mq" scheme="/tags/Mq/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="Mq" scheme="/tags/Mq/"/>
     
   </entry>
   
@@ -322,9 +348,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
@@ -467,30 +493,6 @@
       <category term="Vue" scheme="/tags/Vue/"/>
     
       <category term="Springboot" scheme="/tags/Springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue跨域问题</title>
-    <link href="/2019/11/26/Vue%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
-    <id>/2019/11/26/Vue跨域问题/</id>
-    <published>2019-11-26T07:44:42.000Z</published>
-    <updated>2019-11-26T07:44:42.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;公司最近上线了日志系统,每天要在上面写日志,但是操作复杂,要先开VPN连接内网,登陆写日志。嫌麻烦的我于是用Vue写了几个前端页面,调用公司的接口。然后把项目部署到自己的服务器上,在服务器上打开VPN,这样的话就会简单很多了。在这个过程中,遇到了Vue的跨域问题。在这里记录一下。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Vue" scheme="/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-      <category term="Vue" scheme="/tags/Vue/"/>
     
   </entry>
   
