@@ -134,7 +134,7 @@
 <meta property="og:site_name" content="MiZhuo">
 <meta property="og:description" content="nullJVM组成部分 JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-10T14:50:14.860Z">
+<meta property="og:updated_time" content="2020-12-11T14:54:53.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM性能优化">
 <meta name="twitter:description" content="nullJVM组成部分 JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)">
@@ -390,8 +390,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-10T22:50:14+08:00">
-                2020-12-10
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-11T22:54:53+08:00">
+                2020-12-11
               </time>
             
           </span>
@@ -473,7 +473,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  562
+                  722
                 </span>
               
 
@@ -538,6 +538,22 @@
 </li>
 </ul>
 <h4 id="java类加载过程"><a class="header-anchor" href="#java类加载过程">null</a>Java类加载过程</h4>
+<ul>
+<li>加载
+<ul>
+<li>通过类的全限定类名获取类的二进制流</li>
+<li>将二进制流的静态存储结构转化为方法区的运行时数据</li>
+<li>在内存中生成Class对象，作为方法区这个类的访问入口</li>
+</ul>
+</li>
+<li>验证
+<ul>
+<li>用于确保Class文件的字节流中包含的信息符合当前虚拟机的要求，保证加载类的正确性。</li>
+<li>文件格式验证:验证字节流是否符合Class文件规范，如主次版本号是否在当前虚拟机范围内，常量池中的常量是否有不被支持的类型。</li>
+<li>源数据</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -573,7 +589,7 @@
   <p><span>本文标题:</span><a href="/2020/12/10/JVM性能优化/">JVM性能优化</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月10日 - 20:12</p>
-  <p><span>最后更新:</span>2020年12月10日 - 22:12</p>
+  <p><span>最后更新:</span>2020年12月11日 - 22:12</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/10/JVM性能优化/" title="https://www.mizhuo.funJVM性能优化">https://www.mizhuo.fun/2020/12/10/JVM性能优化/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/10/JVM性能优化/" aria-label="复制成功！"></i></span>
   </p>
@@ -858,7 +874,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">37.9k</span>
+    <span title="全站文字共">38.1k</span>
   
 </div>
 
