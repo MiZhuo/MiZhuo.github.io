@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="JVM,性能优化,">
+  <meta name="keywords" content="JVM,">
 
 
 
@@ -127,16 +127,16 @@
 
 
 <meta name="description" content="nullJVM组成部分 JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)">
-<meta name="keywords" content="JVM,性能优化">
+<meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM性能优化">
+<meta property="og:title" content="JVM">
 <meta property="og:url" content="/2020/12/10/JVM性能优化/index.html">
 <meta property="og:site_name" content="MiZhuo">
 <meta property="og:description" content="nullJVM组成部分 JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-11T14:54:53.002Z">
+<meta property="og:updated_time" content="2020-12-12T11:52:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM性能优化">
+<meta name="twitter:title" content="JVM">
 <meta name="twitter:description" content="nullJVM组成部分 JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)">
 
 
@@ -181,7 +181,7 @@
   daovoice('update');
   </script>
 
-  <title>JVM性能优化 | MiZhuo</title>
+  <title>JVM | MiZhuo</title>
   
 
 
@@ -362,7 +362,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JVM性能优化</h2>
+          <h2 class="post-title" itemprop="name headline">JVM</h2>
         
 
         <div class="post-meta">
@@ -390,8 +390,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-11T22:54:53+08:00">
-                2020-12-11
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-12T19:52:35+08:00">
+                2020-12-12
               </time>
             
           </span>
@@ -411,17 +411,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/JVM/" itemprop="url" rel="index">
                     <span itemprop="name">JVM</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/性能优化/" itemprop="url" rel="index">
-                    <span itemprop="name">性能优化</span>
                   </a>
                 </span>
 
@@ -447,7 +436,7 @@
 
           
           
-             <span id="/2020/12/10/JVM性能优化/" class="leancloud_visitors" data-flag-title="JVM性能优化">
+             <span id="/2020/12/10/JVM性能优化/" class="leancloud_visitors" data-flag-title="JVM">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  722
+                  1.9k
                 </span>
               
 
@@ -489,7 +478,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 min
+                  6 min
                 </span>
               
             </div>
@@ -511,7 +500,8 @@
 
       
         <h4 id="jvm组成部分"><a class="header-anchor" href="#jvm组成部分">null</a>JVM组成部分</h4>
-<p>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)</p>
+<pre><code>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)
+</code></pre>
 <a id="more"></a>
 <h4 id="各组成部分的用途"><a class="header-anchor" href="#各组成部分的用途">null</a>各组成部分的用途</h4>
 <ul>
@@ -539,18 +529,84 @@
 </ul>
 <h4 id="java类加载过程"><a class="header-anchor" href="#java类加载过程">null</a>Java类加载过程</h4>
 <ul>
-<li>加载
+<li>
+<p>1:加载</p>
 <ul>
 <li>通过类的全限定类名获取类的二进制流</li>
 <li>将二进制流的静态存储结构转化为方法区的运行时数据</li>
 <li>在内存中生成Class对象，作为方法区这个类的访问入口</li>
 </ul>
 </li>
-<li>验证
+<li>
+<p>2:验证<br>
+<strong>用于确保Class文件的字节流中包含的信息符合当前虚拟机的要求，保证加载类的正确性。</strong></p>
 <ul>
-<li>用于确保Class文件的字节流中包含的信息符合当前虚拟机的要求，保证加载类的正确性。</li>
 <li>文件格式验证:验证字节流是否符合Class文件规范，如主次版本号是否在当前虚拟机范围内，常量池中的常量是否有不被支持的类型。</li>
-<li>源数据</li>
+<li>源数据验证:对字节码描述的信息进行语义分析,如这个类是否有父类、是否继承了不被继承的类等等。</li>
+<li>字节码验证:是整个验证过程中最为复杂的一个阶段，通过验证数据流和控制流的分析，确定程序语义是否正确，主要针对方法体的验证。如:方法中类型转换是否正确，跳转指令是否正确等。</li>
+<li>符号引用验证:主要是为了确保解析动作能够正确执行。</li>
+</ul>
+</li>
+<li>
+<p>3:准备</p>
+<ul>
+<li>为类的静态变量分配内存并将其初始化为默认值，这些内存都在方法区中进行分配(<strong>这里不包含用final修饰的static，因为final在编译的时候就会分配了，准备阶段会显式初始化</strong>)。</li>
+<li>准备阶段不分配类中实例变量的内存，实例变量将会在对象实例化时随着对象一起分配在Java堆中。</li>
+</ul>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value = <span class="number">123</span>;</span><br><span class="line"><span class="comment">//在准备阶段只会初始化为0。在后续的初始化阶段才会变为123.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>4:解析</p>
+<ul>
+<li>将常量池中的符号引用转换为直接引用的过程。</li>
+</ul>
+</li>
+<li>
+<p>5:初始化<br>
+初始化是类加载的最后一步，在前面的类加载的过程中，除了用户<strong>自定义的类加载器</strong>参与之外，剩下的动作都由虚拟机主导和控制。直到初始化阶段，才真正的开始执行类中定义的java程序。</p>
+</li>
+<li>
+<p>6:使用</p>
+</li>
+<li>
+<p>7:卸载</p>
+</li>
+</ul>
+<h4 id="java内存分配"><a class="header-anchor" href="#java内存分配">null</a>java内存分配</h4>
+<ul>
+<li>寄存器:无法控制</li>
+<li>静态域:<code>static</code>定义的静态成员。</li>
+<li>常量池:
+<ul>
+<li>静态常量池: <code>final</code>修饰的常量值及符号引用(<code>类和接口的全限定名</code>,<code>字段的名称和描述符</code>,<code>方法的名称和描述符</code>)。</li>
+<li>运行时常量池:是方法区的一部分，存放编译器的常量值和符号引用。</li>
+</ul>
+</li>
+<li>磁盘等永久存储空间</li>
+<li>堆内存:存储new的对象，所有类的实例和数组都是在堆内存上分配内存，在JVM启动的时候创建，由Java虚拟机自动垃圾回收器管理。</li>
+<li>栈内存:位于CPU寄存器中，存取速度快，数据可以共享，但是缺乏灵活性，大小与生存期必须确定。</li>
+</ul>
+<h4 id="gc"><a class="header-anchor" href="#gc">null</a>GC</h4>
+<pre><code>`GC(GabageCollection)`即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。
+</code></pre>
+<p><strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被运行。</strong></p>
+<ul>
+<li>GC回收的对象<br>
+GC会回收不再存活的对象，而判断对象是否存活有两种方法。
+<ul>
+<li>1:引用计数法<br>
+给每个对象设置一个引用计数器,每当有一个地方使用这个对象时,计数器加一,引用失效时计数器减一。当计数器归0时，说明对象没有被引用。将会被回收。<br>
+此计数法有缺陷，就是无法解决循环引用的问题。</li>
+<li>2:可达性算法(引用链法)<br>
+从一个<code>GC Roots</code>的对象向下搜索,如果一个对象到GC Roots没有被任何引用链相连时,说明此对象不可用。但并不代表此对象会立马被回收，而是处于一个<code>死缓</code>的阶段,等待被真正回收。</li>
+</ul>
+</li>
+<li>GC清理算法<br>
+目前JAVA使用的为<code>分代收集算法</code>,它根据对象的生存周期,将堆内存分为<code>新生代(1/3内存)</code>和<code>老年代(2/3内存)</code>，而<code>新生代</code>又被分为三个区域:<strong><code>eden</code>、<code>from survivor</code>、<code>to survivor</code></strong>,内存为(8:1:1)。
+<ul>
+<li>新建的对象会被存放在<code>eden</code>区域,而当<code>eden</code>区域内存不足时，就会触发一次<code>minor gc</code>清理<code>eden</code>,并且把无法回收的对象复制到<code>from survivor</code>区域中。</li>
+<li>而当<code>from survivor</code>区域内存不足时，又会触发一次<code>minor gc</code>清理<code>eden</code>、<code>from survivor</code>区域，将无法回收的对象复制到<code>to survivor</code>区域。</li>
+<li>每经历一次gc，对象就会被标记一次，被标记15次时，则进入老年代。当老年代内存满之后就会触发<code>Full GC</code>进行全量回收。</li>
 </ul>
 </li>
 </ul>
@@ -586,11 +642,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/12/10/JVM性能优化/">JVM性能优化</a></p>
+  <p><span>本文标题:</span><a href="/2020/12/10/JVM性能优化/">JVM</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月10日 - 20:12</p>
-  <p><span>最后更新:</span>2020年12月11日 - 22:12</p>
-  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/10/JVM性能优化/" title="https://www.mizhuo.funJVM性能优化">https://www.mizhuo.fun/2020/12/10/JVM性能优化/</a>
+  <p><span>最后更新:</span>2020年12月12日 - 19:12</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/10/JVM性能优化/" title="https://www.mizhuo.funJVM">https://www.mizhuo.fun/2020/12/10/JVM性能优化/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/10/JVM性能优化/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -622,8 +678,6 @@
         <div class="post-tags">
           
             <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
-          
-            <a href="/tags/性能优化/" rel="tag"><i class="fa fa-tag"></i> 性能优化</a>
           
         </div>
       
@@ -774,7 +828,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -840,7 +894,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jvm组成部分"><span class="nav-number">1.</span> <span class="nav-text">nullJVM组成部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各组成部分的用途"><span class="nav-number">2.</span> <span class="nav-text">null各组成部分的用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java类加载过程"><span class="nav-number">3.</span> <span class="nav-text">nullJava类加载过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jvm组成部分"><span class="nav-number">1.</span> <span class="nav-text">nullJVM组成部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各组成部分的用途"><span class="nav-number">2.</span> <span class="nav-text">null各组成部分的用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java类加载过程"><span class="nav-number">3.</span> <span class="nav-text">nullJava类加载过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java内存分配"><span class="nav-number">4.</span> <span class="nav-text">nulljava内存分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gc"><span class="nav-number">5.</span> <span class="nav-text">nullGC</span></a></li></ol></div>
             
 
           </div>
@@ -874,7 +928,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">38.1k</span>
+    <span title="全站文字共">39.2k</span>
   
 </div>
 

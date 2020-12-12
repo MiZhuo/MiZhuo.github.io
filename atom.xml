@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-12-11T14:54:53.002Z</updated>
+  <updated>2020-12-12T11:52:35.000Z</updated>
   <id>/</id>
   
   <author>
@@ -17,28 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JVM性能优化</title>
+    <title>JVM</title>
     <link href="/2020/12/10/JVM%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>/2020/12/10/JVM性能优化/</id>
     <published>2020-12-10T12:50:22.000Z</published>
-    <updated>2020-12-11T14:54:53.002Z</updated>
+    <updated>2020-12-12T11:52:35.000Z</updated>
     
     <summary type="html">
     
       &lt;h4 id=&quot;jvm组成部分&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#jvm组成部分&quot;&gt;null&lt;/a&gt;JVM组成部分&lt;/h4&gt;
-&lt;p&gt;JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
       <category term="JVM" scheme="/categories/JVM/"/>
     
-      <category term="性能优化" scheme="/categories/JVM/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
     
       <category term="JVM" scheme="/tags/JVM/"/>
-    
-      <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -60,9 +57,9 @@
       <category term="性能优化" scheme="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
       <category term="tomcat" scheme="/tags/tomcat/"/>
+    
+      <category term="性能优化" scheme="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -348,9 +345,9 @@
       <category term="Docker" scheme="/categories/MongoDB/Docker/"/>
     
     
-      <category term="MongoDB" scheme="/tags/MongoDB/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
   </entry>
   
