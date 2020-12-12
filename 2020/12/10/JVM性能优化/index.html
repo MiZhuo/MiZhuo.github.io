@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k
+                  2.5k
                 </span>
               
 
@@ -478,7 +478,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 min
+                  8 min
                 </span>
               
             </div>
@@ -527,6 +527,20 @@
 <code>方法区</code>用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译后的代码等数据。</p>
 </li>
 </ul>
+<h4 id="类加载器"><a class="header-anchor" href="#类加载器">null</a>类加载器</h4>
+<p>实现通过类的全限定名获取该类的二进制字节流的代码块叫类加载器。类加载器主要有四种。</p>
+<ul>
+<li>启动类加载器<br>
+用来加载Java核心类库，无法被java程序直接引用。</li>
+<li>扩展类加载器<br>
+用来加载java扩展库，java虚拟机会提供扩展类库目录，该类加载器在目录中查询并加载java类。</li>
+<li>系统类加载器<br>
+根据java应用的类路径来加载java类。一般来说，java应用的类都是它来完成加载的。</li>
+<li>自定义类加载器<br>
+通过继承<code>java.lang.ClassLoader</code>类来实现。</li>
+</ul>
+<h4 id="类加载器双亲委派模型机制"><a class="header-anchor" href="#类加载器双亲委派模型机制">null</a>类加载器双亲委派模型机制</h4>
+<p>当一个类收到加载请求时，不会自己先去加载这个类，而是将其委派给父类，由父类去加载，如果父类无法被加载，则反馈给子类，由子类去完成类的加载。</p>
 <h4 id="java类加载过程"><a class="header-anchor" href="#java类加载过程">null</a>Java类加载过程</h4>
 <ul>
 <li>
@@ -589,7 +603,7 @@
 <h4 id="gc"><a class="header-anchor" href="#gc">null</a>GC</h4>
 <pre><code>`GC(GabageCollection)`即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。
 </code></pre>
-<p><strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被运行。</strong></p>
+<p><strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被马上执行，具体执行GC的时间还是取决于JVM。</strong></p>
 <ul>
 <li>GC回收的对象<br>
 GC会回收不再存活的对象，而判断对象是否存活有两种方法。
@@ -609,6 +623,20 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
 <li>每经历一次gc，对象就会被标记一次，被标记15次时，则进入老年代。当老年代内存满之后就会触发<code>Full GC</code>进行全量回收。</li>
 </ul>
 </li>
+</ul>
+<h4 id="内存泄漏"><a class="header-anchor" href="#内存泄漏">null</a>内存泄漏</h4>
+<p><strong>符合内存泄漏的两个条件:<code>无用</code>、<code>无法回收</code></strong></p>
+<ul>
+<li>静态集合类<br>
+如<code>HashMap</code>、<code>LinkedList</code>等。如果这些集合被定义为静态，那么它们的生命周期与程序一致，则容器中的对象在程序结束之前无法被释放，即长生命周期的对象持有短生命周期对象的引用，尽管短生命周期的对象不再使用，但是因为长生命周期对象持有它的引用而导致不能被回收，从而造成内存泄漏。</li>
+<li>各种连接<br>
+如<code>数据库连接</code>、<code>IO连接</code>等。当连接之后不再使用时，应及时调用close方法来释放连接，否则会造成大量对象无法被回收，从而引起内存泄漏。</li>
+<li>变量不合理的作用域<br>
+即变量数据已经无用，但生命周期还在继续，也有可能造成内存泄漏。</li>
+<li>内部类持有外部类<br>
+如果一个外部类的实例对象返回了一个内部类的实例对象，那么这个内部类的实例对象将会被长期引用，即使外部类不再使用，也不会被回收，造成内存泄漏。</li>
+<li>改变哈希值<br>
+当一个对象被存储到HashSet集合后，如果修改它的哈希值，使其与储存进集合时的哈希值不一致，将会造成无法在集合中检索到这个对象，也无法删除，从而造成内存泄漏。</li>
 </ul>
 
       
@@ -894,7 +922,7 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jvm组成部分"><span class="nav-number">1.</span> <span class="nav-text">nullJVM组成部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各组成部分的用途"><span class="nav-number">2.</span> <span class="nav-text">null各组成部分的用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java类加载过程"><span class="nav-number">3.</span> <span class="nav-text">nullJava类加载过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java内存分配"><span class="nav-number">4.</span> <span class="nav-text">nulljava内存分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gc"><span class="nav-number">5.</span> <span class="nav-text">nullGC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jvm组成部分"><span class="nav-number">1.</span> <span class="nav-text">nullJVM组成部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各组成部分的用途"><span class="nav-number">2.</span> <span class="nav-text">null各组成部分的用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">3.</span> <span class="nav-text">null类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器双亲委派模型机制"><span class="nav-number">4.</span> <span class="nav-text">null类加载器双亲委派模型机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java类加载过程"><span class="nav-number">5.</span> <span class="nav-text">nullJava类加载过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java内存分配"><span class="nav-number">6.</span> <span class="nav-text">nulljava内存分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gc"><span class="nav-number">7.</span> <span class="nav-text">nullGC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存泄漏"><span class="nav-number">8.</span> <span class="nav-text">null内存泄漏</span></a></li></ol></div>
             
 
           </div>
@@ -928,7 +956,7 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">39.2k</span>
+    <span title="全站文字共">39.8k</span>
   
 </div>
 
