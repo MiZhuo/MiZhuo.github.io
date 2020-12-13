@@ -500,8 +500,7 @@
 
       
         <h4 id="jvm组成部分"><a class="header-anchor" href="#jvm组成部分">null</a>JVM组成部分</h4>
-<pre><code>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)
-</code></pre>
+<p>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)</p>
 <a id="more"></a>
 <h4 id="各组成部分的用途"><a class="header-anchor" href="#各组成部分的用途">null</a>各组成部分的用途</h4>
 <ul>
@@ -601,9 +600,8 @@
 <li>栈内存:位于CPU寄存器中，存取速度快，数据可以共享，但是缺乏灵活性，大小与生存期必须确定。</li>
 </ul>
 <h4 id="gc"><a class="header-anchor" href="#gc">null</a>GC</h4>
-<pre><code>`GC(GabageCollection)`即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。
-</code></pre>
-<p><strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被马上执行，具体执行GC的时间还是取决于JVM。</strong></p>
+<p><code>GC(GabageCollection)</code>即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。<br>
+<strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被马上执行，具体执行GC的时间还是取决于JVM。</strong></p>
 <ul>
 <li>GC回收的对象<br>
 GC会回收不再存活的对象，而判断对象是否存活有两种方法。
@@ -727,6 +725,10 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/12/13/自定义类加载器/" rel="prev" title="自定义类加载器">
+                自定义类加载器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -845,7 +847,7 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -867,7 +869,7 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -956,7 +958,7 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">39.8k</span>
+    <span title="全站文字共">40.3k</span>
   
 </div>
 

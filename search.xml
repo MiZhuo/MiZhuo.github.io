@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>自定义类加载器</title>
+    <url>/2020/12/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="类加载器"><a class="header-anchor" href="#类加载器">null</a>类加载器</h4>
+<p>Java类加载过程，第一步就是通过类加载器加载<code>.class</code>文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。</p>
+<a id="more"></a>
+<ul>
+<li>启动(Bootstrap)类加载器<br>
+用来加载Java核心类库，由C++语言实现，是虚拟机的一部分，无法被java程序直接引用。</li>
+<li>扩展(Extension)类加载器<br>
+用来加载java扩展库，java虚拟机会提供扩展类库目录，该类加载器在目录中查询并加载java类。</li>
+<li>系统(System)类加载器<br>
+根据java应用的类路径来加载java类。一般来说，java应用的类都是它来完成加载的。</li>
+<li>自定义(Custom)类加载器<br>
+通过继承<code>java.lang.ClassLoader</code>类来实现。</li>
+</ul>
+<h4 id="双亲委派模式"><a class="header-anchor" href="#双亲委派模式">null</a>双亲委派模式</h4>
+<p><code>双亲委派模式</code>要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。</p>
+<ul>
+<li>工作原理<br>
+如果一个类加载器收到了类加载的请求，它不会自己直接去加载类，而是将请求委托给父类加载器去执行，如果父类加载器也存在父类加载器，则一层层向上委托直到完成类加载任务。若父类加载器无法完成加载任务，子加载器才会尝试加载，这就是双亲委派模式。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201213230046.png" alt><br>
+<strong>来源:<a href="https://blog.csdn.net/javazejian/article/details/73413292" target="_blank" rel="noopener">https://blog.csdn.net/javazejian/article/details/73413292</a></strong></li>
+<li>为何使用双亲委派模式<br>
+采用双亲委派模式最大的好处就是类加载的层级关系，通过这种层级关系，可以有效的避免类的重复加载问题。因为父类能加载的话，子类就不会有机会去加载了，这样能保证同一个类加载器加载的相同的全限定类名的类是同一个类。</li>
+</ul>
+<h4 id="classloader源码"><a class="header-anchor" href="#classloader源码">null</a>ClassLoader源码</h4>
+]]></content>
+      <categories>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>类加载器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JVM</title>
     <url>/2020/12/10/JVM/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="jvm组成部分"><a class="header-anchor" href="#jvm组成部分">null</a>JVM组成部分</h4>
-<pre><code>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)
-</code></pre>
+<p>JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)</p>
 <a id="more"></a>
 <h4 id="各组成部分的用途"><a class="header-anchor" href="#各组成部分的用途">null</a>各组成部分的用途</h4>
 <ul>
@@ -105,9 +139,8 @@
 <li>栈内存:位于CPU寄存器中，存取速度快，数据可以共享，但是缺乏灵活性，大小与生存期必须确定。</li>
 </ul>
 <h4 id="gc"><a class="header-anchor" href="#gc">null</a>GC</h4>
-<pre><code>`GC(GabageCollection)`即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。
-</code></pre>
-<p><strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被马上执行，具体执行GC的时间还是取决于JVM。</strong></p>
+<p><code>GC(GabageCollection)</code>即垃圾收集,Java提供GC功能自动监测对象是否超过作用域从而达到自动回收内存的目的。Java并没有提供释放已分配内存的显示操作方法。同时，GC由虚拟机自动执行，不受控制。只有在虚拟机空闲或者当前堆内存不足的情况下才会触发执行。<br>
+<strong>程序员可以手动执行<code>System.gc()</code>通知GC运行，但是并不保证GC一定会被马上执行，具体执行GC的时间还是取决于JVM。</strong></p>
 <ul>
 <li>GC回收的对象<br>
 GC会回收不再存活的对象，而判断对象是否存活有两种方法。
