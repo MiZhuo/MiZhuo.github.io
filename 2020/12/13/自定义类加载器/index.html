@@ -135,7 +135,7 @@
 <meta property="og:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201213230046.png">
-<meta property="og:updated_time" content="2020-12-13T15:15:48.832Z">
+<meta property="og:updated_time" content="2020-12-14T14:55:37.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义类加载器">
 <meta name="twitter:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
@@ -392,8 +392,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-13T23:15:48+08:00">
-                2020-12-13
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-14T22:55:37+08:00">
+                2020-12-14
               </time>
             
           </span>
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  476
+                  478
                 </span>
               
 
@@ -525,6 +525,10 @@
 采用双亲委派模式最大的好处就是类加载的层级关系，通过这种层级关系，可以有效的避免类的重复加载问题。因为父类能加载的话，子类就不会有机会去加载了，这样能保证同一个类加载器加载的相同的全限定类名的类是同一个类。</li>
 </ul>
 <h4 id="classloader源码"><a class="header-anchor" href="#classloader源码">null</a>ClassLoader源码</h4>
+<ul>
+<li>loadClass</li>
+<li>findClass</li>
+</ul>
 
       
     </div>
@@ -560,7 +564,7 @@
   <p><span>本文标题:</span><a href="/2020/12/13/自定义类加载器/">自定义类加载器</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月13日 - 21:12</p>
-  <p><span>最后更新:</span>2020年12月13日 - 23:12</p>
+  <p><span>最后更新:</span>2020年12月14日 - 22:12</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" title="https://www.mizhuo.fun自定义类加载器">https://www.mizhuo.fun/2020/12/13/自定义类加载器/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" aria-label="复制成功！"></i></span>
   </p>

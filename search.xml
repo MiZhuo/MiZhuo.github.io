@@ -27,6 +27,10 @@
 采用双亲委派模式最大的好处就是类加载的层级关系，通过这种层级关系，可以有效的避免类的重复加载问题。因为父类能加载的话，子类就不会有机会去加载了，这样能保证同一个类加载器加载的相同的全限定类名的类是同一个类。</li>
 </ul>
 <h4 id="classloader源码"><a class="header-anchor" href="#classloader源码">null</a>ClassLoader源码</h4>
+<ul>
+<li>loadClass</li>
+<li>findClass</li>
+</ul>
 ]]></content>
       <categories>
         <category>JVM</category>
