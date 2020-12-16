@@ -26,10 +26,21 @@
 <li>为何使用双亲委派模式<br>
 采用双亲委派模式最大的好处就是类加载的层级关系，通过这种层级关系，可以有效的避免类的重复加载问题。因为父类能加载的话，子类就不会有机会去加载了，这样能保证同一个类加载器加载的相同的全限定类名的类是同一个类。</li>
 </ul>
-<h4 id="classloader源码"><a class="header-anchor" href="#classloader源码">null</a>ClassLoader源码</h4>
+<h4 id="classloader源码解析"><a class="header-anchor" href="#classloader源码解析">null</a>ClassLoader源码解析</h4>
 <ul>
-<li>loadClass</li>
-<li>findClass</li>
+<li>
+<p><strong><code>loadClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</span><br><span class="line">            <span class="comment">//先判断该类是否已经被加载</span></span><br><span class="line">            Class&lt;?&gt; c = findLoadedClass(name);</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">//有父类加载器，则委托父类加载器加载</span></span><br><span class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">//无父类加载器则使用启动器类加载器</span></span><br><span class="line">                        c = findBootstrapClassOrNull(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></span><br><span class="line">                    <span class="comment">// from the non-null parent class loader</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">//父类加载器也无法加载该类，则自行加载此类。</span></span><br><span class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</span><br><span class="line">                    c = findClass(name);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></span><br><span class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">                resolveClass(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，当类收到加载请求时，先从缓存查找该类是否已被加载，如果存在则直接返回，否则交于父类加载器进行加载，倘若不存在父类加载器则交由启动类加载器进行加载，如果都无法加载成功，则返回到被请求的类加载器进行加载，主要是使用<code>findClass</code>方法进行加载。</p>
+</li>
+<li>
+<p><strong><code>findClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在自定义类加载时，总会去继承ClassLoader类，把自定义的类加载器逻辑写在findClass()方法中。从前面的分析可知，findClass()方法是在loadClass()方法中被调用的，当loadClass()方法中父加载器加载失败后，则会调用自己的findClass()方法来完成类加载，这样就可以保证自定义的类加载器也符合双亲委托模式。</p>
+</li>
+<li>
+<p><strong><code>defineClass</code></strong></p>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -827,8 +838,8 @@ DB2也可以使用字符流的方式，读取方法和Oracle读取方法一样�
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>MongoDB</tag>
         <tag>Docker</tag>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>

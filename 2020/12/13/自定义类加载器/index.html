@@ -135,7 +135,7 @@
 <meta property="og:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201213230046.png">
-<meta property="og:updated_time" content="2020-12-14T14:55:37.139Z">
+<meta property="og:updated_time" content="2020-12-16T14:10:35.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义类加载器">
 <meta name="twitter:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
@@ -392,8 +392,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-14T22:55:37+08:00">
-                2020-12-14
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-16T22:10:35+08:00">
+                2020-12-16
               </time>
             
           </span>
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  478
+                  892
                 </span>
               
 
@@ -480,7 +480,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 min
+                  3 min
                 </span>
               
             </div>
@@ -524,10 +524,21 @@
 <li>为何使用双亲委派模式<br>
 采用双亲委派模式最大的好处就是类加载的层级关系，通过这种层级关系，可以有效的避免类的重复加载问题。因为父类能加载的话，子类就不会有机会去加载了，这样能保证同一个类加载器加载的相同的全限定类名的类是同一个类。</li>
 </ul>
-<h4 id="classloader源码"><a class="header-anchor" href="#classloader源码">null</a>ClassLoader源码</h4>
+<h4 id="classloader源码解析"><a class="header-anchor" href="#classloader源码解析">null</a>ClassLoader源码解析</h4>
 <ul>
-<li>loadClass</li>
-<li>findClass</li>
+<li>
+<p><strong><code>loadClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</span><br><span class="line">            <span class="comment">//先判断该类是否已经被加载</span></span><br><span class="line">            Class&lt;?&gt; c = findLoadedClass(name);</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">//有父类加载器，则委托父类加载器加载</span></span><br><span class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">//无父类加载器则使用启动器类加载器</span></span><br><span class="line">                        c = findBootstrapClassOrNull(name);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">                    <span class="comment">// ClassNotFoundException thrown if class not found</span></span><br><span class="line">                    <span class="comment">// from the non-null parent class loader</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">//父类加载器也无法加载该类，则自行加载此类。</span></span><br><span class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</span><br><span class="line">                    c = findClass(name);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></span><br><span class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</span><br><span class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">                resolveClass(c);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，当类收到加载请求时，先从缓存查找该类是否已被加载，如果存在则直接返回，否则交于父类加载器进行加载，倘若不存在父类加载器则交由启动类加载器进行加载，如果都无法加载成功，则返回到被请求的类加载器进行加载，主要是使用<code>findClass</code>方法进行加载。</p>
+</li>
+<li>
+<p><strong><code>findClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在自定义类加载时，总会去继承ClassLoader类，把自定义的类加载器逻辑写在findClass()方法中。从前面的分析可知，findClass()方法是在loadClass()方法中被调用的，当loadClass()方法中父加载器加载失败后，则会调用自己的findClass()方法来完成类加载，这样就可以保证自定义的类加载器也符合双亲委托模式。</p>
+</li>
+<li>
+<p><strong><code>defineClass</code></strong></p>
+</li>
 </ul>
 
       
@@ -564,7 +575,7 @@
   <p><span>本文标题:</span><a href="/2020/12/13/自定义类加载器/">自定义类加载器</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月13日 - 21:12</p>
-  <p><span>最后更新:</span>2020年12月14日 - 22:12</p>
+  <p><span>最后更新:</span>2020年12月16日 - 22:12</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" title="https://www.mizhuo.fun自定义类加载器">https://www.mizhuo.fun/2020/12/13/自定义类加载器/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" aria-label="复制成功！"></i></span>
   </p>
@@ -813,7 +824,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">1.</span> <span class="nav-text">null类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双亲委派模式"><span class="nav-number">2.</span> <span class="nav-text">null双亲委派模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#classloader源码"><span class="nav-number">3.</span> <span class="nav-text">nullClassLoader源码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">1.</span> <span class="nav-text">null类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双亲委派模式"><span class="nav-number">2.</span> <span class="nav-text">null双亲委派模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#classloader源码解析"><span class="nav-number">3.</span> <span class="nav-text">nullClassLoader源码解析</span></a></li></ol></div>
             
 
           </div>
@@ -847,7 +858,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">40.3k</span>
+    <span title="全站文字共">40.7k</span>
   
 </div>
 
