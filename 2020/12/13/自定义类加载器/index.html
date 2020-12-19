@@ -135,7 +135,8 @@
 <meta property="og:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201213230046.png">
-<meta property="og:updated_time" content="2020-12-16T14:10:35.623Z">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201219184435.png">
+<meta property="og:updated_time" content="2020-12-19T10:45:33.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义类加载器">
 <meta name="twitter:description" content="null类加载器 Java类加载过程，第一步就是通过类加载器加载.class文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。">
@@ -392,8 +393,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-16T22:10:35+08:00">
-                2020-12-16
+              <time title="更新于" itemprop="dateModified" datetime="2020-12-19T18:45:33+08:00">
+                2020-12-19
               </time>
             
           </span>
@@ -464,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  892
+                  1.4k
                 </span>
               
 
@@ -480,7 +481,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 min
+                  6 min
                 </span>
               
             </div>
@@ -538,8 +539,34 @@
 </li>
 <li>
 <p><strong><code>defineClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">final</span> Class&lt;?&gt; defineClass(String name, <span class="keyword">byte</span>[] b, <span class="keyword">int</span> off, <span class="keyword">int</span> len,</span><br><span class="line">                                        ProtectionDomain protectionDomain)</span><br><span class="line">    <span class="keyword">throws</span> ClassFormatError</span><br><span class="line">&#123;</span><br><span class="line">    protectionDomain = preDefineClass(name, protectionDomain);</span><br><span class="line">    String source = defineClassSourceLocation(protectionDomain);</span><br><span class="line">    Class&lt;?&gt; c = defineClass1(name, b, off, len, protectionDomain, source);</span><br><span class="line">    postDefineClass(c, protectionDomain);</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>加载完Class之后，需将读取的字节流转换为JVM能够识别的Class对象.</p>
+</li>
+<li>
+<p><strong><code>resolveClass</code></strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">resolveClass</span><span class="params">(Class&lt;?&gt; c)</span> </span>&#123;</span><br><span class="line">    resolveClass0(c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">resolveClass0</span><span class="params">(Class&lt;?&gt; c)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>对完成创建的Class对象进行解析，为类的变量分配内存、初始值等。</p>
 </li>
 </ul>
+<h4 id="自定义类加载器"><a class="header-anchor" href="#自定义类加载器">null</a>自定义类加载器</h4>
+<ul>
+<li>创建测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassTemp</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"加载ClassTemp类成功!"</span>);</span><br><span class="line">        ClassLoader loader = ClassTemp.class.getClassLoader();</span><br><span class="line">        ClassLoader parent = loader.getParent();</span><br><span class="line">        ClassLoader parent1 = parent.getParent();</span><br><span class="line">        System.out.println(<span class="string">"加载器:"</span> + loader);</span><br><span class="line">        System.out.println(<span class="string">"父类加载器:"</span> + parent);</span><br><span class="line">        System.out.println(<span class="string">"爷爷加载器:"</span> + parent1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编译测试类获取Class文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/study-project/tmp/MyClassLoader  vi *java</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/study-project/tmp/MyClassLoader  javac ClassTemp.java</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/WorkPlace/study-project/tmp/MyClassLoader  ls</span><br><span class="line">ClassTemp.class ClassTemp.java</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建自定义类加载器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Mizhuo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span>: 2020/12/19 4:53 下午</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 自定义类加载器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String _classPath;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClassLoader</span><span class="params">(String classPath)</span></span>&#123;</span><br><span class="line">        _classPath = classPath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        Class myClass = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//获取文件字节流</span></span><br><span class="line">        <span class="keyword">byte</span>[] classDatas = getDatas();</span><br><span class="line">        <span class="keyword">if</span>(classDatas != <span class="keyword">null</span>)&#123;</span><br><span class="line">            myClass = defineClass(name,classDatas,<span class="number">0</span>,classDatas.length);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> myClass;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取Class字节流</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">byte</span>[] getDatas() &#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(_classPath);</span><br><span class="line">        FileInputStream in = <span class="keyword">null</span>;</span><br><span class="line">        ByteArrayOutputStream outputStream = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(file.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">                outputStream = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">                <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span> ((size = in.read(buffer)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                    outputStream.write(buffer,<span class="number">0</span>,size);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    in.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> outputStream.toByteArray();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用自定义类加载器加载测试类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">       String classPath = <span class="string">"/Users/mizhuo/WorkPlace/study-project/tmp/MyClassLoader/ClassTemp.class"</span>;</span><br><span class="line">       MyClassLoader classLoader = <span class="keyword">new</span> MyClassLoader(classPath);</span><br><span class="line">       Class&lt;?&gt; classTemp = classLoader.findClass(<span class="string">"ClassTemp"</span>);</span><br><span class="line">       System.out.println(<span class="string">"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;"</span> + classTemp.getClassLoader());</span><br><span class="line"></span><br><span class="line">       Method method = classTemp.getDeclaredMethod(<span class="string">"main"</span>,String[].class);</span><br><span class="line">       Object obj = classTemp.newInstance();</span><br><span class="line">       String[] strings = &#123;&#125;;</span><br><span class="line">       method.invoke(obj, (Object)strings);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>类加载成功。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20201219184435.png" alt></p>
 
       
     </div>
@@ -575,7 +602,7 @@
   <p><span>本文标题:</span><a href="/2020/12/13/自定义类加载器/">自定义类加载器</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
   <p><span>发布时间:</span>2020年12月13日 - 21:12</p>
-  <p><span>最后更新:</span>2020年12月16日 - 22:12</p>
+  <p><span>最后更新:</span>2020年12月19日 - 18:12</p>
   <p><span>原始链接:</span><a href="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" title="https://www.mizhuo.fun自定义类加载器">https://www.mizhuo.fun/2020/12/13/自定义类加载器/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2020/12/13/自定义类加载器/" aria-label="复制成功！"></i></span>
   </p>
@@ -824,7 +851,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">1.</span> <span class="nav-text">null类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双亲委派模式"><span class="nav-number">2.</span> <span class="nav-text">null双亲委派模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#classloader源码解析"><span class="nav-number">3.</span> <span class="nav-text">nullClassLoader源码解析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">1.</span> <span class="nav-text">null类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双亲委派模式"><span class="nav-number">2.</span> <span class="nav-text">null双亲委派模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#classloader源码解析"><span class="nav-number">3.</span> <span class="nav-text">nullClassLoader源码解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义类加载器"><span class="nav-number">4.</span> <span class="nav-text">null自定义类加载器</span></a></li></ol></div>
             
 
           </div>
@@ -858,7 +885,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">40.7k</span>
+    <span title="全站文字共">41.2k</span>
   
 </div>
 
