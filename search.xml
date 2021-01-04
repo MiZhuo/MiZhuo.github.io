@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>搭建Gitlab</title>
-    <url>/2020/12/30/%E6%90%AD%E5%BB%BAGitlab/</url>
+    <title>Spring Cloud Stream定时任务</title>
+    <url>/2020/12/30/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <categories>
-        <category>git</category>
+        <category>RabbitMq</category>
+        <category>SpringCloud</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>SpringCloud</tag>
+        <tag>RabbitMq</tag>
       </tags>
   </entry>
   <entry>
@@ -871,8 +873,8 @@ DB2也可以使用字符流的方式，读取方法和Oracle读取方法一样�
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Mq</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -921,8 +923,8 @@ DB2也可以使用字符流的方式，读取方法和Oracle读取方法一样�
         <category>Docker</category>
       </categories>
       <tags>
-        <tag>MongoDB</tag>
         <tag>Docker</tag>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>

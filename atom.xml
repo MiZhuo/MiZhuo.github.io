@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-12-30T14:01:14.376Z</updated>
+  <updated>2021-01-04T14:48:24.675Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>搭建Gitlab</title>
-    <link href="/2020/12/30/%E6%90%AD%E5%BB%BAGitlab/"/>
-    <id>/2020/12/30/搭建Gitlab/</id>
+    <title>Spring Cloud Stream定时任务</title>
+    <link href="/2020/12/30/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    <id>/2020/12/30/Spring Cloud Stream定时任务/</id>
     <published>2020-12-30T14:00:47.000Z</published>
-    <updated>2020-12-30T14:01:14.376Z</updated>
+    <updated>2021-01-04T14:48:24.675Z</updated>
     
     <summary type="html">
     
@@ -36,10 +36,14 @@
     </summary>
     
     
-      <category term="git" scheme="/categories/git/"/>
+      <category term="RabbitMq" scheme="/categories/RabbitMq/"/>
+    
+      <category term="SpringCloud" scheme="/categories/RabbitMq/SpringCloud/"/>
     
     
-      <category term="git" scheme="/tags/git/"/>
+      <category term="SpringCloud" scheme="/tags/SpringCloud/"/>
+    
+      <category term="RabbitMq" scheme="/tags/RabbitMq/"/>
     
   </entry>
   
@@ -387,9 +391,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="Mq" scheme="/tags/Mq/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
@@ -411,9 +415,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="MongoDB" scheme="/tags/MongoDB/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
   </entry>
   
