@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-01-04T14:48:24.675Z</updated>
+  <updated>2021-01-05T03:47:26.888Z</updated>
   <id>/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="/2020/12/30/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
     <id>/2020/12/30/Spring Cloud Stream定时任务/</id>
     <published>2020-12-30T14:00:47.000Z</published>
-    <updated>2021-01-04T14:48:24.675Z</updated>
+    <updated>2021-01-05T03:47:26.888Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;p&gt;在开发系统的过程中，我们经常会遇到延迟执行任务的需求。比如，在系统中设定两个小时后提醒我做XX事情。对于这样的需求，我们可以使用Spring Cloud Stream搭配消息中间件可以很好的进行处理。&lt;/p&gt;
     
     </summary>
     
@@ -391,9 +385,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Mq" scheme="/tags/Mq/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="Mq" scheme="/tags/Mq/"/>
     
   </entry>
   
@@ -415,9 +409,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
