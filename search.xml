@@ -488,6 +488,35 @@ GC会回收不再存活的对象，而判断对象是否存活有两种方法。
       </tags>
   </entry>
   <entry>
+    <title>Docker安装ELK</title>
+    <url>/2020/11/03/Docker%E5%AE%89%E8%A3%85ELK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一:拉取镜像</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo docker]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">logstash            7.9.3               fc2df485e5c5        2 months ago        735MB</span><br><span class="line">kibana              7.9.3               f9f7fac59a10        2 months ago        1.18GB</span><br><span class="line">elasticsearch       7.9.3               1ab13f928dc8        2 months ago        742MB</span><br></pre></td></tr></table></figure>
+<p>二:创建自定义的网络(用于连接到连接到同一网络的其他服务(例如Kibana))<br>
+<code>docker network create elk_network</code><br>
+三:启动elasticsearch<br>
+<code>docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; -d --name elasticsearch --net elk_network -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elasticsearch:7.9.3</code><br>
+四:检测 elasticsearch 是否启动成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo ~]# curl localhost:9200</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;37a7c1bcd2de&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;docker-cluster&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;7VQCRiFZS1yr0lQSGXsgyQ&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;7.9.3&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;c4138e51121ef06a6404866cddc601906fe5c868&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2020-10-16T10:36:16.141335Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;8.6.2&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;6.8.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;6.0.0-beta1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下载分词器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.9.3/elasticsearch-analysis-ik-7.9.3.zip</span><br></pre></td></tr></table></figure>
+<p>创建索引<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135029.png" alt></p>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135103.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@mizhuo elasticsearch-plugins]# docker cp elasticsearch-analysis-ik-7.9.3.zip elasticsearch:/usr/share/elasticsearch/plugins/analysis-ik/</span><br><span class="line">[root@mizhuo elasticsearch-plugins]# docker exec -it elasticsearch /bin/bash</span><br><span class="line">[root@37a7c1bcd2de elasticsearch]# cd plugins/analysis-ik</span><br><span class="line">[root@37a7c1bcd2de analysis-ik]# unzip elasticsearch-analysis-ik-7.9.3.zip</span><br><span class="line">[root@37a7c1bcd2de plugins]# elasticsearch-plugin list</span><br><span class="line">analysis-ik</span><br></pre></td></tr></table></figure>
+<h1>运行 Kibana</h1>
+<p>docker run -d --name kibana --net elk_network -p 5601:5601 kibana:7.9.3</p>
+<p>设置中文</p>
+<h2 id="访问5601端口"><a class="header-anchor" href="#访问5601端口">null</a>访问5601端口</h2>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110110006.png" alt></p>
+<h2 id="运行logstash"><a class="header-anchor" href="#运行logstash">null</a>运行logstash</h2>
+<p>先建立目录存放配置信息</p>
+<p>docker run --name logstash -d -p 5044:5044 -p 9600:9600 logstash:7.9.3</p>
+<p>docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; --rm -it --name logstash --net elk_network --link elasticsearch -d -v /root/mizhuo/docker/logstash/config:/usr/share/logstash/config -v /root/mizhuo/docker/logstash/pipeline:/usr/share/logstash/pipeline -v /root/mizhuo/docker/logstash/mydocs:/usr/share/logstash/mydocs logstash:7.9.3</p>
+<p>docker run --name filebeat --net elk_network -d --link logstash -v /root/mizhuo/docker/logstash/config/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /root/mizhuo/docker/elk/logs/:/home/logs/ store/elastic/filebeat:7.9.3</p>
+]]></content>
+  </entry>
+  <entry>
     <title>部署Vue项目到远程服务器Dokcer下的Nginx</title>
     <url>/2020/10/29/%E9%83%A8%E7%BD%B2Vue%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8Dokcer%E4%B8%8B%E7%9A%84Nginx/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
