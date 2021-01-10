@@ -126,21 +126,22 @@
 
 
 
-<meta name="description" content="一:拉取镜像 12345[root@mizhuo docker]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZElogstash            7.9.3               fc2df485e5c5        2 months">
+<meta name="description" content="null使用Dokcer安装配置ELK ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kibana , 它们都是开源软件。新增了一个FileBeat，它是一个轻量级的日志收集处理工具(Agent)，Filebeat占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具。">
 <meta name="keywords" content="Spring,MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker安装ELK">
 <meta property="og:url" content="/2020/11/03/Docker安装ELK/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="一:拉取镜像 12345[root@mizhuo docker]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZElogstash            7.9.3               fc2df485e5c5        2 months">
+<meta property="og:description" content="null使用Dokcer安装配置ELK ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kibana , 它们都是开源软件。新增了一个FileBeat，它是一个轻量级的日志收集处理工具(Agent)，Filebeat占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135029.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135103.png">
-<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110110006.png">
-<meta property="og:updated_time" content="2021-01-10T06:07:07.086Z">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144529.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144615.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144956.png">
+<meta property="og:updated_time" content="2021-01-10T06:32:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker安装ELK">
-<meta name="twitter:description" content="一:拉取镜像 12345[root@mizhuo docker]# docker imagesREPOSITORY          TAG                 IMAGE ID            CREATED             SIZElogstash            7.9.3               fc2df485e5c5        2 months">
+<meta name="twitter:description" content="null使用Dokcer安装配置ELK ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kibana , 它们都是开源软件。新增了一个FileBeat，它是一个轻量级的日志收集处理工具(Agent)，Filebeat占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具。">
 <meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135029.png">
 
 
@@ -394,7 +395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-10T14:07:07+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-01-10T14:32:05+08:00">
                 2021-01-10
               </time>
             
@@ -444,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  453
+                  807
                 </span>
               
 
@@ -460,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 min
+                  4 min
                 </span>
               
             </div>
@@ -481,30 +482,91 @@
       
 
       
-        <p>一:拉取镜像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@mizhuo docker]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">logstash            7.9.3               fc2df485e5c5        2 months ago        735MB</span><br><span class="line">kibana              7.9.3               f9f7fac59a10        2 months ago        1.18GB</span><br><span class="line">elasticsearch       7.9.3               1ab13f928dc8        2 months ago        742MB</span><br></pre></td></tr></table></figure>
-<p>二:创建自定义的网络(用于连接到连接到同一网络的其他服务(例如Kibana))<br>
-<code>docker network create elk_network</code><br>
-三:启动elasticsearch<br>
-<code>docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; -d --name elasticsearch --net elk_network -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elasticsearch:7.9.3</code><br>
-四:检测 elasticsearch 是否启动成功</p>
+        <h4 id="使用dokcer安装配置elk"><a class="header-anchor" href="#使用dokcer安装配置elk">null</a>使用Dokcer安装配置ELK</h4>
+<p>ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kibana , 它们都是开源软件。新增了一个FileBeat，它是一个轻量级的日志收集处理工具(Agent)，Filebeat占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具。</p>
+<a id="more"></a>
+<h4 id="拉取镜像"><a class="header-anchor" href="#拉取镜像">null</a>拉取镜像</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker images</span><br><span class="line">REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">logstash                       7.9.3               fc2df485e5c5        2 months ago        735MB</span><br><span class="line">kibana                         7.9.3               f9f7fac59a10        2 months ago        1.18GB</span><br><span class="line">elasticsearch                  7.9.3               1ab13f928dc8        2 months ago        742MB</span><br><span class="line">store/elastic/filebeat         7.9.3               568972583985        2 months ago        449MB</span><br></pre></td></tr></table></figure>
+<h4 id="创建自定义的网络"><a class="header-anchor" href="#创建自定义的网络">null</a>创建自定义的网络</h4>
+<p>用于连接到连接到同一网络的其他服务(例如Kibana)<br>
+<code>docker network create elk_network</code></p>
+<h4 id="安装elasticsearch"><a class="header-anchor" href="#安装elasticsearch">null</a>安装ElasticSearch</h4>
+<ul>
+<li>
+<p>启动ElasticSearch<br>
+<code>docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; -d --name elasticsearch --net elk_network -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; elasticsearch:7.9.3</code></p>
+</li>
+<li>
+<p>检测 elasticsearch 是否启动成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@mizhuo ~]# curl localhost:9200</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;37a7c1bcd2de&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;docker-cluster&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;7VQCRiFZS1yr0lQSGXsgyQ&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;7.9.3&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;docker&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;c4138e51121ef06a6404866cddc601906fe5c868&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2020-10-16T10:36:16.141335Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;8.6.2&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;6.8.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;6.0.0-beta1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
 <p>下载分词器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.9.3/elasticsearch-analysis-ik-7.9.3.zip</span><br></pre></td></tr></table></figure>
-<p>创建索引<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135029.png" alt></p>
-<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135103.png" alt></p>
+</li>
+<li>
+<p>安装分词器(方法一)</p>
+<ul>
+<li>下载分词器<a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.9.3/elasticsearch-analysis-ik-7.9.3.zip" target="_blank" rel="noopener">-&gt;小火箭</a></li>
+<li>将下载文件解压。在 es/plugins 目录下，新建 ik 目录，并将解压后的所有文件拷贝到 ik 目录下。</li>
+<li>重启 es 服务。</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@mizhuo elasticsearch-plugins]# docker cp elasticsearch-analysis-ik-7.9.3.zip elasticsearch:/usr/share/elasticsearch/plugins/analysis-ik/</span><br><span class="line">[root@mizhuo elasticsearch-plugins]# docker exec -it elasticsearch /bin/bash</span><br><span class="line">[root@37a7c1bcd2de elasticsearch]# cd plugins/analysis-ik</span><br><span class="line">[root@37a7c1bcd2de analysis-ik]# unzip elasticsearch-analysis-ik-7.9.3.zip</span><br><span class="line">[root@37a7c1bcd2de plugins]# elasticsearch-plugin list</span><br><span class="line">analysis-ik</span><br></pre></td></tr></table></figure>
-<h1>运行 Kibana</h1>
-<p>docker run -d --name kibana --net elk_network -p 5601:5601 kibana:7.9.3</p>
-<p>设置中文</p>
-<h2 id="访问5601端口"><a class="header-anchor" href="#访问5601端口">null</a>访问5601端口</h2>
-<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110110006.png" alt></p>
-<h2 id="运行logstash"><a class="header-anchor" href="#运行logstash">null</a>运行logstash</h2>
-<p>先建立目录存放配置信息</p>
-<p>docker run --name logstash -d -p 5044:5044 -p 9600:9600 logstash:7.9.3</p>
-<p>docker run -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; --rm -it --name logstash --net elk_network --link elasticsearch -d -v /root/mizhuo/docker/logstash/config:/usr/share/logstash/config -v /root/mizhuo/docker/logstash/pipeline:/usr/share/logstash/pipeline -v /root/mizhuo/docker/logstash/mydocs:/usr/share/logstash/mydocs logstash:7.9.3</p>
-<p>docker run --name filebeat --net elk_network -d --link logstash -v /root/mizhuo/docker/logstash/config/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /root/mizhuo/docker/elk/logs/:/home/logs/ store/elastic/filebeat:7.9.3</p>
+</li>
+<li>
+<p>安装分词器(方法二)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.9.3/elasticsearch-analysis-ik-7.9.3.zip</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>测试分词器</p>
+<ul>
+<li>创建索引<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110135029.png" alt></li>
+<li>分词测试<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144529.png" alt><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144615.png" alt></li>
+</ul>
+</li>
+</ul>
+<h4 id="安装kibana"><a class="header-anchor" href="#安装kibana">null</a>安装Kibana</h4>
+<ul>
+<li>运行Kibana</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name kibana --net elk_network -p 5601:5601 kibana:7.9.3</span><br><span class="line">``` </span><br><span class="line">- 设置中文</span><br><span class="line">```linux</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/plugins  docker exec -it kibana /bin/bash</span><br><span class="line">bash-4.2$ ls</span><br><span class="line">LICENSE.txt  NOTICE.txt  README.txt  bin  built_assets	config	data  node  node_modules  optimize  package.json  plugins  src	webpackShims  x-pack</span><br><span class="line">bash-4.2$ cd config</span><br><span class="line">bash-4.2$ ls</span><br><span class="line">kibana.yml  node.options</span><br><span class="line">bash-4.2$ vi kibana.yml</span><br><span class="line">bash-4.2$ exit</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~  docker restart kibana</span><br><span class="line">kibana</span><br></pre></td></tr></table></figure>
+<ul>
+<li>访问5601端口<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210110144956.png" alt></li>
+</ul>
+<h4 id="安装logstash"><a class="header-anchor" href="#安装logstash">null</a>安装logstash</h4>
+<ul>
+<li>新建目录,保存配置文件</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker  mkdir elk</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker  cd elk</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  mkdir logstash</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行logstash</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~  docker run --name logstash -d -p 5044:5044 -p 9600:9600 logstash:7.9.3</span><br><span class="line">2c74790add783f66f93d1e31413351114f0d700d407ca0a5aa60e14e906bee52</span><br></pre></td></tr></table></figure>
+<ul>
+<li>拷贝配置信息到新建目录</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker cp logstash:/usr/share/logstash/config /Users/mizhuo/docker/elk/logstash/config</span><br></pre></td></tr></table></figure>
+<ul>
+<li>停止并删除镜像</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker stop logstash</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker rm logstash</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正式启动logstash</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker run -it -d -p 5044:5044 --name logstash --net elk_network -v /Users/mizhuo/docker/elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.9.3</span><br><span class="line">1ce146d60819149c98d504fa62b07bb9ec4fb11596b82a50288663052d5c66dd</span><br></pre></td></tr></table></figure>
+<h4 id="安装filebeat"><a class="header-anchor" href="#安装filebeat">null</a>安装filebeat</h4>
+<ul>
+<li>同样启动拷贝配置文件</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  docker cp filebeat:/usr/share/filebeat/ ./filebeat</span><br><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker rm filebeat</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动filebeat</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mizhuo@mizhuodeMacBook-Pro  ~/docker/elk  docker run --name filebeat --net elk_network -d --link logstash -v /Users/mizhuo/docker/elk/filebeat/:/usr/share/filebeat/ -v /Users/mizhuo/docker/elk/logs/:/home/logs/ store/elastic/filebeat:7.9.3</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -787,7 +849,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">运行 Kibana</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问5601端口"><span class="nav-number">1.1.</span> <span class="nav-text">null访问5601端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行logstash"><span class="nav-number">1.2.</span> <span class="nav-text">null运行logstash</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用dokcer安装配置elk"><span class="nav-number">1.</span> <span class="nav-text">null使用Dokcer安装配置ELK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拉取镜像"><span class="nav-number">2.</span> <span class="nav-text">null拉取镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建自定义的网络"><span class="nav-number">3.</span> <span class="nav-text">null创建自定义的网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装elasticsearch"><span class="nav-number">4.</span> <span class="nav-text">null安装ElasticSearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装kibana"><span class="nav-number">5.</span> <span class="nav-text">null安装Kibana</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装logstash"><span class="nav-number">6.</span> <span class="nav-text">null安装logstash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装filebeat"><span class="nav-number">7.</span> <span class="nav-text">null安装filebeat</span></a></li></ol></div>
             
 
           </div>
@@ -821,7 +883,7 @@
     
       <span class="post-meta-item-text">全站文字共&#58;</span>
     
-    <span title="全站文字共">43.2k</span>
+    <span title="全站文字共">43.6k</span>
   
 </div>
 
