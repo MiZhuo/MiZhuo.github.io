@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>5分钟搭建对象存储服务!</title>
+    <url>/2021/01/15/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="对象存储"><a class="header-anchor" href="#对象存储">null</a>对象存储</h4>
+<p>对象存储服务用来存储各类文件，一般作用于存储图片。常用的对象存储服务有OSS，像阿里云、腾讯、七牛云等等都有OSS对象存储服务。虽然这些OSS使用也很便捷，但毕竟还是自己搭建的比较香，搭建好了，也不需要连接外网就能使用，安全又方便。</p>
+<a id="more"></a>
+<h4 id="minio介绍"><a class="header-anchor" href="#minio介绍">null</a>MinIO介绍</h4>
+<p>MinIO是基于Go语言开发的一款高性能对象存储服务，非常适合于存储大容量非结构化的数据，比如图片、视频、日志等文件。而且MinIO虽然轻量，但五脏俱全，安装使用也十分方便。</p>
+<h4 id="使用docker安装及部署"><a class="header-anchor" href="#使用docker安装及部署">null</a>使用Docker安装及部署</h4>
+<ul>
+<li>
+<p>下载镜像</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull minio/minio</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>运行MinIO并挂载目录</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> docker run -p 9090:9000 --name minio \</span><br><span class="line">-v /root/mizhuo/docker/minio/data:/data \</span><br><span class="line">-v /root/mizhuo/docker/minio/config:/root/.minio \</span><br><span class="line">-d minio/minio server /data</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>浏览器访问MinIO网页端,默认Access Key和Secret都是<code>minioadmin</code><br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115215929.png" alt></p>
+</li>
+</ul>
+<h4 id="上传文件"><a class="header-anchor" href="#上传文件">null</a>上传文件</h4>
+<ul>
+<li>新建存储桶<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115220417.png" alt></li>
+<li>存储桶创建完成后，上传文件<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115220537.png" alt></li>
+<li>图片上传完成后，可以拷贝链接获取临时访问路径，时间可以自行选择<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115220934.png" alt></li>
+<li>想获取一个永久的访问路径，需要修改存储桶策略。<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115221217.png" alt></li>
+<li>这里可以选择访问策略，只读、只写、可读可写，这里我们选择只读即可，但是需要注意的是，访问前缀需要设置为<code>*.*</code>，否则会无法访问<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115221236.png" alt></li>
+<li>设置完之后，通过前面的路径就可以查看到这个文件了<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115221526.png" alt></li>
+<li>浏览图片<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210115221613.png" alt></li>
+</ul>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>minio</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring Cloud Stream定时任务</title>
     <url>/2020/12/30/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在开发系统的过程中，我们经常会遇到延迟执行任务的需求。比如，在系统中设定两个小时后提醒我做XX事情。对于这样的需求，我们可以使用Spring Cloud Stream搭配消息中间件可以很好的进行处理。</p>
