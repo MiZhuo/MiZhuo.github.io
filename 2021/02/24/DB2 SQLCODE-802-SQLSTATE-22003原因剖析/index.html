@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="DB2,Linux,">
+  <meta name="keywords" content="DB2,">
 
 
 
@@ -126,18 +126,22 @@
 
 
 
-<meta name="description" content="null前言 一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。">
-<meta name="keywords" content="DB2,Linux">
+<meta name="description" content="null前言 今天开发cognos报表，写的SQL语句执行出错，错误如下:  翻译过来就是发生算术溢出或其他算术异常,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。 null错误重现   新建临时表，表结构如下   1CREATE TABLE &quot;TEST    &quot;.&quot;TABLE2&quot; ( &quot;ID&quot; VARCHAR(50) , &quot;NAME&quot; VARCHAR(50) , &quot;V">
+<meta name="keywords" content="DB2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下DB2的使用">
-<meta property="og:url" content="/2019/10/09/Linux下DB2的使用/index.html">
+<meta property="og:title" content="DB2 SQLCODE=-802,SQLSTATE=22003原因剖析">
+<meta property="og:url" content="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/index.html">
 <meta property="og:site_name" content="MiZhuo">
-<meta property="og:description" content="null前言 一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。">
+<meta property="og:description" content="null前言 今天开发cognos报表，写的SQL语句执行出错，错误如下:  翻译过来就是发生算术溢出或其他算术异常,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。 null错误重现   新建临时表，表结构如下   1CREATE TABLE &quot;TEST    &quot;.&quot;TABLE2&quot; ( &quot;ID&quot; VARCHAR(50) , &quot;NAME&quot; VARCHAR(50) , &quot;V">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T09:24:55.000Z">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221451.png">
+<meta property="og:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221611.png">
+<meta property="og:updated_time" content="2021-02-24T14:28:20.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux下DB2的使用">
-<meta name="twitter:description" content="null前言 一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。">
+<meta name="twitter:title" content="DB2 SQLCODE=-802,SQLSTATE=22003原因剖析">
+<meta name="twitter:description" content="null前言 今天开发cognos报表，写的SQL语句执行出错，错误如下:  翻译过来就是发生算术溢出或其他算术异常,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。 null错误重现   新建临时表，表结构如下   1CREATE TABLE &quot;TEST    &quot;.&quot;TABLE2&quot; ( &quot;ID&quot; VARCHAR(50) , &quot;NAME&quot; VARCHAR(50) , &quot;V">
+<meta name="twitter:image" content="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png">
 
 
 
@@ -167,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="/2019/10/09/Linux下DB2的使用/">
+  <link rel="canonical" href="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/">
 
 
 
@@ -181,7 +185,7 @@
   daovoice('update');
   </script>
 
-  <title>Linux下DB2的使用 | MiZhuo</title>
+  <title>DB2 SQLCODE=-802,SQLSTATE=22003原因剖析 | MiZhuo</title>
   
 
 
@@ -345,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2019/10/09/Linux下DB2的使用/">
+    <link itemprop="mainEntityOfPage" href="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MiZhuo">
@@ -362,7 +366,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux下DB2的使用</h2>
+          <h2 class="post-title" itemprop="name headline">DB2 SQLCODE=-802,SQLSTATE=22003原因剖析</h2>
         
 
         <div class="post-meta">
@@ -374,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T14:04:55+08:00">
-                2019-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-24T21:25:11+08:00">
+                2021-02-24
               </time>
             
 
@@ -390,8 +394,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-15T17:24:55+08:00">
-                2019-10-15
+              <time title="更新于" itemprop="dateModified" datetime="2021-02-24T22:28:20+08:00">
+                2021-02-24
               </time>
             
           </span>
@@ -416,17 +420,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DB2/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -438,8 +431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>评论数:
-                <a href="/2019/10/09/Linux下DB2的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/Linux下DB2的使用/" itemprop="commentCount"></span>
+                <a href="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,7 +440,7 @@
 
           
           
-             <span id="/2019/10/09/Linux下DB2的使用/" class="leancloud_visitors" data-flag-title="Linux下DB2的使用">
+             <span id="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/" class="leancloud_visitors" data-flag-title="DB2 SQLCODE=-802,SQLSTATE=22003原因剖析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  488
                 </span>
               
 
@@ -489,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 min
+                  2 min
                 </span>
               
             </div>
@@ -511,115 +504,56 @@
 
       
         <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
-<p>一只在银行工作的程序猿，平时工作中使用到的都是IBM的系统和软件。比如AIX、DB2、WebSphere等。这里记录一下Linux下DB2的命令。</p>
-<a id="more"></a>
+<p>今天开发cognos报表，写的SQL语句执行出错，错误如下:<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png" alt><br>
+翻译过来就是<code>发生算术溢出或其他算术异常</code>,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。</p>
+<h4 id="错误重现"><a class="header-anchor" href="#错误重现">null</a>错误重现</h4>
 <ul>
 <li>
-<p><span style="color:red;font-size:18px;">连接DB2数据库</span><br>
-连接本地数据库：<code>db2 connect to &lt;DB2库名&gt;</code><br>
-连接远程数据库：<code>db2 connect to &lt;DB2库名&gt; user &lt;用户名&gt; using &lt;密码&gt;</code><br>
-查看所有连接：<code>db2 list application</code><br>
-强迫所有应用断开数据库连接(异步的)：<code>db2 force application all</code><br>
-断开数据库连接：<code>db2 connect reset</code>或 <code>db2 terminate</code></p>
+<p>新建临时表，表结构如下</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"TEST    "</span>.<span class="string">"TABLE2"</span> ( <span class="string">"ID"</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) , <span class="string">"NAME"</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) , <span class="string">"VALUE"</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>, <span class="number">8</span>)) <span class="keyword">IN</span> <span class="string">"USERSPACE1"</span> ORGANIZE <span class="keyword">BY</span> <span class="keyword">ROW</span> ;</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">显示DB2错误信息</span><br>
-DB2解释信息：<code>db2 ? &lt;SQLSTATE&gt;</code><br>
-SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
-<span style="color:red;font-size:20px;">缺点是只能看英文信息，不太直观，英文不好的可以<a href="https://www.mizhuo.site/2019/09/24/DB2-SqlCode-%E9%94%99%E8%AF%AF%E7%A0%81%E5%A4%A7%E5%85%A8" target="_blank" rel="noopener">点击这里</a>查看中文详细错误信息</span></p>
+<p>插入测试数据</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TEST.TABLE2 <span class="keyword">VALUES</span>(<span class="keyword">CONCAT</span>(<span class="keyword">HEX</span>(<span class="keyword">RAND</span>()),<span class="keyword">HEX</span>(<span class="keyword">RAND</span>())),<span class="string">'参数1'</span>,<span class="number">1.24342</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">启动关闭数据库</span><br>
-启动数据库：<code>db2start</code><br>
-停止数据库：<code>db2stop</code>或<code>db2stop force</code></p>
+<p>执行sql</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">17</span>,<span class="number">4</span>)) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">备份还原导入导出</span><br>
-备份整个数据库数据：<code>db2 backup db db2name&lt;数据库名称&gt;</code><br>
-还原数据库：<code>db2 restore db &lt;db2name&gt;</code><br>
-例：db2 restore database &lt;库名&gt; from &lt;路径&gt; taken at 20150304215844<br>
-导出数据：</p>
-<ul>
-<li><code>db2 &quot;export to &lt;路径&gt;/&lt;名称&gt;.del of del select * from &lt;表名&gt;&quot;</code></li>
-<li><code>db2 &quot;export to &lt;路径&gt;/&lt;名称&gt;.ixf of ixf select * from &lt;表名&gt;&quot;</code></li>
-<li><code>db2 &quot;export to &lt;路径&gt;/&lt;名称&gt;.txt of del select * from &lt;表名&gt;&quot;</code></li>
+<p>执行错误与预期一致</p>
+</li>
 </ul>
-<p>导入数据：</p>
+<h4 id="解决思路"><a class="header-anchor" href="#解决思路">null</a>解决思路</h4>
 <ul>
-<li><code>db2 import from &lt;路径&gt;/&lt;名称&gt;.ixf of ixf insert into &lt;表名&gt;</code></li>
-<li><code>db2 load from &lt;路径&gt;/&lt;名称&gt;.ixf of ixf insert into &lt;表名&gt;</code></li>
-<li><code>db2 load from &lt;路径&gt;/&lt;名称&gt;.ixf of ixf replace into &lt;表名&gt;</code> // 装入数据前，先删除已存在记录</li>
-<li><code>db2 load from &lt;路径&gt;/&lt;名称&gt;.ixf of ixf restart into &lt;表名&gt;</code> // 当装入失败时，重新执行，并记录导出结果和错误信息</li>
-</ul>
+<li>
+<p>将各部分数据单独拿出来查询</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">17</span>,<span class="number">4</span>)) ,NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) , NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) , NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
+<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221451.png" alt></p>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">数据库的创建和删除</span></p>
-<ul>
-<li>创建数据库：<code>db2 create database &lt;库名&gt; using UFT-8 territory CN</code><br>
-<span style="color:red;">若出现以下错误:</span></li>
-</ul>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[db2inst1@VM_0_5_centos server_dec]$ db2 create database Test using UFT-8 territory CN</span><br><span class="line">SQL0104N  An unexpected token "UFT-8" was found following "USING".  Expected</span><br></pre></td></tr></table></figure>
-<p>是因为使用了“su username”而非“su -username”在终端切换用户，前者相当于简单地同时登录有用户，而后者相当于注销后重新登录新用户，所以不会维持之前用户的ENV设置。<br>
-切换为su - db2inst1 就可以创建成功了</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[db2inst1@VM_0_5_centos ~]$ db2 create database Test  using codeset UTF-8 territory CN</span><br><span class="line">The CREATE DATABASE command completed successfully.</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查看所有的数据库：<code>db2 list db directory</code></li>
-<li>删除数据库：<code>db2 drop database Test</code>, 如果执行失败可能是有数据库连接存在。执行<code>db2stop force</code>或者<code>db2 force application all</code>。再启动 <code>db2start</code>。删除数据库时，数据库所有表空间会自动删除。</li>
-</ul>
+<p>最开始会误以为是数据错误，于是直接将数据写死参与运算<br>
+<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221611.png" alt></p>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">Schema的创建和删除</span></p>
-<ul>
-<li>创建Schema：<code>db2 list schemas</code></li>
-<li>查询Schema：<code>db2 select schemaname from syscat.schemata</code></li>
-<li>删除Schema：<code>db2 DROP SCHEMA &lt;name&gt; RESTRICT</code>  （只能删除空Schema）</li>
-<li>切换当前Schema： <code>db2 SET CURRENT SCHEMA = 'PAYROLL'</code></li>
-<li>查看当前Schema：<code>db2 select current schema from sysibm.sysdummy1</code> 或 <code>db2 select current schema from sysibm.dual</code></li>
-</ul>
+<p>这个时候就很疑惑了，明明是同样的数据，为啥就会报错呢？于是开始怀疑是不是数据类型出了问题。</p>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">表的创建及修改</span></p>
-<ul>
-<li>创建表:<code>db2 create table TTBB &quot;( T_ID int not null,T_TYPE CHAR(1))&quot;</code></li>
-</ul>
+<p>于是将数据全部进行类型转换,发现能够正常执行不报错。</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p><span style="color:red;font-size:18px;">表索引</span></p>
-<ul>
-<li>查看表的索引情况:<code>db2look -d &lt;数据库名&gt; -z &lt;Schema&gt; -t &quot;&lt;表名&gt;&quot; -a -e -c</code></li>
-<li>简单查看索引:<code>db2 describe indexes for table &lt;Schema.tabName&gt;</code></li>
-<li>从系统表中查询索引:`select * from sysibm.sysindexes where tbName = &lt;表名&gt;&quot;<br>
-<span style="color:red;">推荐使用第一种，比较详细。</span></li>
-<li>建立表索引:<code>create index 索引名 on 表名(列名，列名);</code></li>
-<li>删除表索引:<code>drop index 索引名 on 表名;</code></li>
-</ul>
-</li>
-<li>
-<p><span style="color:red;font-size:18px;">触发器、存储过程</span></p>
-<ul>
-<li>查看某张表的触发器:<code>select * from syscat.triggers where tabname = &lt;表名&gt;</code></li>
-<li>查看触发器的代码:<code>select text from syscat.triggers where tabname = &lt;表名&gt;</code></li>
-<li>创建触发器:</li>
-</ul>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> &lt;<span class="keyword">schema</span>&gt;.&lt;触发器名称&gt; <span class="keyword">after</span> &lt;<span class="keyword">insert</span>/<span class="keyword">update</span>/<span class="keyword">delete</span>&gt;</span><br><span class="line"><span class="keyword">on</span> &lt;Schema.tabname&gt;</span><br><span class="line"><span class="keyword">referencing</span> &lt;<span class="keyword">new</span> <span class="keyword">as</span> n&gt;/&lt;<span class="keyword">new</span> <span class="keyword">as</span> n <span class="keyword">old</span> <span class="keyword">as</span> o&gt;/&lt;<span class="keyword">old</span> <span class="keyword">as</span> o&gt; <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span> <span class="keyword">mode</span> db2 <span class="keyword">sql</span></span><br><span class="line"><span class="keyword">begin</span> atomic</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> XXX (XXX) <span class="keyword">VALUES</span> (n.XXX);</span><br><span class="line"><span class="keyword">update</span> XXX <span class="keyword">set</span> o.XXX = n.XXX <span class="keyword">where</span> o.XXX = n.XXX;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> XXX <span class="keyword">where</span> XXX = o.XXX;</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>删除触发器:<code>DROP TRIGGER &lt;触发器名称&gt;</code></li>
-<li>查看存储过程:<code>select * from syscat.procedures</code></li>
-<li>查看存储过程代码:<code>select text from syscat.procedures where procname = &lt;存储过程名称&gt;</code></li>
-</ul>
-</li>
-<li>
-<p><span style="color:red;font-size:18px;">其它命令行</span></p>
-<ul>
-<li>查看版本:<code>db2level</code></li>
-<li>显示当前数据库管理实例:<code>db2 get instance</code></li>
-<li>列出数据库中所有的表:<code>db2 list tables</code></li>
-<li>执行SQL脚本:<code>db2 -svtf test.sql</code></li>
-<li>查看db2对sql脚本的建议:<code>db2advis -d &lt;数据库名&gt; -i &lt;sql文件位置&gt;</code></li>
-<li>查看执行计划:<code>db2expln -d &lt;数据库名&gt; -i -g -q &lt;sql语句&gt; -t</code></li>
-</ul>
+<p>最后比较强转之前和强转之后数据类型的差异，找到问题所在了。</p>
 </li>
 </ul>
+<h4 id="原因剖析"><a class="header-anchor" href="#原因剖析">null</a>原因剖析</h4>
+<ul>
+<li>类型转换之前是<code>DECIMAL(16,8)</code>,转换之后是<code>DECIMAL(16,4)</code>。差距在于小数位进度相差4位。</li>
+<li>这时候应该很清晰了，原因就是<code>4位小数精度 X 8位小数精度 X 8位小数精度 X 8位小数精度</code>导致最后的数据精度超长。而DECIMAL最大长度为31位。</li>
+</ul>
+<h4 id="总结"><a class="header-anchor" href="#总结">null</a>总结</h4>
+<p>错误原因虽然很小，但是定位错误的步骤比较麻烦。遇到问题，找到问题所在是最重要的一步!</p>
 
       
     </div>
@@ -652,12 +586,12 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/09/Linux下DB2的使用/">Linux下DB2的使用</a></p>
+  <p><span>本文标题:</span><a href="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/">DB2 SQLCODE=-802,SQLSTATE=22003原因剖析</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 MiZhuo 的个人博客">MiZhuo</a></p>
-  <p><span>发布时间:</span>2019年10月09日 - 14:10</p>
-  <p><span>最后更新:</span>2019年10月15日 - 17:10</p>
-  <p><span>原始链接:</span><a href="https://www.mizhuo.site/2019/10/09/Linux下DB2的使用/" title="https://www.mizhuo.funLinux下DB2的使用">https://www.mizhuo.fun/2019/10/09/Linux下DB2的使用/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2019/10/09/Linux下DB2的使用/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2021年02月24日 - 21:02</p>
+  <p><span>最后更新:</span>2021年02月24日 - 22:02</p>
+  <p><span>原始链接:</span><a href="https://www.mizhuo.site/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/" title="https://www.mizhuo.funDB2 SQLCODE=-802,SQLSTATE=22003原因剖析">https://www.mizhuo.fun/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.mizhuo.fun/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -689,8 +623,6 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
           
             <a href="/tags/DB2/" rel="tag"><i class="fa fa-tag"></i> DB2</a>
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-          
         </div>
       
 
@@ -701,8 +633,8 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/09/Linux下DB2的安装/" rel="next" title="Linux下DB2的安装">
-                <i class="fa fa-chevron-left"></i> Linux下DB2的安装
+              <a href="/2021/01/15/5分钟搭建对象存储服务/" rel="next" title="5分钟搭建对象存储服务!">
+                <i class="fa fa-chevron-left"></i> 5分钟搭建对象存储服务!
               </a>
             
           </div>
@@ -710,10 +642,6 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/13/微信公众号开发【二】/" rel="prev" title="微信公众号开发【二】">
-                微信公众号开发【二】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -910,7 +838,7 @@ SQLCODE解释信息：<code>db2 ? &lt;SQLCODE&gt;</code><br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">null前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误重现"><span class="nav-number">2.</span> <span class="nav-text">null错误重现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决思路"><span class="nav-number">3.</span> <span class="nav-text">null解决思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因剖析"><span class="nav-number">4.</span> <span class="nav-text">null原因剖析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">null总结</span></a></li></ol></div>
             
 
           </div>

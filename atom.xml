@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-01-15T14:18:46.840Z</updated>
+  <updated>2021-02-24T14:28:20.879Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DB2 SQLCODE=-802,SQLSTATE=22003原因剖析</title>
+    <link href="/2021/02/24/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/"/>
+    <id>/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/</id>
+    <published>2021-02-24T13:25:11.000Z</published>
+    <updated>2021-02-24T14:28:20.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DB2" scheme="/categories/DB2/"/>
+    
+    
+      <category term="DB2" scheme="/tags/DB2/"/>
+    
+  </entry>
   
   <entry>
     <title>5分钟搭建对象存储服务!</title>
@@ -427,9 +454,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Mq" scheme="/tags/Mq/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="Mq" scheme="/tags/Mq/"/>
     
   </entry>
   
@@ -451,33 +478,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
-  </entry>
-  
-  <entry>
-    <title>清空DB2表数据的几种方法</title>
-    <link href="/2020/06/03/%E6%B8%85%E7%A9%BADB2%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <id>/2020/06/03/清空DB2表数据的几种方法/</id>
-    <published>2020-06-03T07:46:53.000Z</published>
-    <updated>2020-06-03T07:46:53.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
-&lt;p&gt;今天对DB2数据进行刷新操作，表数据千万级别，因为要从其它表中重新汇数据，所以我新建了一张临时表，但是中间逻辑问题，我直接使用了&lt;code&gt;DELETE FROM XXX&lt;/code&gt;来进行清表操作，结果光删除数据就花费了半个小时。于是整理了一下时间慢的原因和其它几种清表方式。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="DB2" scheme="/categories/DB2/"/>
-    
-      <category term="数据库" scheme="/categories/DB2/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="DB2" scheme="/tags/DB2/"/>
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
