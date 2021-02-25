@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-02-24T14:28:20.879Z</updated>
+  <updated>2021-02-25T01:10:07.848Z</updated>
   <id>/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="/2021/02/24/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/"/>
     <id>/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/</id>
     <published>2021-02-24T13:25:11.000Z</published>
-    <updated>2021-02-24T14:28:20.879Z</updated>
+    <updated>2021-02-25T01:10:07.848Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          
-        
-      
+      &lt;h4 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;null&lt;/a&gt;前言&lt;/h4&gt;
+&lt;p&gt;今天开发cognos报表，写的SQL语句执行出错，错误如下:&lt;br&gt;
+&lt;img src=&quot;https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png&quot; alt&gt;&lt;br&gt;
+翻译过来就是&lt;code&gt;发生算术溢出或其他算术异常&lt;/code&gt;,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。&lt;/p&gt;
     
     </summary>
     

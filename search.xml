@@ -7,6 +7,7 @@
 <p>今天开发cognos报表，写的SQL语句执行出错，错误如下:<br>
 <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png" alt><br>
 翻译过来就是<code>发生算术溢出或其他算术异常</code>,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。</p>
+<a id="more"></a>
 <h4 id="错误重现"><a class="header-anchor" href="#错误重现">null</a>错误重现</h4>
 <ul>
 <li>

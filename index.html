@@ -392,8 +392,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-02-24T22:28:20+08:00">
-                2021-02-24
+              <time title="更新于" itemprop="dateModified" datetime="2021-02-25T09:10:07+08:00">
+                2021-02-25
               </time>
             
           </span>
@@ -502,60 +502,17 @@
 
       
         
-          
-            <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
+          <h4 id="前言"><a class="header-anchor" href="#前言">null</a>前言</h4>
 <p>今天开发cognos报表，写的SQL语句执行出错，错误如下:<br>
 <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png" alt><br>
 翻译过来就是<code>发生算术溢出或其他算术异常</code>,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。</p>
-<h4 id="错误重现"><a class="header-anchor" href="#错误重现">null</a>错误重现</h4>
-<ul>
-<li>
-<p>新建临时表，表结构如下</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"TEST    "</span>.<span class="string">"TABLE2"</span> ( <span class="string">"ID"</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) , <span class="string">"NAME"</span> <span class="built_in">VARCHAR</span>(<span class="number">50</span>) , <span class="string">"VALUE"</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>, <span class="number">8</span>)) <span class="keyword">IN</span> <span class="string">"USERSPACE1"</span> ORGANIZE <span class="keyword">BY</span> <span class="keyword">ROW</span> ;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>插入测试数据</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TEST.TABLE2 <span class="keyword">VALUES</span>(<span class="keyword">CONCAT</span>(<span class="keyword">HEX</span>(<span class="keyword">RAND</span>()),<span class="keyword">HEX</span>(<span class="keyword">RAND</span>())),<span class="string">'参数1'</span>,<span class="number">1.24342</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>执行sql</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">17</span>,<span class="number">4</span>)) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) * NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>执行错误与预期一致</p>
-</li>
-</ul>
-<h4 id="解决思路"><a class="header-anchor" href="#解决思路">null</a>解决思路</h4>
-<ul>
-<li>
-<p>将各部分数据单独拿出来查询</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">17</span>,<span class="number">4</span>)) ,NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) , NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) , NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
-<p><img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221451.png" alt></p>
-</li>
-<li>
-<p>最开始会误以为是数据错误，于是直接将数据写死参与运算<br>
-<img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224221611.png" alt></p>
-</li>
-<li>
-<p>这个时候就很疑惑了，明明是同样的数据，为啥就会报错呢？于是开始怀疑是不是数据类型出了问题。</p>
-</li>
-<li>
-<p>于是将数据全部进行类型转换,发现能够正常执行不报错。</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">4324432.13134</span>/<span class="number">365</span> <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) * <span class="keyword">CAST</span>(NVL(<span class="keyword">VALUE</span>,<span class="number">1</span>) <span class="keyword">AS</span> <span class="built_in">DECIMAL</span>(<span class="number">16</span>,<span class="number">4</span>)) <span class="keyword">FROM</span> TABLE2</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>最后比较强转之前和强转之后数据类型的差异，找到问题所在了。</p>
-</li>
-</ul>
-<h4 id="原因剖析"><a class="header-anchor" href="#原因剖析">null</a>原因剖析</h4>
-<ul>
-<li>类型转换之前是<code>DECIMAL(16,8)</code>,转换之后是<code>DECIMAL(16,4)</code>。差距在于小数位进度相差4位。</li>
-<li>这时候应该很清晰了，原因就是<code>4位小数精度 X 8位小数精度 X 8位小数精度 X 8位小数精度</code>导致最后的数据精度超长。而DECIMAL最大长度为31位。</li>
-</ul>
-<h4 id="总结"><a class="header-anchor" href="#总结">null</a>总结</h4>
-<p>错误原因虽然很小，但是定位错误的步骤比较麻烦。遇到问题，找到问题所在是最重要的一步!</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/02/24/DB2 SQLCODE-802-SQLSTATE-22003原因剖析/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
