@@ -451,9 +451,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="Docker" scheme="/tags/Docker/"/>
-    
       <category term="Mq" scheme="/tags/Mq/"/>
+    
+      <category term="Docker" scheme="/tags/Docker/"/>
     
   </entry>
   
@@ -475,9 +475,9 @@
       <category term="Docker" scheme="/categories/Docker/"/>
     
     
-      <category term="MongoDB" scheme="/tags/MongoDB/"/>
-    
       <category term="Docker" scheme="/tags/Docker/"/>
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
     
   </entry>
   
