@@ -6,7 +6,7 @@
   <link href="http://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="http://mizhuo.site/"/>
-  <updated>2022-06-24T08:16:39.435Z</updated>
+  <updated>2022-06-24T09:22:01.949Z</updated>
   <id>http://mizhuo.site/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://mizhuo.site/2021/08/17/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/"/>
     <id>http://mizhuo.site/2021/08/17/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</id>
     <published>2021-08-17T13:48:10.000Z</published>
-    <updated>2022-06-24T08:16:39.435Z</updated>
+    <updated>2022-06-24T09:22:01.949Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;JAVA设计模式分类&quot;&gt;&lt;a href=&quot;#JAVA设计模式分类&quot; class=&quot;headerlink&quot; title=&quot;JAVA设计模式分类&quot;&gt;&lt;/a&gt;JAVA设计模式分类&lt;/h4&gt;&lt;p&gt;设计模式主要分为三大类：&lt;/p&gt;
@@ -52,7 +52,7 @@
     <link href="http://mizhuo.site/2021/02/24/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/"/>
     <id>http://mizhuo.site/2021/02/24/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/</id>
     <published>2021-02-24T13:25:11.000Z</published>
-    <updated>2022-06-24T08:16:01.655Z</updated>
+    <updated>2022-06-24T09:21:23.681Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;今天开发cognos报表，写的SQL语句执行出错，错误如下:&lt;br&gt;&lt;img src=&quot;https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png&quot;&gt;&lt;br&gt;翻译过来就是&lt;code&gt;发生算术溢出或其他算术异常&lt;/code&gt;,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。&lt;/p&gt;</summary>
@@ -71,7 +71,7 @@
     <link href="http://mizhuo.site/2021/01/15/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/"/>
     <id>http://mizhuo.site/2021/01/15/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/</id>
     <published>2021-01-15T12:27:45.000Z</published>
-    <updated>2022-06-24T08:15:20.103Z</updated>
+    <updated>2022-06-24T09:20:39.370Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;对象存储&quot;&gt;&lt;a href=&quot;#对象存储&quot; class=&quot;headerlink&quot; title=&quot;对象存储&quot;&gt;&lt;/a&gt;对象存储&lt;/h4&gt;&lt;p&gt;对象存储服务用来存储各类文件，一般作用于存储图片。常用的对象存储服务有OSS，像阿里云、腾讯、七牛云等等都有OSS对象存储服务。虽然这些OSS使用也很便捷，但毕竟还是自己搭建的比较香，搭建好了，也不需要连接外网就能使用，安全又方便。&lt;/p&gt;</summary>
@@ -111,7 +111,7 @@
     <link href="http://mizhuo.site/2020/12/19/Native%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     <id>http://mizhuo.site/2020/12/19/Native%E5%85%B3%E9%94%AE%E5%AD%97/</id>
     <published>2020-12-19T12:32:44.000Z</published>
-    <updated>2022-06-24T08:16:57.540Z</updated>
+    <updated>2022-06-24T09:22:16.386Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;Native方法&quot;&gt;&lt;a href=&quot;#Native方法&quot; class=&quot;headerlink&quot; title=&quot;Native方法&quot;&gt;&lt;/a&gt;Native方法&lt;/h4&gt;&lt;p&gt;说到&lt;code&gt;native&lt;/code&gt;关键字，大家可能没怎么关注过，但是肯定都见过，在Java很多方法中，都有用&lt;code&gt;native&lt;/code&gt;修饰的方法。&lt;/p&gt;</summary>
@@ -130,7 +130,7 @@
     <link href="http://mizhuo.site/2020/12/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
     <id>http://mizhuo.site/2020/12/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
     <published>2020-12-13T13:55:28.000Z</published>
-    <updated>2022-06-24T08:15:51.138Z</updated>
+    <updated>2022-06-24T09:21:14.568Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;类加载器&quot;&gt;&lt;a href=&quot;#类加载器&quot; class=&quot;headerlink&quot; title=&quot;类加载器&quot;&gt;&lt;/a&gt;类加载器&lt;/h4&gt;&lt;p&gt;Java类加载过程，第一步就是通过类加载器加载&lt;code&gt;.class&lt;/code&gt;文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。&lt;/p&gt;</summary>
@@ -168,7 +168,7 @@
     <link href="http://mizhuo.site/2020/12/07/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
     <id>http://mizhuo.site/2020/12/07/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/</id>
     <published>2020-12-07T14:19:56.000Z</published>
-    <updated>2022-06-24T08:17:04.103Z</updated>
+    <updated>2022-06-24T09:22:23.349Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;Tomcat性能优化&quot;&gt;&lt;a href=&quot;#Tomcat性能优化&quot; class=&quot;headerlink&quot; title=&quot;Tomcat性能优化&quot;&gt;&lt;/a&gt;Tomcat性能优化&lt;/h4&gt;&lt;p&gt;Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。&lt;/p&gt;</summary>
