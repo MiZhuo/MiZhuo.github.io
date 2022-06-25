@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-06-25T05:31:09.050Z</updated>
+  <updated>2022-06-25T14:54:44.440Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spring Cloud Stream定时任务</title>
+    <title>Spring事务的7种传播行为</title>
     <link href="https://mizhuo.site/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/"/>
     <id>https://mizhuo.site/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</id>
     <published>2022-06-25T04:42:30.000Z</published>
-    <updated>2022-06-25T05:31:09.050Z</updated>
+    <updated>2022-06-25T14:54:44.440Z</updated>
     
     
     

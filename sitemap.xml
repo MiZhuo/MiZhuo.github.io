@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>https://mizhuo.site/comment/index.html</loc>
+    
+    <lastmod>2022-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizhuo.site/resource/index.html</loc>
+    
+    <lastmod>2022-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/photos/landscape/index.html</loc>
     
     <lastmod>2022-06-24</lastmod>
