@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MiZhuo</title>
-  <icon>https://www.gravatar.com/avatar/729c4fc1446b9d9e4f703bb78f258157</icon>
+  <icon>https://www.gravatar.com/avatar/66181c53243a8aa70e5b1971b944717c</icon>
   
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>MiZhuo</name>
-    <email>wulibin0809@gmail.com</email>
+    <email>mizhuo809@gmail.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
