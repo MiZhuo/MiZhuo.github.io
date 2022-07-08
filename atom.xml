@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-07-08T03:06:38.849Z</updated>
+  <updated>2022-07-08T13:32:31.303Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Springboot整合ELK实现查看日志自由</title>
-    <link href="https://mizhuo.site/Springboot%E6%95%B4%E5%90%88ELK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
-    <id>https://mizhuo.site/Springboot%E6%95%B4%E5%90%88ELK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
+    <title>SpringBoot整合ELK实现查看日志自由</title>
+    <link href="https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
+    <id>https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
     <published>2022-07-08T02:28:06.000Z</published>
-    <updated>2022-07-08T03:06:38.849Z</updated>
+    <updated>2022-07-08T13:32:31.303Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;之前讲过如何使用Docker搭建ELK日志收集系统,本章来讲讲如何使用SpringBoot整合ELK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
@@ -42,7 +42,7 @@
     <link href="https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/"/>
     <id>https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/</id>
     <published>2022-07-06T14:33:50.000Z</published>
-    <updated>2022-07-08T01:15:07.908Z</updated>
+    <updated>2022-07-08T13:32:42.120Z</updated>
     
     
     
