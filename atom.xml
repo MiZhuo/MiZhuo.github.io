@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-07-10T23:13:07.080Z</updated>
+  <updated>2022-07-11T01:27:30.507Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
     <id>https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
     <published>2022-07-08T02:28:06.000Z</published>
-    <updated>2022-07-10T23:13:07.080Z</updated>
+    <updated>2022-07-11T01:27:30.507Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;之前讲过如何使用Docker搭建ELK日志收集系统,本章来讲讲如何使用SpringBoot整合ELK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;之前讲过如何使用Docker安装ELK日志,本章来讲讲如何使用SpringBoot整合ELK以及ELFK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
     
     
     
