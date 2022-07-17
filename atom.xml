@@ -42,7 +42,7 @@
     <link href="https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/"/>
     <id>https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/</id>
     <published>2022-07-06T14:33:50.000Z</published>
-    <updated>2022-07-13T14:34:06.467Z</updated>
+    <updated>2022-07-17T15:00:01.510Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;Arthas介绍&quot;&gt;&lt;a href=&quot;#Arthas介绍&quot; class=&quot;headerlink&quot; title=&quot;Arthas介绍&quot;&gt;&lt;/a&gt;Arthas介绍&lt;/h4&gt;&lt;p&gt;&lt;code&gt;Arthas&lt;/code&gt; 是Alibaba开源的Java诊断工具,一般用于排查线上比较难以定位以及线下难以重现的问题,采用命令式交互模式,简单易上手,可以实时无侵入的监控JVM状态,以及动态追踪JAVA代码,并且可以动态替换class文件。&lt;/p&gt;</summary>
