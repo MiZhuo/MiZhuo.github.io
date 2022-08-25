@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-08-24T14:31:17.547Z</updated>
+  <updated>2022-08-25T23:19:15.159Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>为什么InnoDB要使用B树</title>
-    <link href="https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B%E6%A0%91/"/>
-    <id>https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B%E6%A0%91/</id>
+    <title>为什么InnoDB要使用B+树</title>
+    <link href="https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/"/>
+    <id>https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/</id>
     <published>2022-07-21T13:59:25.000Z</published>
-    <updated>2022-08-24T14:31:17.547Z</updated>
+    <updated>2022-08-25T23:19:15.159Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在研究数据库调优,最常用的优化手段就是&lt;code&gt;缩小结果集&lt;/code&gt;、&lt;code&gt;分页&lt;/code&gt;、&lt;code&gt;优化SQL避免出现索引失效&lt;/code&gt;、&lt;code&gt;建索引&lt;/code&gt;、&lt;code&gt;分库分表&lt;/code&gt;,但不管怎么样都绕不开索引。而说到索引,查询很快、有序,就会想到&lt;code&gt;树&lt;/code&gt;这个数据结构。但是MySQL默认的InnoDB引擎为什么使用B+树而不是B树、平衡二叉树、红黑树呢？&lt;/p&gt;</summary>
