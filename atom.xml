@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-08-30T13:27:37.919Z</updated>
+  <updated>2022-08-31T13:27:59.115Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Docker安装kafka</title>
-    <link href="https://mizhuo.site/Docker%E5%AE%89%E8%A3%85kafka/"/>
-    <id>https://mizhuo.site/Docker%E5%AE%89%E8%A3%85kafka/</id>
+    <title>Docker安装Kafka</title>
+    <link href="https://mizhuo.site/Docker%E5%AE%89%E8%A3%85Kafka/"/>
+    <id>https://mizhuo.site/Docker%E5%AE%89%E8%A3%85Kafka/</id>
     <published>2022-08-28T13:22:43.000Z</published>
-    <updated>2022-08-30T13:27:37.919Z</updated>
+    <updated>2022-08-31T13:27:59.115Z</updated>
     
     
       
