@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/</loc>
+    
+    <lastmod>2022-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/</loc>
     
     <lastmod>2022-08-30</lastmod>
@@ -556,6 +565,13 @@
   </url>
   
   <url>
+    <loc>https://mizhuo.site/tags/JVM/</loc>
+    <lastmod>2022-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/tags/Linux/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -591,14 +607,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
+    <loc>https://mizhuo.site/tags/Spring/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Spring/</loc>
+    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -619,14 +635,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/JVM/</loc>
+    <loc>https://mizhuo.site/tags/Vue/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Vue/</loc>
+    <loc>https://mizhuo.site/tags/Git/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -641,13 +657,6 @@
   
   <url>
     <loc>https://mizhuo.site/tags/MySQL/</loc>
-    <lastmod>2022-10-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/tags/Git/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -710,6 +719,13 @@
   </url>
   
   <url>
+    <loc>https://mizhuo.site/tags/Nginx/</loc>
+    <lastmod>2022-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/tags/mysql/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -718,13 +734,6 @@
   
   <url>
     <loc>https://mizhuo.site/tags/oracle/</loc>
-    <lastmod>2022-10-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/tags/Nginx/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -775,14 +784,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://mizhuo.site/categories/Git/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/Git/</loc>
+    <loc>https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

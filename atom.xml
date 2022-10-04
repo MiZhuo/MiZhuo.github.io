@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-08-28T13:22:43.000Z</updated>
+  <updated>2022-09-14T14:04:48.000Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>玩转Kafka【二】</title>
+    <link href="https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/"/>
+    <id>https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/</id>
+    <published>2022-09-14T14:04:48.000Z</published>
+    <updated>2022-09-14T14:04:48.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;上节内容,我们已经使用 Docker 将 Zookeeper 集群与 Kafka 集群搭建好,这节内容我们就来演示一下如何使用 Kafka,以及如何使用SpringBoot整合Kafka。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Kafka" scheme="https://mizhuo.site/categories/Kafka/"/>
+    
+    
+    <category term="Mq" scheme="https://mizhuo.site/tags/Mq/"/>
+    
+    <category term="Kafka" scheme="https://mizhuo.site/tags/Kafka/"/>
+    
+  </entry>
   
   <entry>
     <title>玩转Kafka【一】</title>
@@ -404,27 +425,6 @@
     
     
     <category term="Git" scheme="https://mizhuo.site/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义注解实现Aspect埋点</title>
-    <link href="https://mizhuo.site/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0Aspect%E5%9F%8B%E7%82%B9/"/>
-    <id>https://mizhuo.site/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0Aspect%E5%9F%8B%E7%82%B9/</id>
-    <published>2020-08-13T14:37:27.000Z</published>
-    <updated>2020-08-13T14:37:27.000Z</updated>
-    
-    
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;最近做一个项目,要求服务埋点,保存登录用户的所有操作记录并入库，方便系统报错的时候能够及时发现和重现，也能防止登录人员不遵守系统规范。一想到埋点，常见的方式就是使用AOP切面,自定义一些包或者类和方法进行AOP来记录操作记录。这里记录一下使用自定义注解埋点过程。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
-    
-    
-    <category term="SpringBoot" scheme="https://mizhuo.site/tags/SpringBoot/"/>
-    
-    <category term="AOP" scheme="https://mizhuo.site/tags/AOP/"/>
     
   </entry>
   
