@@ -24,7 +24,7 @@
     <updated>2022-09-14T14:04:48.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;上节内容,我们已经使用 Docker 将 Zookeeper 集群与 Kafka 集群搭建好,这节内容我们就来演示一下如何使用 Kafka,以及如何使用SpringBoot整合Kafka。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;上节内容,我们已经使用 Docker 将 Zookeeper 集群与 Kafka 集群搭建好,这节内容我们就来演示一下如何使用 Kafka,以及Kafka的一些源码分析。&lt;/p&gt;</summary>
     
     
     
