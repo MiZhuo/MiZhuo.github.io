@@ -45,7 +45,11 @@
     <updated>2022-08-28T13:22:43.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;首先,何为Kafka？Kafka是一种高吞吐量的分布式发布订阅系统,支持分区、多副本,它以高吞吐、可持久化、可水平扩展、支持流处理等多种特性而被广泛应用。主要应用于:日志收集、消息系统、用户活动跟踪、运营指标、流式处理等。为什么选择Kafka？我们知道消息队列有很多,像我们熟知的mq,还有&lt;code&gt;RocketMQ&lt;/code&gt;、&lt;code&gt;RabbitMQ&lt;/code&gt;、&lt;code&gt;ActivityMQ&lt;/code&gt;,那相较于这些MQ来说,Kafka优势体现在哪里呢？我认为主要表现为:性能极致突出、生态成熟。接下来就让我们一起玩转Kafka吧!&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;首先,何为Kafka？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Kafka是一种高吞吐量的分布式发布订阅系统,支持分区、多副本,它以高吞吐、可持久化、可水平扩展、支持流处理等多种特性而被广泛应用。主要应用于:日志收集、消息系统、用户活动跟踪、运营指标、流式处理等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为什么选择Kafka？我们知道消息队列有很多,像我们熟知的mq,还有&lt;code&gt;RocketMQ&lt;/code&gt;、&lt;code&gt;RabbitMQ&lt;/code&gt;、&lt;code&gt;ActivityMQ&lt;/code&gt;,那相较于这些MQ来说,Kafka优势体现在哪里呢？我认为主要表现为:性能极致突出、生态成熟。接下来就让我们一起玩转Kafka吧!&lt;/p&gt;</summary>
     
     
     
@@ -84,10 +88,10 @@
     <link href="https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
     <id>https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
     <published>2022-07-08T02:28:06.000Z</published>
-    <updated>2022-08-21T13:22:22.019Z</updated>
+    <updated>2022-10-07T14:00:19.911Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;之前讲过如何使用Docker安装ELK,本章来讲讲如何使用SpringBoot整合ELK以及ELFK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;之前讲过如何使用Docker安装ELK,本章来讲讲如何使用SpringBoot整合ELK以及ELFK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
     
     
     
@@ -105,7 +109,7 @@
     <link href="https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/"/>
     <id>https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/</id>
     <published>2022-07-06T14:33:50.000Z</published>
-    <updated>2022-07-21T14:32:02.000Z</updated>
+    <updated>2022-10-07T13:47:21.270Z</updated>
     
     
     <summary type="html">&lt;h4 id=&quot;Arthas介绍&quot;&gt;&lt;a href=&quot;#Arthas介绍&quot; class=&quot;headerlink&quot; title=&quot;Arthas介绍&quot;&gt;&lt;/a&gt;Arthas介绍&lt;/h4&gt;&lt;p&gt;&lt;code&gt;Arthas&lt;/code&gt; 是Alibaba开源的Java诊断工具,一般用于排查线上比较难以定位以及线下难以重现的问题,采用命令式交互模式,简单易上手,可以实时无侵入的监控JVM状态,以及动态追踪JAVA代码,并且可以动态替换class文件。&lt;/p&gt;</summary>
@@ -170,14 +174,14 @@
   </entry>
   
   <entry>
-    <title>DB2 SQLCODE=-802,SQLSTATE=22003原因剖析</title>
-    <link href="https://mizhuo.site/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/"/>
-    <id>https://mizhuo.site/DB2%20SQLCODE-802-SQLSTATE-22003%E5%8E%9F%E5%9B%A0%E5%89%96%E6%9E%90/</id>
+    <title>DB2错误剖析</title>
+    <link href="https://mizhuo.site/DB2%E9%94%99%E8%AF%AF%E5%89%96%E6%9E%90/"/>
+    <id>https://mizhuo.site/DB2%E9%94%99%E8%AF%AF%E5%89%96%E6%9E%90/</id>
     <published>2021-02-24T13:25:11.000Z</published>
-    <updated>2022-07-21T14:32:03.000Z</updated>
+    <updated>2022-10-07T14:06:13.030Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;今天开发cognos报表，写的SQL语句执行出错，错误如下:&lt;br&gt;&lt;img src=&quot;https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png&quot;&gt;&lt;br&gt;翻译过来就是&lt;code&gt;发生算术溢出或其他算术异常&lt;/code&gt;,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;今天开发一张报表，写的SQL语句执行出错，错误如下:&lt;br&gt;&lt;img src=&quot;https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20210224214812.png&quot;&gt;&lt;br&gt;翻译过来就是&lt;code&gt;发生算术溢出或其他算术异常&lt;/code&gt;,网上搜索到的资料也不尽人意,于是自己摸索,查清楚了错误原因,这里记录一下。&lt;/p&gt;</summary>
     
     
     
@@ -193,10 +197,12 @@
     <link href="https://mizhuo.site/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/"/>
     <id>https://mizhuo.site/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/</id>
     <published>2021-01-15T12:27:45.000Z</published>
-    <updated>2022-07-21T14:31:44.000Z</updated>
+    <updated>2022-10-07T14:16:46.115Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;对象存储&quot;&gt;&lt;a href=&quot;#对象存储&quot; class=&quot;headerlink&quot; title=&quot;对象存储&quot;&gt;&lt;/a&gt;对象存储&lt;/h4&gt;&lt;p&gt;对象存储服务用来存储各类文件，一般作用于存储图片。常用的对象存储服务有OSS，像阿里云、腾讯、七牛云等等都有OSS对象存储服务。虽然这些OSS使用也很便捷，但毕竟还是自己搭建的比较香，搭建好了，也不需要连接外网就能使用，安全又方便。&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;对象存储服务用来存储各类文件，一般作用于存储图片。常用的对象存储服务有OSS，像阿里云、腾讯、七牛云等等都有OSS对象存储服务。虽然这些OSS使用也很便捷，但毕竟还是自己搭建的比较香，搭建好了，也不需要连接外网就能使用，安全又方便。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -233,10 +239,12 @@
     <link href="https://mizhuo.site/Native%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     <id>https://mizhuo.site/Native%E5%85%B3%E9%94%AE%E5%AD%97/</id>
     <published>2020-12-19T12:32:44.000Z</published>
-    <updated>2022-07-21T14:32:17.000Z</updated>
+    <updated>2022-10-07T14:21:29.224Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;Native方法&quot;&gt;&lt;a href=&quot;#Native方法&quot; class=&quot;headerlink&quot; title=&quot;Native方法&quot;&gt;&lt;/a&gt;Native方法&lt;/h4&gt;&lt;p&gt;说到&lt;code&gt;native&lt;/code&gt;关键字，大家可能没怎么关注过，但是肯定都见过，在Java很多方法中，都有用&lt;code&gt;native&lt;/code&gt;修饰的方法。&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;说到&lt;code&gt;native&lt;/code&gt;关键字，大家可能没怎么关注过，但是肯定都见过，在Java很多方法中，都有用&lt;code&gt;native&lt;/code&gt;修饰的方法。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -274,7 +282,9 @@
     <updated>2020-12-12T11:52:35.000Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;JVM组成部分&quot;&gt;&lt;a href=&quot;#JVM组成部分&quot; class=&quot;headerlink&quot; title=&quot;JVM组成部分&quot;&gt;&lt;/a&gt;JVM组成部分&lt;/h4&gt;&lt;p&gt;JVM即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JVM&lt;/strong&gt;即Java虚拟机(Java virtual machine)，其组成部分为:程序计数器(Program Counter Register)、Java虚拟机栈(Java Virtual Machine Stacks)、本地方法栈(Native Method Stack)、Java堆（Java Heap)、方法区(Methed Area)&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -370,14 +380,14 @@
   </entry>
   
   <entry>
-    <title>部署Vue项目到远程服务器Dokcer下的Nginx</title>
+    <title>部署Vue项目到远程服务器Docker下的Nginx</title>
     <link href="https://mizhuo.site/%E9%83%A8%E7%BD%B2Vue%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8Dokcer%E4%B8%8B%E7%9A%84Nginx/"/>
     <id>https://mizhuo.site/%E9%83%A8%E7%BD%B2Vue%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8Dokcer%E4%B8%8B%E7%9A%84Nginx/</id>
     <published>2020-10-29T11:57:21.000Z</published>
     <updated>2020-10-29T11:57:21.000Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;使用远程服务器Dokcer的Nginx来部署Vue项目&lt;/p&gt;</summary>
+    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;使用远程服务器Docker的Nginx来部署Vue项目&lt;/p&gt;</summary>
     
     
     
@@ -398,7 +408,9 @@
     <updated>2020-08-30T06:16:15.000Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;乐观锁和悲观锁，顾名思义，乐观锁对数据库永远保持着一种乐观的态度，操作数据库的时候不会对数据加锁，只有到数据提交的时候才去验证数据是否存在冲突，一般是通过加版本号来验证。而悲观锁则是一种悲观的态度，操作数据库时先对数据加锁，然后再去读写数据，在它释放锁之前，任何人都无法操作数据，直到上一个人释放锁，下一个人才能继续抢占锁，然后操作数据。&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;乐观锁和悲观锁，顾名思义，乐观锁对数据库永远保持着一种乐观的态度，操作数据库的时候不会对数据加锁，只有到数据提交的时候才去验证数据是否存在冲突，一般是通过加版本号来验证。而悲观锁则是一种悲观的态度，操作数据库时先对数据加锁，然后再去读写数据，在它释放锁之前，任何人都无法操作数据，直到上一个人释放锁，下一个人才能继续抢占锁，然后操作数据。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -410,14 +422,16 @@
   </entry>
   
   <entry>
-    <title>git命令大全</title>
-    <link href="https://mizhuo.site/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-    <id>https://mizhuo.site/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</id>
+    <title>Git命令大全</title>
+    <link href="https://mizhuo.site/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>https://mizhuo.site/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</id>
     <published>2020-08-17T14:30:07.000Z</published>
     <updated>2020-08-17T14:30:07.000Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;Git,是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Git&lt;/strong&gt;是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且git的分支概念可以很好的管理版本、环境等。也正因为git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
