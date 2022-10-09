@@ -155,7 +155,14 @@
 <h4 id="各组成部分的用途"><a href="#各组成部分的用途" class="headerlink" title="各组成部分的用途"></a>各组成部分的用途</h4><ul>
 <li>程序计数器<br>  <code>程序计数器</code>是一块较小的内存空间，它可以看做是一个指示器，指向当前线程所执行的字节码的位置。字节码解码器就是通过修改这个程序计数器来选取下一个要执行的字节码指令。像循环、跳转、异常等基础功能都需要依赖这个计数器来实现。</li>
 <li>Java虚拟机栈<br>  <code>Java虚拟机栈</code>描述的是Java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧(Stack Frame),包括函数的返回地址和参数、临时变量、函数上下文等等内容。每个方法的执行都对应一个栈帧在虚拟机栈中的入栈到出栈。</li>
-<li>本地方法栈<br>  <code>本地方法栈</code>主要存放用<code>native</code>关键字修饰的方法，即本地方法。而本地方法主要用于加载文件和动态链接库，由于Java无法访问操作系统底层信息，这时候就需要借助C语言来实现，而被native修饰的方法可以被C语言重写。  <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤1:在Java程序中声明native方法，编译该Java文件，生成class文件。</span><br><span class="line">步骤2:使用javah -jni编译class文件，生成一个.h文件。</span><br><span class="line">步骤3:写一个.cpp文件实现上一步中.h文件中的方法。</span><br><span class="line">步骤4:将上一步的.cpp文件编译成动态链接库文件.dll。</span><br><span class="line">步骤5:最后就可以使用System或是Runtime中的loadLibrary()方法加载上一步的产生的动态连接库文件了。</span><br></pre></td></tr></table></figure></li>
+<li>本地方法栈<br>  <code>本地方法栈</code>主要存放用<code>native</code>关键字修饰的方法，即本地方法。而本地方法主要用于加载文件和动态链接库，由于Java无法访问操作系统底层信息，这时候就需要借助C语言来实现，而被native修饰的方法可以被C语言重写。具体步骤如下:<ul>
+<li>在Java程序中声明native方法，编译该Java文件，生成class文件。</li>
+<li>使用javah -jni编译class文件，生成一个.h文件。</li>
+<li>写一个.cpp文件实现上一步中.h文件中的方法。</li>
+<li>将上一步的.cpp文件编译成动态链接库文件.dll。</li>
+<li>最后就可以使用System或是Runtime中的loadLibrary()方法加载上一步的产生的动态连接库文件了。</li>
+</ul>
+</li>
 <li>Java堆<br>  <code>Java堆</code>是Java虚拟机中内存最大的一块,是被所有线程共享的。在java虚拟机启动的时候创建，用于存放对象实例。</li>
 <li>方法区<br> <code>方法区</code>用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译后的代码等数据。</li>
 </ul>
