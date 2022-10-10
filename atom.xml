@@ -143,6 +143,25 @@
   </entry>
   
   <entry>
+    <title>CAP和BASE理论</title>
+    <link href="https://mizhuo.site/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/"/>
+    <id>https://mizhuo.site/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/</id>
+    <published>2021-09-11T07:32:39.000Z</published>
+    <updated>2021-09-11T07:32:39.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;现在大家天天在说分布式系统,通常我们理解的分布式系统,就是将一个复杂的系统拆分成多个简单的子系统,然后将这些子系统分别部署到不同的服务器下,而这些子系统共同构成的系统,就是我们所说的分布式系统。与传统的单体应用架构相比,分布式有着更强的机动性、可拓展性,但是分布式依靠网络通信,所以随着网络风险都会导致系统出现问题,因此就有了CAP和BASE理论。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="分布式" scheme="https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+    
+    <category term="分布式" scheme="https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JAVA设计模式详解</title>
     <link href="https://mizhuo.site/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/"/>
     <id>https://mizhuo.site/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</id>
@@ -410,25 +429,6 @@
     
     
     <category term="锁" scheme="https://mizhuo.site/tags/%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git命令大全</title>
-    <link href="https://mizhuo.site/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-    <id>https://mizhuo.site/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</id>
-    <published>2020-08-17T14:30:07.000Z</published>
-    <updated>2020-08-17T14:30:07.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Git&lt;/strong&gt;是每个程序员必备技能,相较于之前使用的SVN,Git是分布式的,每台电脑本地都有一个仓库,可以离线工作,而SVN断网则无法工作。而且Git的分支概念可以很好的管理版本、环境等。也正因为Git功能强大,所以要掌握的命令也十分繁多,所以这里记录一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Git" scheme="https://mizhuo.site/categories/Git/"/>
-    
-    
-    <category term="Git" scheme="https://mizhuo.site/tags/Git/"/>
     
   </entry>
   
