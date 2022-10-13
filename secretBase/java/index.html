@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Java基础篇 | MiZhuo</title><meta name="keywords" content="Spring,MyBatis"><meta name="author" content="MiZhuo,mizhuo809@gmail.com"><meta name="copyright" content="MiZhuo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="父类子类静态方法、构造器、字段加载顺序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950package site.mizhuo.demo1;&#x2F;*** @author: Mizhuo* @time: 2021&#x2F;3&#x2F;9 9:58 下午* @description:*&#x2F;pu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Java基础篇">
+<meta property="og:url" content="https://mizhuo.site/secretBase/java/index.html">
+<meta property="og:site_name" content="MiZhuo">
+<meta property="og:description" content="父类子类静态方法、构造器、字段加载顺序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950package site.mizhuo.demo1;&#x2F;*** @author: Mizhuo* @time: 2021&#x2F;3&#x2F;9 9:58 下午* @description:*&#x2F;pu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-10-12T14:32:25.000Z">
+<meta property="article:modified_time" content="2022-10-13T04:48:59.608Z">
+<meta property="article:author" content="MiZhuo">
+<meta property="article:tag" content="Spring,MyBatis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/logo.png"><link rel="canonical" href="https://mizhuo.site/secretBase/java/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-nCzGeBCH3J"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?53005972e9558fca8095df3cefd3bda3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: MiZhuo","link":"链接: ","source":"来源: MiZhuo","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java基础篇',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-10-13 12:48:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="MiZhuo" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/resource/"><i class="fa-fw fas fa-compass"></i><span> 资源</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/comment/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/bg1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MiZhuo</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/resource/"><i class="fa-fw fas fa-compass"></i><span> 资源</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/comment/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Java基础篇</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h3 id="父类子类静态方法、构造器、字段加载顺序"><a href="#父类子类静态方法、构造器、字段加载顺序" class="headerlink" title="父类子类静态方法、构造器、字段加载顺序"></a>父类子类静态方法、构造器、字段加载顺序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> site.mizhuo.demo1;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span>: Mizhuo</span></span><br><span class="line"><span class="comment">* <span class="doctag">@time</span>: 2021/3/9 9:58 下午</span></span><br><span class="line"><span class="comment">* <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FatherAndSon</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Father</span> <span class="variable">father</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br><span class="line">        father.fun();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Father</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;father构造&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;father代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;father静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fun</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;father方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Son</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;son构造&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;son代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;son静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fun</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;son方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">father静态代码块</span><br><span class="line">son静态代码块</span><br><span class="line">father代码块</span><br><span class="line">father构造</span><br><span class="line">son代码块</span><br><span class="line">son构造</span><br><span class="line">son方法</span><br></pre></td></tr></table></figure>
+<h3 id="Array-asList是否可以扩容"><a href="#Array-asList是否可以扩容" class="headerlink" title="Array.asList是否可以扩容"></a>Array.asList是否可以扩容</h3><ul>
+<li>Array.asList 返回的是一个 <code>java.util.Arrays.ArrayList</code>,是Arrays的一个静态内部类，它没有完全实现List的方法</li>
+<li>Arrays.ArrayList是一个定长集合，因为它没有重写add,remove方法，所以一旦初始化元素后，集合的size就是不可变的。</li>
+</ul>
+<h3 id="Bean的生命周期"><a href="#Bean的生命周期" class="headerlink" title="Bean的生命周期"></a>Bean的生命周期</h3><ul>
+<li>通过构造器或工厂方法创建Bean实例:调用构造器</li>
+<li>为Bean设置属性及引用:调用Setter方法</li>
+<li>将Bean实例传递给Bean后置处理器的postProcessBeforeInitialization方法</li>
+<li>调用Bean的初始化方法:init-method 可配置</li>
+<li>将Bean实例传递给Bean后置处理器的postProcessAfterInitialization方法</li>
+<li>Bean可以使用了</li>
+<li>当容器关闭时, 调用 Bean 的销毁方法:destroy-method 可配置</li>
+</ul>
+<h3 id="泛型-T-与-？的区别"><a href="#泛型-T-与-？的区别" class="headerlink" title="泛型 T 与 ？的区别"></a>泛型 T 与 ？的区别</h3><ul>
+<li>T 代表某一类具体的对象，list集合里只能存放同一类型数据，如果插入不同类型数据则会报错。</li>
+<li>？可以表示成占位符，它自己也不知道list集合中会存放多少种类型的数据，所以这样就表明我们的list中存放N种数据类型也是可以的。</li>
+</ul>
+<h3 id="JAVA动态代理的方式，区别"><a href="#JAVA动态代理的方式，区别" class="headerlink" title="JAVA动态代理的方式，区别"></a>JAVA动态代理的方式，区别</h3><ul>
+<li>JDK动态代理<ul>
+<li>利用拦截器（必须实现InvocationHandler）加上反射机制生成一个代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理</li>
+</ul>
+</li>
+<li>cglib动态代理<ul>
+<li>利用ASM框架，对代理对象类生成的class文件加载进来，通过修改其字节码生成子类来处理<br>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/sandaman2019/p/12636727.html">https://www.cnblogs.com/sandaman2019/p/12636727.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="什么时候用cglib-什么时候用jdk动态代理？"><a href="#什么时候用cglib-什么时候用jdk动态代理？" class="headerlink" title="什么时候用cglib,什么时候用jdk动态代理？"></a>什么时候用cglib,什么时候用jdk动态代理？</h3><ul>
+<li>目标对象生成了接口 默认用JDK动态代理</li>
+<li>如果目标对象使用了接口，可以强制使用cglib</li>
+<li>如果目标对象没有实现接口，必须采用cglib库，Spring会自动在JDK动态代理和cglib之间转换</li>
+</ul>
+<h3 id="装箱和拆箱的原理"><a href="#装箱和拆箱的原理" class="headerlink" title="装箱和拆箱的原理"></a>装箱和拆箱的原理</h3><ul>
+<li>只有double和float的自动装箱代码没有使用缓存，每次都是new 新的对象，其它的6种基本类型都使用了缓存策略。</li>
+<li>使用缓存策略是因为，缓存的这些对象都是经常使用到的（如字符、-128至127之间的数字），防止每次自动装箱都创建一次对象的实例。而double、float是浮点型的，没有特别的热的（经常使用到的）数据的，缓存效果没有其它几种类型使用效率高。</li>
+</ul>
+<h3 id="两个ArrayList的交集、并集和差集"><a href="#两个ArrayList的交集、并集和差集" class="headerlink" title="两个ArrayList的交集、并集和差集"></a>两个ArrayList的交集、并集和差集</h3><ul>
+<li>交集:  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.retainAll(list2);</span><br></pre></td></tr></table></figure></li>
+<li>并集  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list4.removeAll(list3);</span><br><span class="line">list3.addAll(list4);</span><br></pre></td></tr></table></figure></li>
+<li>差集  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list6.removeAll(list5);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="HashMap什么时候重新hashCode方法和equals方法"><a href="#HashMap什么时候重新hashCode方法和equals方法" class="headerlink" title="HashMap什么时候重新hashCode方法和equals方法"></a>HashMap什么时候重新hashCode方法和equals方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*HashMap 是不允许有重复元素的，其实现是通过判断对象的hashcode值是和equals方法*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        user1.setName(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        user1.setAge(<span class="number">23</span>);</span><br><span class="line">        <span class="type">User</span> <span class="variable">user2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        user2.setName(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        user2.setAge(<span class="number">23</span>);</span><br><span class="line">        Map&lt;User,String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(user1,<span class="string">&quot;user&quot;</span>);</span><br><span class="line">        map.put(user2,<span class="string">&quot;user&quot;</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">User</span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> name;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> age;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;User&#123;&quot;</span> +</span><br><span class="line">                    <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                    <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                    <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//打印结果:</span></span><br><span class="line"><span class="comment">//&#123;User&#123;name=&#x27;张三&#x27;, age=23&#125;=user, User&#123;name=&#x27;张三&#x27;, age=23&#125;=user&#125;</span></span><br><span class="line"><span class="comment">//如果不重新hashCode方法和equals方法，则会判定这两个对象不是同一个,则HashMap里面可以存放两个张三的实例</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//添加hashcode方法和equals方法</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span> == o) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (o == <span class="literal">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> (User) o;</span><br><span class="line">    <span class="type">return</span> <span class="variable">age</span> <span class="operator">=</span>= user.age &amp;&amp;</span><br><span class="line">            name.equals(user.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打印结果:</span></span><br><span class="line"><span class="comment">//&#123;User&#123;name=&#x27;张三&#x27;, age=23&#125;=user&#125;</span></span><br><span class="line"><span class="comment">//重写hashcode方法和equals方法后就判定两个是同一个对象，就不会存放两个张三的对象了。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>github地址:<a target="_blank" rel="noopener" href="https://github.com/MiZhuo/Demo/blob/master/src/main/java/site/mizhuo/demo1/HashMapDemo.java">https://github.com/MiZhuo/Demo/blob/master/src/main/java/site/mizhuo/demo1/HashMapDemo.java</a></li>
+</ul>
+<h3 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h3><h3 id="访问最大失败次数"><a href="#访问最大失败次数" class="headerlink" title="访问最大失败次数"></a>访问最大失败次数</h3><h3 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h3><h3 id="jdk1-8特性，Stream分组"><a href="#jdk1-8特性，Stream分组" class="headerlink" title="jdk1.8特性，Stream分组"></a>jdk1.8特性，Stream分组</h3><h3 id="SpringBoot启动类注解中有哪些注解"><a href="#SpringBoot启动类注解中有哪些注解" class="headerlink" title="SpringBoot启动类注解中有哪些注解"></a>SpringBoot启动类注解中有哪些注解</h3><ul>
+<li><code>@SpringBootConfiguration</code>:表示被注解的启动类是SpringBoot的主配置类。</li>
+<li><code>@EnableAutoConfiguration</code>:表示开启SpringBoot的自动配置。</li>
+<li><code>@ComponentScan</code>:定义了SpringBoot容器的扫描规则。</li>
+</ul>
+<h3 id="SpringStarter"><a href="#SpringStarter" class="headerlink" title="SpringStarter"></a>SpringStarter</h3><h3 id="List、Map、Set异同点，底层方法"><a href="#List、Map、Set异同点，底层方法" class="headerlink" title="List、Map、Set异同点，底层方法"></a>List、Map、Set异同点，底层方法</h3><ul>
+<li>List<ul>
+<li>ArrayList:查询修改块，添加删除慢，因为需要移动数据。</li>
+<li>Vector:线程同步，效率较低。</li>
+<li>LinkedList用的链表结构存储数据，插入删除较快。</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>HashSet:无序</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>HashMap:数组+链表+红黑树</li>
+<li>ConcurrentHashMap:1.7使用分段锁，1.8使用CAS+Synchronized</li>
+</ul>
+</li>
+</ul>
+<h3 id="IOC原理"><a href="#IOC原理" class="headerlink" title="IOC原理"></a>IOC原理</h3><ul>
+<li>通过类的反射实例化Bean并建立Bean之间的依赖关系。</li>
+</ul>
+<h3 id="AOP原理"><a href="#AOP原理" class="headerlink" title="AOP原理"></a>AOP原理</h3><ul>
+<li>主要是动态代理，通过JDK动态代理和Cglib动态代理</li>
+<li>如果目标对象实现了接口，可采用JDK动态代理。</li>
+<li>如果目标对象没有实现接口，则只能使用Cglib动态代理。</li>
+</ul>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
+<li>饥汉模式<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton1</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton1</span> <span class="variable">singleton1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton1</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton1</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton1 <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>懒汉式<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton2</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton2 singleton2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton2</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton2 <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(singleton2 == <span class="literal">null</span>)&#123;</span><br><span class="line">            singleton2 = <span class="keyword">new</span> <span class="title class_">Singleton2</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singleton2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>懒汉式-线程安全<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton3</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton3 singleton3;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton3</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton3 <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(singleton3 == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton3.class)&#123;</span><br><span class="line">                <span class="keyword">if</span>(singleton3 == <span class="literal">null</span>)&#123;</span><br><span class="line">                    singleton3 = <span class="keyword">new</span> <span class="title class_">Singleton3</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singleton3;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="HashMap红黑树remove一个元素会退化链表吗？"><a href="#HashMap红黑树remove一个元素会退化链表吗？" class="headerlink" title="HashMap红黑树remove一个元素会退化链表吗？"></a>HashMap红黑树remove一个元素会退化链表吗？</h3><ul>
+<li>HashMap 链表的个数小于6才会退化为链表</li>
+</ul>
+<h3 id="try-cathch-finally-return执行的顺序"><a href="#try-cathch-finally-return执行的顺序" class="headerlink" title="try-cathch ,finally return执行的顺序"></a>try-cathch ,finally return执行的顺序</h3><ul>
+<li>finally 里面的return顺序优先级最高，会将其他数据覆盖掉。</li>
+<li>finally 只要不return，是无法修改基本类型的，但是可以修改引用类型。</li>
+</ul>
+<h3 id="常见异常"><a href="#常见异常" class="headerlink" title="常见异常"></a>常见异常</h3><ul>
+<li>常见的编译时异常<ul>
+<li>FileNotFoundException</li>
+<li>ClassNotFoundException</li>
+<li>SQLException</li>
+<li>NoSuchFieldException</li>
+<li>NoSuchMethodException</li>
+<li>ParseException</li>
+</ul>
+</li>
+<li>常见的运行时异常<ul>
+<li>NullPointerException</li>
+<li>ArithmeticException</li>
+<li>ClassCastException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>StringIndexOutOfBoundsException</li>
+</ul>
+</li>
+</ul>
+<h3 id="SpringBoot自动装配原理"><a href="#SpringBoot自动装配原理" class="headerlink" title="SpringBoot自动装配原理"></a>SpringBoot自动装配原理</h3><h3 id="锁的原理"><a href="#锁的原理" class="headerlink" title="锁的原理"></a>锁的原理</h3><h3 id="锁的级别，升级过程"><a href="#锁的级别，升级过程" class="headerlink" title="锁的级别，升级过程"></a>锁的级别，升级过程</h3><h3 id="秒杀场景"><a href="#秒杀场景" class="headerlink" title="秒杀场景"></a>秒杀场景</h3><h3 id="事务失效有哪些场景"><a href="#事务失效有哪些场景" class="headerlink" title="事务失效有哪些场景"></a>事务失效有哪些场景</h3><h3 id="JVM组成和GC"><a href="#JVM组成和GC" class="headerlink" title="JVM组成和GC"></a>JVM组成和GC</h3><h3 id="Synchronized为什么线程安全"><a href="#Synchronized为什么线程安全" class="headerlink" title="Synchronized为什么线程安全"></a>Synchronized为什么线程安全</h3></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">MiZhuo</div><div class="author-info__description">做一个热爱生活的人</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/MiZhuo"><i class="fab fa-github"></i><span>Follow</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mizhuo" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:mizhuo809@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="rss"><i class="fa-solid fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如果文章有错误之处，烦请指正，可以在文章下方评论或者邮箱联系我，我会第一时间查看并改正，谢谢！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/" title="玩转Kafka【二】"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/cover/44.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="玩转Kafka【二】"/></a><div class="content"><a class="title" href="/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/" title="玩转Kafka【二】">玩转Kafka【二】</a><time datetime="2022-09-14T14:04:48.000Z" title="发表于 2022-09-14 22:04:48">2022-09-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/" title="玩转Kafka【一】"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/cover/44.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="玩转Kafka【一】"/></a><div class="content"><a class="title" href="/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/" title="玩转Kafka【一】">玩转Kafka【一】</a><time datetime="2022-08-28T13:22:43.000Z" title="发表于 2022-08-28 21:22:43">2022-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/" title="为什么InnoDB要使用B+树"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/cover/43.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为什么InnoDB要使用B+树"/></a><div class="content"><a class="title" href="/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/" title="为什么InnoDB要使用B+树">为什么InnoDB要使用B+树</a><time datetime="2022-07-21T13:59:25.000Z" title="发表于 2022-07-21 21:59:25">2022-07-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/" title="SpringBoot整合ELFK实现查看日志自由"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/cover/40.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot整合ELFK实现查看日志自由"/></a><div class="content"><a class="title" href="/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/" title="SpringBoot整合ELFK实现查看日志自由">SpringBoot整合ELFK实现查看日志自由</a><time datetime="2022-07-08T02:28:06.000Z" title="发表于 2022-07-08 10:28:06">2022-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/" title="Arthas真的好用吗"><img src= "https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/loading.gif" data-lazy-src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/cover/39.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Arthas真的好用吗"/></a><div class="content"><a class="title" href="/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/" title="Arthas真的好用吗">Arthas真的好用吗</a><time datetime="2022-07-06T14:33:50.000Z" title="发表于 2022-07-06 22:33:50">2022-07-06</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Docker/"><span class="card-category-list-name">Docker</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JAVA/"><span class="card-category-list-name">JAVA</span><span class="card-category-list-count">13</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Kafka/"><span class="card-category-list-name">Kafka</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"><span class="card-category-list-name">分布式</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"><span class="card-category-list-name">微信公众号</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Arthas/" style="font-size: 1.15em; color: rgb(146, 91, 87)">Arthas</a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 1.22em; color: rgb(29, 123, 85)">分布式</a><a href="/tags/Docker/" style="font-size: 1.45em; color: rgb(26, 166, 64)">Docker</a><a href="/tags/DB2/" style="font-size: 1.45em; color: rgb(72, 167, 34)">DB2</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.15em; color: rgb(153, 87, 135)">数据库</a><a href="/tags/ELK/" style="font-size: 1.22em; color: rgb(147, 10, 90)">ELK</a><a href="/tags/MongoDB/" style="font-size: 1.15em; color: rgb(68, 188, 88)">MongoDB</a><a href="/tags/Mq/" style="font-size: 1.3em; color: rgb(84, 128, 183)">Mq</a><a href="/tags/Websphere/" style="font-size: 1.15em; color: rgb(74, 11, 171)">Websphere</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(90, 87, 188)">Git</a><a href="/tags/Hexo/" style="font-size: 1.15em; color: rgb(122, 60, 118)">Hexo</a><a href="/tags/SpringCloud/" style="font-size: 1.3em; color: rgb(33, 36, 164)">SpringCloud</a><a href="/tags/Hystrix/" style="font-size: 1.15em; color: rgb(169, 153, 4)">Hystrix</a><a href="/tags/JVM/" style="font-size: 1.15em; color: rgb(21, 124, 59)">JVM</a><a href="/tags/Maven/" style="font-size: 1.15em; color: rgb(166, 48, 133)">Maven</a><a href="/tags/Gradle/" style="font-size: 1.15em; color: rgb(182, 40, 188)">Gradle</a><a href="/tags/Native/" style="font-size: 1.15em; color: rgb(145, 20, 41)">Native</a><a href="/tags/RabbitMq/" style="font-size: 1.15em; color: rgb(87, 200, 55)">RabbitMq</a><a href="/tags/SpringBoot/" style="font-size: 1.3em; color: rgb(68, 103, 40)">SpringBoot</a><a href="/tags/Spring/" style="font-size: 1.15em; color: rgb(24, 54, 76)">Spring</a><a href="/tags/tomcat/" style="font-size: 1.15em; color: rgb(181, 70, 137)">tomcat</a><a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 1.15em; color: rgb(72, 134, 86)">性能优化</a><a href="/tags/Vue/" style="font-size: 1.38em; color: rgb(55, 76, 49)">Vue</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(74, 110, 109)">数据结构</a><a href="/tags/MySQL/" style="font-size: 1.22em; color: rgb(162, 154, 146)">MySQL</a><a href="/tags/%E9%94%81/" style="font-size: 1.15em; color: rgb(107, 129, 128)">锁</a><a href="/tags/Consul/" style="font-size: 1.15em; color: rgb(84, 5, 175)">Consul</a><a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/" style="font-size: 1.15em; color: rgb(26, 74, 194)">支付宝</a><a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 1.3em; color: rgb(63, 77, 25)">微信</a><a href="/tags/Kafka/" style="font-size: 1.22em; color: rgb(95, 135, 51)">Kafka</a><a href="/tags/AOP/" style="font-size: 1.15em; color: rgb(8, 123, 54)">AOP</a><a href="/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" style="font-size: 1.15em; color: rgb(35, 103, 21)">类加载器</a><a href="/tags/Nginx/" style="font-size: 1.15em; color: rgb(149, 25, 146)">Nginx</a><a href="/tags/Oracle/" style="font-size: 1.15em; color: rgb(30, 126, 85)">Oracle</a><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(108, 120, 158)">设计模式</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">45</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2019-11-25T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">68.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-10-13T04:49:35.760Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/img/bg1.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2022 By MiZhuo</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
