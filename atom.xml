@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-11-27T04:14:59.547Z</updated>
+  <updated>2022-11-27T06:45:19.935Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -21,16 +21,14 @@
     <link href="https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/"/>
     <id>https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/</id>
     <published>2022-11-26T12:00:17.000Z</published>
-    <updated>2022-11-27T04:14:59.547Z</updated>
+    <updated>2022-11-27T06:45:19.935Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天做项目的时候遇到一个问题,项目中使用的安全框架是Oauth2+Security,使用JWT来进行鉴权,正常请求调用服务是没有问题的,但是使用Feign远程调用其它微服务后,目标服务中无法获取这个header中的信息,这里记录一下解决方案。&lt;/p&gt;</summary>
     
     
     
-    <category term="SpringCloud" scheme="https://mizhuo.site/categories/SpringCloud/"/>
-    
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/SpringCloud/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
     <category term="Feign" scheme="https://mizhuo.site/tags/Feign/"/>
@@ -42,16 +40,14 @@
     <link href="https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2022-11-12T14:27:00.000Z</published>
-    <updated>2022-11-27T04:16:56.948Z</updated>
+    <updated>2022-11-12T14:27:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天在搭建项目的时候,遇到了一个很奇怪的问题,使用Gradle构建的项目引用了Lombok依赖,但怎么设置项目都无法编译成功,这里记录一下解决方案。&lt;/p&gt;</summary>
     
     
     
-    <category term="Gradle" scheme="https://mizhuo.site/categories/Gradle/"/>
-    
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/Gradle/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
     <category term="Gradle" scheme="https://mizhuo.site/tags/Gradle/"/>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/</loc>
     
     <lastmod>2022-11-27</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/</loc>
+    <loc>https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
-    <lastmod>2022-11-27</lastmod>
+    <lastmod>2022-11-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -621,14 +621,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Arthas/</loc>
+    <loc>https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
+    <loc>https://mizhuo.site/tags/Arthas/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -656,13 +656,6 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Mq/</loc>
-    <lastmod>2022-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://mizhuo.site/tags/MongoDB/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -670,7 +663,7 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Feign/</loc>
+    <loc>https://mizhuo.site/tags/Mq/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -678,6 +671,13 @@
   
   <url>
     <loc>https://mizhuo.site/tags/Websphere/</loc>
+    <lastmod>2022-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizhuo.site/tags/Feign/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -747,14 +747,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Spring/</loc>
+    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
+    <loc>https://mizhuo.site/tags/Spring/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -875,14 +875,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/JAVA/</loc>
+    <loc>https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
+    <loc>https://mizhuo.site/categories/JAVA/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -896,7 +896,7 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/SpringCloud/</loc>
+    <loc>https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -910,28 +910,7 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/Gradle/</loc>
-    <lastmod>2022-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://mizhuo.site/categories/Hexo/</loc>
-    <lastmod>2022-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/categories/SpringCloud/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/</loc>
-    <lastmod>2022-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/categories/Gradle/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
