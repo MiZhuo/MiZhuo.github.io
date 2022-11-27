@@ -621,14 +621,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
+    <loc>https://mizhuo.site/tags/Arthas/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Arthas/</loc>
+    <loc>https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -761,6 +761,13 @@
   </url>
   
   <url>
+    <loc>https://mizhuo.site/tags/Vue/</loc>
+    <lastmod>2022-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/tags/tomcat/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -769,13 +776,6 @@
   
   <url>
     <loc>https://mizhuo.site/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2022-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/tags/Vue/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -796,14 +796,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/%E9%94%81/</loc>
+    <loc>https://mizhuo.site/tags/Consul/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Consul/</loc>
+    <loc>https://mizhuo.site/tags/%E9%94%81/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -875,14 +875,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
+    <loc>https://mizhuo.site/categories/JAVA/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/categories/JAVA/</loc>
+    <loc>https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2022-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

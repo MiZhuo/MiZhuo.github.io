@@ -742,17 +742,6 @@ document.addEventListener('DOMContentLoaded', function () {
     GLOBAL_CONFIG.copyright !== undefined && addCopyright()
   }
 
-  document.onkeydown = function(event) {
-    var e = event || window.event || arguments.callee.caller.arguments[0];
-    var keyCode = e.keyCode || e.which || e.charCode;
-        var ctrlKey = e.ctrlKey || e.metaKey;
-        if(ctrlKey && keyCode == 87) {
-          window.location.href = window.document.location.href.substring(0, window.document.location.href.indexOf(window.document.location.pathname)) + "/secretBase";
-        }
-        e.preventDefault();
-        return false;
-  }
-
   window.refreshFn = function () {
     initAdjust()
 
