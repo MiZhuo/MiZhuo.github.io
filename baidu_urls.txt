@@ -1,3 +1,4 @@
+https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/
 https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/
 https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/
 https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/

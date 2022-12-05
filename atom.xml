@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-11-27T06:45:19.935Z</updated>
+  <updated>2022-12-05T14:41:43.487Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Jenkins自动化部署SpringCloud项目</title>
+    <link href="https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/</id>
+    <published>2022-12-05T13:47:18.000Z</published>
+    <updated>2022-12-05T14:41:43.487Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;Jenkins&lt;/code&gt;是一个持续集成工具,主要是通过拉取远程git仓库的代码到本地,然后使用编译工具编译拉取的代码,最后将编译的结果部署到指定机器上。这样大大的减少了开发人员的工作,开发人员只需要将代码上传至仓库中,其余的工作Jenkins会自动完成。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Jenkins" scheme="https://mizhuo.site/categories/Jenkins/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
+    
+    <category term="Jenkins" scheme="https://mizhuo.site/tags/Jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>Feign传递token</title>
@@ -404,27 +425,6 @@
     <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
     
     <category term="Hystrix" scheme="https://mizhuo.site/tags/Hystrix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Consul进行服务注册与发现</title>
-    <link href="https://mizhuo.site/%E4%BD%BF%E7%94%A8Consul%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/"/>
-    <id>https://mizhuo.site/%E4%BD%BF%E7%94%A8Consul%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/</id>
-    <published>2020-11-14T13:47:55.000Z</published>
-    <updated>2020-11-15T01:57:55.000Z</updated>
-    
-    
-    <summary type="html">&lt;h4 id=&quot;Consul介绍&quot;&gt;&lt;a href=&quot;#Consul介绍&quot; class=&quot;headerlink&quot; title=&quot;Consul介绍&quot;&gt;&lt;/a&gt;Consul介绍&lt;/h4&gt;&lt;p&gt;Consul是HashiCorp公司推出的开源工具，使用Go语言开发，所以和Docker完全兼容，部署起来非常容易，Consul具有&lt;strong&gt;绿色&lt;/strong&gt;、&lt;strong&gt;轻量级&lt;/strong&gt;的特点。是&lt;strong&gt;分布式&lt;/strong&gt;的、&lt;strong&gt;高可用&lt;/strong&gt;的、 &lt;strong&gt;可横向扩展&lt;/strong&gt;的用于实现分布式系统的服务发现与配置。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
-    
-    
-    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
-    
-    <category term="Consul" scheme="https://mizhuo.site/tags/Consul/"/>
     
   </entry>
   
