@@ -17,21 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MyBatisPlus分页total为0</title>
-    <link href="https://mizhuo.site/MyBatisPlus%E5%88%86%E9%A1%B5total%E4%B8%BA0/"/>
-    <id>https://mizhuo.site/MyBatisPlus%E5%88%86%E9%A1%B5total%E4%B8%BA0/</id>
+    <title>Prometheus+Grafna搭建线上JVM监控</title>
+    <link href="https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8AJVM%E7%9B%91%E6%8E%A7/"/>
+    <id>https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8AJVM%E7%9B%91%E6%8E%A7/</id>
     <published>2022-12-18T14:00:22.000Z</published>
     <updated>2022-11-12T14:27:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;今天写代码的时候,遇到了一个问题,项目使用的MyBatisPlus,但是Page分页后,里面的total一直为0&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;“线上出了问题，你们是怎么排查的？排查的思路是怎么样的？”,你有被问过这个问题吗？像我们一般查生产问题都是从生产环境将日志拉下来查看,如果JVM异常也只能分析dump文件。但这远远不够，如果有个线上JVM监控系统，出了问题可以快速定位问题，所以这次试着搭建一个线上JVM监控。使用的是业界比较出名的Prometheus(普罗米修斯)+Grafna看板。&lt;/p&gt;</summary>
     
     
     
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
     
     
-    <category term="MyBatisPlus" scheme="https://mizhuo.site/tags/MyBatisPlus/"/>
+    <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
     
   </entry>
   
