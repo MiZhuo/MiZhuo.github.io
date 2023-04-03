@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-11-12T14:27:00.000Z</updated>
+  <updated>2023-02-03T13:46:56.000Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>国内无法拉取gcr.io镜像的解决方案</title>
+    <link href="https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <published>2023-02-03T13:46:56.000Z</published>
+    <updated>2023-02-03T13:46:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://mizhuo.site/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Prometheus+Grafna搭建线上JVM监控</title>
@@ -402,27 +427,6 @@
     
     
     <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat性能调优</title>
-    <link href="https://mizhuo.site/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
-    <id>https://mizhuo.site/Tomcat%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/</id>
-    <published>2020-12-07T14:19:56.000Z</published>
-    <updated>2022-10-09T06:15:02.000Z</updated>
-    
-    
-    <summary type="html">&lt;h4 id=&quot;Tomcat性能优化&quot;&gt;&lt;a href=&quot;#Tomcat性能优化&quot; class=&quot;headerlink&quot; title=&quot;Tomcat性能优化&quot;&gt;&lt;/a&gt;Tomcat性能优化&lt;/h4&gt;&lt;p&gt;Tomcat作为Apache完全开源的Web容器，其轻量级、占用资源小、扩展性等等特性受到开发人员及中小型企业的喜爱和广泛的应用。为了Tomcat能够稳定的运行，因此Tomcat的性能优化也很重要。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
-    
-    
-    <category term="tomcat" scheme="https://mizhuo.site/tags/tomcat/"/>
-    
-    <category term="性能优化" scheme="https://mizhuo.site/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
