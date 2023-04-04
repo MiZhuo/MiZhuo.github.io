@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2023-02-03T13:46:56.000Z</updated>
+  <updated>2022-12-20T13:46:56.000Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -20,17 +20,11 @@
     <title>国内无法拉取gcr.io镜像的解决方案</title>
     <link href="https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
-    <published>2023-02-03T13:46:56.000Z</published>
-    <updated>2023-02-03T13:46:56.000Z</updated>
+    <published>2022-12-20T13:46:56.000Z</published>
+    <updated>2022-12-20T13:46:56.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
+    <summary type="html">&lt;p&gt;今天在使用Dokcer拉取一个镜像的时候,控制台报了如下错误:&lt;code&gt;Error response from daemon: Get &amp;quot;https://gcr.io/v2/&amp;quot;: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)&lt;/code&gt;,主要是需要科学上网,但也可以曲线救国,这里记录一下解决方案。&lt;/p&gt;</summary>
     
     
     
@@ -42,11 +36,11 @@
   </entry>
   
   <entry>
-    <title>Prometheus+Grafna搭建线上JVM监控</title>
-    <link href="https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8AJVM%E7%9B%91%E6%8E%A7/"/>
-    <id>https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8AJVM%E7%9B%91%E6%8E%A7/</id>
+    <title>Prometheus+Grafna搭建线上监控</title>
+    <link href="https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/"/>
+    <id>https://mizhuo.site/Prometheus+Grafna%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/</id>
     <published>2022-12-18T14:00:22.000Z</published>
-    <updated>2022-11-12T14:27:00.000Z</updated>
+    <updated>2022-12-18T14:00:22.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;“线上出了问题，你们是怎么排查的？排查的思路是怎么样的？”,你有被问过这个问题吗？像我们一般查生产问题都是从生产环境将日志拉下来查看,如果JVM异常也只能分析dump文件。但这远远不够，如果有个线上JVM监控系统，出了问题可以快速定位问题，所以这次试着搭建一个线上JVM监控。使用的是业界比较出名的Prometheus(普罗米修斯)+Grafna看板。&lt;/p&gt;</summary>
@@ -57,6 +51,8 @@
     
     
     <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
+    
+    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
     
   </entry>
   
@@ -180,9 +176,9 @@
     <category term="数据结构" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-    <category term="数据结构" scheme="https://mizhuo.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
     <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    
+    <category term="数据结构" scheme="https://mizhuo.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
