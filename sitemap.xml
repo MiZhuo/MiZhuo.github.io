@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mizhuo.site/resource/index.html</loc>
+    
+    <lastmod>2023-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizhuo.site/about/index.html</loc>
+    
+    <lastmod>2023-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizhuo.site/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/</loc>
     
     <lastmod>2022-12-25</lastmod>
@@ -110,15 +128,6 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/resource/index.html</loc>
-    
-    <lastmod>2022-10-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mizhuo.site/secretBase/other/index.html</loc>
     
     <lastmod>2022-10-13</lastmod>
@@ -174,15 +183,6 @@
   
   <url>
     <loc>https://mizhuo.site/photos/life/index.html</loc>
-    
-    <lastmod>2022-10-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizhuo.site/about/index.html</loc>
     
     <lastmod>2022-10-09</lastmod>
     
@@ -720,14 +720,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Git/</loc>
+    <loc>https://mizhuo.site/tags/Gradle/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Gradle/</loc>
+    <loc>https://mizhuo.site/tags/Git/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -790,14 +790,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
+    <loc>https://mizhuo.site/tags/Spring/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/Spring/</loc>
+    <loc>https://mizhuo.site/tags/SpringBoot/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -874,14 +874,14 @@
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</loc>
+    <loc>https://mizhuo.site/tags/AOP/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mizhuo.site/tags/AOP/</loc>
+    <loc>https://mizhuo.site/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
