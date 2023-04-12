@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2022-12-25T14:00:22.000Z</updated>
+  <updated>2023-01-10T14:25:06.000Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Redis与MySQL双写一致性</title>
+    <link href="https://mizhuo.site/Redis%E4%B8%8EMySQL%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/"/>
+    <id>https://mizhuo.site/Redis%E4%B8%8EMySQL%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/</id>
+    <published>2023-01-10T14:25:06.000Z</published>
+    <updated>2023-01-10T14:25:06.000Z</updated>
+    
+    
+    
+    
+    <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    
+    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Prometheus+Grafana搭建线上监控</title>
     <link href="https://mizhuo.site/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/"/>
     <id>https://mizhuo.site/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/</id>
     <published>2022-12-25T14:00:22.000Z</published>
-    <updated>2022-12-25T14:00:22.000Z</updated>
+    <updated>2022-12-28T15:05:13.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;“线上出了问题，你们是怎么排查的？排查的思路是怎么样的？”,你有被问过这个问题吗？像我们一般查生产问题都是从生产环境将日志拉下来查看,如果JVM异常也只能分析dump文件。但这远远不够，如果有个线上JVM监控系统，出了问题可以快速定位问题，所以这次试着搭建一个线上JVM监控。使用的是业界比较出名的Prometheus(普罗米修斯)+Grafna看板。&lt;/p&gt;</summary>
@@ -31,9 +50,9 @@
     <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
     
     
-    <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
-    
     <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
+    
+    <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
     
     <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
     
@@ -70,7 +89,7 @@
     
     
     
-    <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
+    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
     <category term="Docker" scheme="https://mizhuo.site/tags/Docker/"/>
@@ -406,25 +425,6 @@
     
     
     <category term="Native" scheme="https://mizhuo.site/tags/Native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义类加载器</title>
-    <link href="https://mizhuo.site/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
-    <id>https://mizhuo.site/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</id>
-    <published>2020-12-13T13:55:28.000Z</published>
-    <updated>2022-10-08T13:35:26.000Z</updated>
-    
-    
-    <summary type="html">&lt;h4 id=&quot;类加载器&quot;&gt;&lt;a href=&quot;#类加载器&quot; class=&quot;headerlink&quot; title=&quot;类加载器&quot;&gt;&lt;/a&gt;类加载器&lt;/h4&gt;&lt;p&gt;Java类加载过程，第一步就是通过类加载器加载&lt;code&gt;.class&lt;/code&gt;文件，获取其二进制流,并在内存中创建对象的Class对象。类加载器主要有四种。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
-    
-    
-    <category term="类加载器" scheme="https://mizhuo.site/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/"/>
     
   </entry>
   
