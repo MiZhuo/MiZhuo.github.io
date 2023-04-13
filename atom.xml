@@ -17,12 +17,14 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Redis与MySQL双写一致性</title>
-    <link href="https://mizhuo.site/Redis%E4%B8%8EMySQL%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/"/>
-    <id>https://mizhuo.site/Redis%E4%B8%8EMySQL%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7/</id>
+    <title>Redis与MySQL数据一致性</title>
+    <link href="https://mizhuo.site/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/"/>
+    <id>https://mizhuo.site/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/</id>
     <published>2023-01-10T14:25:06.000Z</published>
     <updated>2023-01-10T14:25:06.000Z</updated>
     
+    
+    <summary type="html">&lt;p&gt;Redis和MySQL数据的一致性,这是个老生常谈的问题,主要原因是为了减少数据库的IO,提高数据查询的性能,经常将Redis做为应用程序与数据库之间的缓存,但是随之而来就出现各种各样的问题,这次就来深度剖析一下。&lt;/p&gt;</summary>
     
     
     
@@ -101,7 +103,7 @@
     <link href="https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/"/>
     <id>https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/</id>
     <published>2022-12-05T13:47:18.000Z</published>
-    <updated>2022-12-06T14:15:37.334Z</updated>
+    <updated>2023-04-13T13:41:12.590Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;code&gt;Jenkins&lt;/code&gt;是一个持续集成工具,主要是通过拉取远程git仓库的代码到本地,然后使用编译工具编译拉取的代码,最后将编译的结果部署到指定机器上。这样大大的减少了开发人员的工作,开发人员只需要将代码上传至仓库中,其余的工作Jenkins会自动完成。&lt;/p&gt;</summary>
