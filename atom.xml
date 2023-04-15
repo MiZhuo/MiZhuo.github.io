@@ -31,9 +31,9 @@
     <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
-    
     <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    
+    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
     
   </entry>
   
