@@ -8,9 +8,21 @@
       <link href="/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
       <url>/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。</p><span id="more"></span>]]></content>
       
       
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
       
     </entry>
     
@@ -33,9 +45,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> Redis </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -865,9 +877,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> DB2 </tag>
+            
+            <tag> Docker </tag>
             
         </tags>
       
@@ -1036,7 +1048,7 @@
       <link href="/Hexo%E4%BB%8EWindows%E8%BF%81%E7%A7%BB%E5%88%B0Mac/"/>
       <url>/Hexo%E4%BB%8EWindows%E8%BF%81%E7%A7%BB%E5%88%B0Mac/</url>
       
-        <content type="html"><![CDATA[<p>最近换Mac了，所有环境和项目都要转移到Mac上，在迁移Hexo时出了点小问题。这里记录一下。</p><span id="more"></span><h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><ul><li>在Mac上安装node和git，这个不用说。用brew两条命令就OK了。  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure></li><li>配置git  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”</span><br><span class="line">git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure></li><li>配置npm淘宝镜像(加快速度，可省略)  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li>使用cnpm  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li>生成ssh密钥，关联github、coding<ul><li>查看是否存在：cd ~&#x2F;.ssh</li><li>生成ssh：ssh-keygen -t rsa -C “<a href="mailto:&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#x61;&#x69;&#108;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#109;">&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#x61;&#x69;&#108;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#109;</a>“</li><li>输入文件名和密码后打开.pub文件，将公钥配置到github、coding上。</li><li>测试是否配置成功：ssh <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a><br>  <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200111180248.png"></li></ul></li></ul><h4 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h4><ul><li>安装hexo  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo </span><br></pre></td></tr></table></figure></li><li>新建目录并初始化Hexo  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir Hexo</span><br><span class="line">cd Hexo</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></li><li>替换文件<br>  将原Hexo中的_config.yml, scaffolds, source, themes替换到本地新建的目录中。  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>  这里如果报TypeError [ERR_INVALID_URL]: Invalid URL:<a href="http://at/">http://at</a> onParseError (internal&#x2F;url.js:257:9)的错。<br>  <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200111174407.png"><br>  就将原来的package.json和package-lock.json也替换过来。把node_modules删除,重新npm install就好了。</li></ul><p><strong>终于又可以开心的写博客了。</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>最近换Mac了，所有环境和项目都要转移到Mac上，在迁移Hexo时出了点小问题。这里记录一下。</p><span id="more"></span><h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><ul><li>在Mac上安装node和git，这个不用说。用brew两条命令就OK了。  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure></li><li>配置git  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname”</span><br><span class="line">git config --global user.email youremail@example.com</span><br></pre></td></tr></table></figure></li><li>配置npm淘宝镜像(加快速度，可省略)  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li>使用cnpm  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li>生成ssh密钥，关联github、coding<ul><li>查看是否存在：cd ~&#x2F;.ssh</li><li>生成ssh：ssh-keygen -t rsa -C “<a href="mailto:&#121;&#x6f;&#117;&#114;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#121;&#x6f;&#117;&#114;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;</a>“</li><li>输入文件名和密码后打开.pub文件，将公钥配置到github、coding上。</li><li>测试是否配置成功：ssh <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a><br>  <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200111180248.png"></li></ul></li></ul><h4 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h4><ul><li>安装hexo  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo </span><br></pre></td></tr></table></figure></li><li>新建目录并初始化Hexo  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir Hexo</span><br><span class="line">cd Hexo</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></li><li>替换文件<br>  将原Hexo中的_config.yml, scaffolds, source, themes替换到本地新建的目录中。  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>  这里如果报TypeError [ERR_INVALID_URL]: Invalid URL:<a href="http://at/">http://at</a> onParseError (internal&#x2F;url.js:257:9)的错。<br>  <img src="https://mizhuo-1259163026.cos.ap-chengdu.myqcloud.com/20200111174407.png"><br>  就将原来的package.json和package-lock.json也替换过来。把node_modules删除,重新npm install就好了。</li></ul><p><strong>终于又可以开心的写博客了。</strong></p>]]></content>
       
       
       <categories>

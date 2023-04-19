@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2023-04-18T14:24:41.354Z</updated>
+  <updated>2023-02-13T14:24:41.000Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -20,12 +20,18 @@
     <title>布隆过滤器</title>
     <link href="https://mizhuo.site/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
     <id>https://mizhuo.site/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</id>
-    <published>2023-04-18T14:24:41.000Z</published>
-    <updated>2023-04-18T14:24:41.354Z</updated>
+    <published>2023-02-13T14:24:41.000Z</published>
+    <updated>2023-02-13T14:24:41.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。&lt;/p&gt;</summary>
     
     
     
+    <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
+    
+    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
     
   </entry>
   
@@ -44,9 +50,9 @@
     <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
-    
     <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
+    
+    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
     
   </entry>
   
