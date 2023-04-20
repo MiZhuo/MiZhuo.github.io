@@ -24,7 +24,7 @@
     <updated>2023-02-13T14:24:41.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;布隆过滤器（Bloom Filter）是1970年由布隆提出的。它实际上是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。它的优点是空间效率和查询时间都比一般的算法要好的多，缺点是有一定的误识别率和删除困难。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在我们实际开发过程中,Redis 使用越来越广泛,随之而来很多问题,比如 Redis 缓存穿透问题(大量请求根本不存在的key),很多人都知道使用布隆过滤器可以解决这个问题。那么什么是布隆过滤器？布隆过滤器原理是什么呢?&lt;/p&gt;</summary>
     
     
     
@@ -71,11 +71,11 @@
     <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
     
     
-    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
-    
     <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
     
     <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    
+    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
     
   </entry>
   
