@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2023-02-13T14:24:41.000Z</updated>
+  <updated>2023-05-17T14:40:33.035Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea插件开发</title>
+    <link href="https://mizhuo.site/idea%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    <id>https://mizhuo.site/idea%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/</id>
+    <published>2023-04-17T14:40:05.000Z</published>
+    <updated>2023-05-17T14:40:33.035Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>布隆过滤器</title>
@@ -50,9 +63,9 @@
     <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
-    
     <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
+    
+    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
     
   </entry>
   
@@ -406,27 +419,6 @@
     
     
     <category term="Docker" scheme="https://mizhuo.site/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring Cloud Stream定时任务</title>
-    <link href="https://mizhuo.site/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    <id>https://mizhuo.site/Spring%20Cloud%20Stream%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</id>
-    <published>2020-12-30T14:00:47.000Z</published>
-    <updated>2021-01-05T13:13:47.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在开发系统的过程中，我们经常会遇到延迟执行任务的需求。比如，在系统中设定两个小时后提醒我做XX事情。对于这样的需求，我们可以使用Spring Cloud Stream搭配消息中间件可以很好的进行处理。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
-    
-    
-    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
-    
-    <category term="RabbitMq" scheme="https://mizhuo.site/tags/RabbitMq/"/>
     
   </entry>
   
