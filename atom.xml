@@ -6,7 +6,7 @@
   <link href="https://mizhuo.site/atom.xml" rel="self"/>
   
   <link href="https://mizhuo.site/"/>
-  <updated>2023-05-17T14:40:33.035Z</updated>
+  <updated>2023-06-05T14:24:26.128Z</updated>
   <id>https://mizhuo.site/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>完善公众号功能</title>
+    <link href="https://mizhuo.site/%E5%AE%8C%E5%96%84%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/"/>
+    <id>https://mizhuo.site/%E5%AE%8C%E5%96%84%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/</id>
+    <published>2023-06-05T14:24:26.000Z</published>
+    <updated>2023-06-05T14:24:26.128Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>idea插件开发</title>
@@ -63,9 +76,9 @@
     <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
-    
     <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    
+    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
     
   </entry>
   
@@ -400,25 +413,6 @@
     
     
     <category term="DB2" scheme="https://mizhuo.site/tags/DB2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5分钟搭建对象存储服务!</title>
-    <link href="https://mizhuo.site/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/"/>
-    <id>https://mizhuo.site/5%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1/</id>
-    <published>2021-01-15T12:27:45.000Z</published>
-    <updated>2022-10-08T13:59:56.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;对象存储服务用来存储各类文件，一般作用于存储图片。常用的对象存储服务有OSS，像阿里云、腾讯、七牛云等等都有OSS对象存储服务。虽然这些OSS使用也很便捷，但毕竟还是自己搭建的比较香，搭建好了，也不需要连接外网就能使用，安全又方便。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://mizhuo.site/tags/Docker/"/>
     
   </entry>
   
