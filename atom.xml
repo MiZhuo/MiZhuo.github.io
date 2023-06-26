@@ -3,11 +3,11 @@
   <title>MiZhuo</title>
   <icon>https://www.gravatar.com/avatar/66181c53243a8aa70e5b1971b944717c</icon>
   
-  <link href="https://mizhuo.site/atom.xml" rel="self"/>
+  <link href="https://mizhuo.fun/atom.xml" rel="self"/>
   
-  <link href="https://mizhuo.site/"/>
+  <link href="https://mizhuo.fun/"/>
   <updated>2023-06-05T14:24:26.000Z</updated>
-  <id>https://mizhuo.site/</id>
+  <id>https://mizhuo.fun/</id>
   
   <author>
     <name>MiZhuo</name>
@@ -18,46 +18,48 @@
   
   <entry>
     <title>完善微信公众号功能</title>
-    <link href="https://mizhuo.site/%E5%AE%8C%E5%96%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/"/>
-    <id>https://mizhuo.site/%E5%AE%8C%E5%96%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/</id>
-    <published>2023-06-05T14:24:26.000Z</published>
+    <link href="https://mizhuo.fun/%E5%AE%8C%E5%96%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/"/>
+    <id>https://mizhuo.fun/%E5%AE%8C%E5%96%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%9F%E8%83%BD/</id>
+    <published>2023-06-26T14:24:26.000Z</published>
     <updated>2023-06-05T14:24:26.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
+    <summary type="html">&lt;p&gt;微信公众号自上次开发以来，就一直没有再使用了，这次将代码重构并完善一下功能。&lt;/p&gt;</summary>
     
     
     
-    <category term="微信公众号" scheme="https://mizhuo.site/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    <category term="微信公众号" scheme="https://mizhuo.fun/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
     
     
-    <category term="微信" scheme="https://mizhuo.site/tags/%E5%BE%AE%E4%BF%A1/"/>
+    <category term="微信" scheme="https://mizhuo.fun/tags/%E5%BE%AE%E4%BF%A1/"/>
     
   </entry>
   
   <entry>
-    <title>idea插件开发</title>
-    <link href="https://mizhuo.site/idea%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    <id>https://mizhuo.site/idea%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/</id>
-    <published>2023-04-17T14:40:05.000Z</published>
-    <updated>2023-05-17T14:40:33.035Z</updated>
+    <title>SpringBoot整合Minio实现对象存储</title>
+    <link href="https://mizhuo.fun/SpringBoot%E6%95%B4%E5%90%88Minio%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    <id>https://mizhuo.fun/SpringBoot%E6%95%B4%E5%90%88Minio%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/</id>
+    <published>2023-06-05T13:50:24.000Z</published>
+    <updated>2023-06-26T14:24:07.489Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Minio是一个高性能对象存储服务,非常适合于存储大容量非结构化的数据,而且搭建十分方便,只需几分钟就能搭建一个对象存储服务。&lt;/p&gt;</summary>
     
     
     
+    <category term="JAVA" scheme="https://mizhuo.fun/categories/JAVA/"/>
     
+    
+    <category term="Minio" scheme="https://mizhuo.fun/tags/Minio/"/>
+    
+    <category term="SpringBoot" scheme="https://mizhuo.fun/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>布隆过滤器</title>
-    <link href="https://mizhuo.site/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
-    <id>https://mizhuo.site/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</id>
+    <link href="https://mizhuo.fun/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+    <id>https://mizhuo.fun/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</id>
     <published>2023-02-13T14:24:41.000Z</published>
     <updated>2023-02-13T14:24:41.000Z</updated>
     
@@ -66,17 +68,17 @@
     
     
     
-    <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://mizhuo.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
+    <category term="Redis" scheme="https://mizhuo.fun/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis与MySQL数据一致性</title>
-    <link href="https://mizhuo.site/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/"/>
-    <id>https://mizhuo.site/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/</id>
+    <link href="https://mizhuo.fun/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/"/>
+    <id>https://mizhuo.fun/Redis%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7/</id>
     <published>2023-01-10T14:25:06.000Z</published>
     <updated>2023-01-10T14:25:06.000Z</updated>
     
@@ -85,19 +87,19 @@
     
     
     
-    <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://mizhuo.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Redis" scheme="https://mizhuo.site/tags/Redis/"/>
+    <category term="MySQL" scheme="https://mizhuo.fun/tags/MySQL/"/>
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    <category term="Redis" scheme="https://mizhuo.fun/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Prometheus+Grafana搭建线上监控</title>
-    <link href="https://mizhuo.site/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/"/>
-    <id>https://mizhuo.site/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/</id>
+    <link href="https://mizhuo.fun/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/"/>
+    <id>https://mizhuo.fun/Prometheus+Grafana%E6%90%AD%E5%BB%BA%E7%BA%BF%E4%B8%8A%E7%9B%91%E6%8E%A7/</id>
     <published>2022-12-25T14:00:22.000Z</published>
     <updated>2022-12-28T15:05:13.000Z</updated>
     
@@ -106,21 +108,21 @@
     
     
     
-    <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
+    <category term="Docker" scheme="https://mizhuo.fun/categories/Docker/"/>
     
     
-    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
+    <category term="SpringCloud" scheme="https://mizhuo.fun/tags/SpringCloud/"/>
     
-    <category term="JVM" scheme="https://mizhuo.site/tags/JVM/"/>
+    <category term="JVM" scheme="https://mizhuo.fun/tags/JVM/"/>
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://mizhuo.fun/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>mysqld-exporter无法连接到mysql的问题</title>
-    <link href="https://mizhuo.site/mysqld-exporter%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0mysql%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://mizhuo.site/mysqld-exporter%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0mysql%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://mizhuo.fun/mysqld-exporter%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0mysql%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://mizhuo.fun/mysqld-exporter%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0mysql%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2022-12-20T15:41:38.000Z</published>
     <updated>2022-12-20T15:41:38.000Z</updated>
     
@@ -129,17 +131,17 @@
     
     
     
-    <category term="Docker" scheme="https://mizhuo.site/categories/Docker/"/>
+    <category term="Docker" scheme="https://mizhuo.fun/categories/Docker/"/>
     
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://mizhuo.fun/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>国内无法拉取gcr.io镜像的解决方案</title>
-    <link href="https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://mizhuo.site/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <link href="https://mizhuo.fun/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://mizhuo.fun/%E5%9B%BD%E5%86%85%E6%97%A0%E6%B3%95%E6%8B%89%E5%8F%96gcr-io%E9%95%9C%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2022-12-18T13:46:56.000Z</published>
     <updated>2022-12-18T13:46:56.000Z</updated>
     
@@ -148,17 +150,17 @@
     
     
     
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="问题集锦" scheme="https://mizhuo.fun/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
-    <category term="Docker" scheme="https://mizhuo.site/tags/Docker/"/>
+    <category term="Docker" scheme="https://mizhuo.fun/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>使用Jenkins自动化部署SpringCloud项目</title>
-    <link href="https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://mizhuo.site/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/</id>
+    <link href="https://mizhuo.fun/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://mizhuo.fun/%E4%BD%BF%E7%94%A8Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2SpringCloud%E9%A1%B9%E7%9B%AE/</id>
     <published>2022-12-05T13:47:18.000Z</published>
     <updated>2023-04-13T13:41:12.590Z</updated>
     
@@ -167,19 +169,19 @@
     
     
     
-    <category term="Jenkins" scheme="https://mizhuo.site/categories/Jenkins/"/>
+    <category term="Jenkins" scheme="https://mizhuo.fun/categories/Jenkins/"/>
     
     
-    <category term="SpringCloud" scheme="https://mizhuo.site/tags/SpringCloud/"/>
+    <category term="SpringCloud" scheme="https://mizhuo.fun/tags/SpringCloud/"/>
     
-    <category term="Jenkins" scheme="https://mizhuo.site/tags/Jenkins/"/>
+    <category term="Jenkins" scheme="https://mizhuo.fun/tags/Jenkins/"/>
     
   </entry>
   
   <entry>
     <title>Feign传递token</title>
-    <link href="https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/"/>
-    <id>https://mizhuo.site/Feign%E4%BC%A0%E9%80%92token/</id>
+    <link href="https://mizhuo.fun/Feign%E4%BC%A0%E9%80%92token/"/>
+    <id>https://mizhuo.fun/Feign%E4%BC%A0%E9%80%92token/</id>
     <published>2022-11-26T12:00:17.000Z</published>
     <updated>2022-11-27T06:45:19.935Z</updated>
     
@@ -188,17 +190,17 @@
     
     
     
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="问题集锦" scheme="https://mizhuo.fun/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
-    <category term="Feign" scheme="https://mizhuo.site/tags/Feign/"/>
+    <category term="Feign" scheme="https://mizhuo.fun/tags/Feign/"/>
     
   </entry>
   
   <entry>
     <title>Gradle引用Lombok编译失败的问题</title>
-    <link href="https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://mizhuo.site/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://mizhuo.fun/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://mizhuo.fun/Gradle%E5%BC%95%E7%94%A8Lombok%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2022-11-12T14:27:00.000Z</published>
     <updated>2022-11-12T14:27:00.000Z</updated>
     
@@ -207,17 +209,17 @@
     
     
     
-    <category term="问题集锦" scheme="https://mizhuo.site/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
+    <category term="问题集锦" scheme="https://mizhuo.fun/categories/%E9%97%AE%E9%A2%98%E9%9B%86%E9%94%A6/"/>
     
     
-    <category term="Gradle" scheme="https://mizhuo.site/tags/Gradle/"/>
+    <category term="Gradle" scheme="https://mizhuo.fun/tags/Gradle/"/>
     
   </entry>
   
   <entry>
     <title>玩转Kafka【二】</title>
-    <link href="https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/"/>
-    <id>https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/</id>
+    <link href="https://mizhuo.fun/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/"/>
+    <id>https://mizhuo.fun/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%BA%8C%E3%80%91/</id>
     <published>2022-09-14T14:04:48.000Z</published>
     <updated>2022-09-14T14:04:48.000Z</updated>
     
@@ -226,19 +228,19 @@
     
     
     
-    <category term="Kafka" scheme="https://mizhuo.site/categories/Kafka/"/>
+    <category term="Kafka" scheme="https://mizhuo.fun/categories/Kafka/"/>
     
     
-    <category term="Mq" scheme="https://mizhuo.site/tags/Mq/"/>
+    <category term="Mq" scheme="https://mizhuo.fun/tags/Mq/"/>
     
-    <category term="Kafka" scheme="https://mizhuo.site/tags/Kafka/"/>
+    <category term="Kafka" scheme="https://mizhuo.fun/tags/Kafka/"/>
     
   </entry>
   
   <entry>
     <title>玩转Kafka【一】</title>
-    <link href="https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/"/>
-    <id>https://mizhuo.site/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/</id>
+    <link href="https://mizhuo.fun/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/"/>
+    <id>https://mizhuo.fun/%E7%8E%A9%E8%BD%ACKafka%E3%80%90%E4%B8%80%E3%80%91/</id>
     <published>2022-08-28T13:22:43.000Z</published>
     <updated>2022-08-28T13:22:43.000Z</updated>
     
@@ -251,19 +253,19 @@
     
     
     
-    <category term="Kafka" scheme="https://mizhuo.site/categories/Kafka/"/>
+    <category term="Kafka" scheme="https://mizhuo.fun/categories/Kafka/"/>
     
     
-    <category term="Mq" scheme="https://mizhuo.site/tags/Mq/"/>
+    <category term="Mq" scheme="https://mizhuo.fun/tags/Mq/"/>
     
-    <category term="Kafka" scheme="https://mizhuo.site/tags/Kafka/"/>
+    <category term="Kafka" scheme="https://mizhuo.fun/tags/Kafka/"/>
     
   </entry>
   
   <entry>
     <title>为什么InnoDB要使用B+树</title>
-    <link href="https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/"/>
-    <id>https://mizhuo.site/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/</id>
+    <link href="https://mizhuo.fun/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/"/>
+    <id>https://mizhuo.fun/%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E8%A6%81%E4%BD%BF%E7%94%A8B+%E6%A0%91/</id>
     <published>2022-07-21T13:59:25.000Z</published>
     <updated>2022-10-09T15:12:25.000Z</updated>
     
@@ -272,40 +274,40 @@
     
     
     
-    <category term="数据结构" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://mizhuo.fun/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-    <category term="MySQL" scheme="https://mizhuo.site/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://mizhuo.fun/tags/MySQL/"/>
     
-    <category term="数据结构" scheme="https://mizhuo.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://mizhuo.fun/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot整合ELFK实现查看日志自由</title>
-    <link href="https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
-    <id>https://mizhuo.site/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
+    <link href="https://mizhuo.fun/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/"/>
+    <id>https://mizhuo.fun/SpringBoot%E6%95%B4%E5%90%88ELFK%E5%AE%9E%E7%8E%B0%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E8%87%AA%E7%94%B1/</id>
     <published>2022-07-08T02:28:06.000Z</published>
-    <updated>2022-10-09T06:33:34.000Z</updated>
+    <updated>2023-06-26T14:00:45.577Z</updated>
     
     
     <summary type="html">&lt;p&gt;之前讲过如何使用Docker安装ELK,本章来讲讲如何使用SpringBoot整合ELK以及ELFK,从而实现日志自由,再也不用跑服务器上捞日志了。&lt;/p&gt;</summary>
     
     
     
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
+    <category term="JAVA" scheme="https://mizhuo.fun/categories/JAVA/"/>
     
     
-    <category term="ELK" scheme="https://mizhuo.site/tags/ELK/"/>
+    <category term="ELK" scheme="https://mizhuo.fun/tags/ELK/"/>
     
-    <category term="SpringBoot" scheme="https://mizhuo.site/tags/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://mizhuo.fun/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>Arthas真的好用吗</title>
-    <link href="https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/"/>
-    <id>https://mizhuo.site/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/</id>
+    <link href="https://mizhuo.fun/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/"/>
+    <id>https://mizhuo.fun/Arthas%E7%9C%9F%E7%9A%84%E5%A5%BD%E7%94%A8%E5%90%97/</id>
     <published>2022-07-06T14:33:50.000Z</published>
     <updated>2022-10-08T13:35:26.000Z</updated>
     
@@ -314,17 +316,17 @@
     
     
     
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
+    <category term="JAVA" scheme="https://mizhuo.fun/categories/JAVA/"/>
     
     
-    <category term="Arthas" scheme="https://mizhuo.site/tags/Arthas/"/>
+    <category term="Arthas" scheme="https://mizhuo.fun/tags/Arthas/"/>
     
   </entry>
   
   <entry>
     <title>Spring事务的7种传播行为</title>
-    <link href="https://mizhuo.site/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/"/>
-    <id>https://mizhuo.site/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</id>
+    <link href="https://mizhuo.fun/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/"/>
+    <id>https://mizhuo.fun/Spring%E4%BA%8B%E5%8A%A1%E7%9A%847%E7%A7%8D%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</id>
     <published>2022-06-25T04:42:30.000Z</published>
     <updated>2022-10-08T13:35:26.000Z</updated>
     
@@ -333,17 +335,17 @@
     
     
     
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
+    <category term="JAVA" scheme="https://mizhuo.fun/categories/JAVA/"/>
     
     
-    <category term="Spring" scheme="https://mizhuo.site/tags/Spring/"/>
+    <category term="Spring" scheme="https://mizhuo.fun/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Paxos算法与Raft算法</title>
-    <link href="https://mizhuo.site/Paxos%E7%AE%97%E6%B3%95%E4%B8%8ERaft%E7%AE%97%E6%B3%95/"/>
-    <id>https://mizhuo.site/Paxos%E7%AE%97%E6%B3%95%E4%B8%8ERaft%E7%AE%97%E6%B3%95/</id>
+    <link href="https://mizhuo.fun/Paxos%E7%AE%97%E6%B3%95%E4%B8%8ERaft%E7%AE%97%E6%B3%95/"/>
+    <id>https://mizhuo.fun/Paxos%E7%AE%97%E6%B3%95%E4%B8%8ERaft%E7%AE%97%E6%B3%95/</id>
     <published>2021-10-03T13:46:39.000Z</published>
     <updated>2021-10-03T13:46:39.000Z</updated>
     
@@ -352,17 +354,17 @@
     
     
     
-    <category term="分布式" scheme="https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://mizhuo.fun/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
     
-    <category term="分布式" scheme="https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://mizhuo.fun/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>CAP和BASE理论</title>
-    <link href="https://mizhuo.site/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/"/>
-    <id>https://mizhuo.site/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/</id>
+    <link href="https://mizhuo.fun/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/"/>
+    <id>https://mizhuo.fun/CAP%E5%92%8CBASE%E7%90%86%E8%AE%BA/</id>
     <published>2021-09-11T07:32:39.000Z</published>
     <updated>2021-09-11T07:32:39.000Z</updated>
     
@@ -371,17 +373,17 @@
     
     
     
-    <category term="分布式" scheme="https://mizhuo.site/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://mizhuo.fun/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
     
-    <category term="分布式" scheme="https://mizhuo.site/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://mizhuo.fun/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>JAVA设计模式详解</title>
-    <link href="https://mizhuo.site/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://mizhuo.site/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</id>
+    <link href="https://mizhuo.fun/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://mizhuo.fun/JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3/</id>
     <published>2021-08-17T13:48:10.000Z</published>
     <updated>2022-10-09T06:30:04.000Z</updated>
     
@@ -402,17 +404,17 @@
     
     
     
-    <category term="JAVA" scheme="https://mizhuo.site/categories/JAVA/"/>
+    <category term="JAVA" scheme="https://mizhuo.fun/categories/JAVA/"/>
     
     
-    <category term="设计模式" scheme="https://mizhuo.site/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://mizhuo.fun/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>DB2解决方案【算术溢出】</title>
-    <link href="https://mizhuo.site/DB2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E7%AE%97%E6%9C%AF%E6%BA%A2%E5%87%BA%E3%80%91/"/>
-    <id>https://mizhuo.site/DB2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E7%AE%97%E6%9C%AF%E6%BA%A2%E5%87%BA%E3%80%91/</id>
+    <link href="https://mizhuo.fun/DB2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E7%AE%97%E6%9C%AF%E6%BA%A2%E5%87%BA%E3%80%91/"/>
+    <id>https://mizhuo.fun/DB2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E7%AE%97%E6%9C%AF%E6%BA%A2%E5%87%BA%E3%80%91/</id>
     <published>2021-02-24T13:25:11.000Z</published>
     <updated>2022-10-08T14:40:51.000Z</updated>
     
@@ -421,10 +423,10 @@
     
     
     
-    <category term="数据库" scheme="https://mizhuo.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://mizhuo.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="DB2" scheme="https://mizhuo.site/tags/DB2/"/>
+    <category term="DB2" scheme="https://mizhuo.fun/tags/DB2/"/>
     
   </entry>
   

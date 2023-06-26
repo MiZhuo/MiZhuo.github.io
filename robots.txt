@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://mizhuo.site/sitemap.xml
-Sitemap: https://mizhuo.site/baidusitemap.xml
+Sitemap: https://mizhuo.fun/sitemap.xml
+Sitemap: https://mizhuo.fun/baidusitemap.xml
